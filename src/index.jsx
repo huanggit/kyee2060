@@ -1,14 +1,8 @@
 import React from "react";
-import { render } from "react-dom";
-import { Router, Route, History,IndexRoute,hashHistory} from "react-router";
-
+import {render} from "react-dom";
+import AppRouter from "./AppRouter";
 
 render(
-	<Router history={hashHistory}>
-                <Route path="/" component={App}>
-                    <IndexRoute component={Home}/>
-                    <Route path="/api" component={Api}/>
-                </Route>
-	</Router>
-	document.getElementById("root")
+    <AppRouter />,
+    document.getElementById("root")
 );
