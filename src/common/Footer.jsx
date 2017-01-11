@@ -1,15 +1,15 @@
-import React, { Component, PropTypes } from "react";
+import React, {Component, PropTypes} from "react";
+import {Layout} from 'antd';
+const {Footer, Content} = Layout;
 
-
-class Footer extends Component {
+class Foooter extends Component {
 
     render() {
         return (
-            <div className="footer">
-                Footer
-            </div>
+            <div>test</div>
+
         )
     }
 }
 
-export default Footer;
+export default Foooter;

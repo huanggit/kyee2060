@@ -1,7 +1,10 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
-class Api extends Component {
+export default class Api extends Component {
+    render() {
+        return (
+            <div>devsdhj</div>
+        )
+    }
+};
 
-}
-
-export default Api;

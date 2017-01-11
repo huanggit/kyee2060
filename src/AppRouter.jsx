@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import {render} from "react-dom";
 import {Router, Route, IndexRoute, History, hashHistory} from "react-router";
 import App from "./App";
@@ -11,7 +11,7 @@ export default class AppRouter extends Component {
             <Router history={hashHistory}>
                 <Route path="/" component={App}>
                     <IndexRoute component={Home}/>
-                    <Route path="/api" component={Api}/>
+                    <Route path="api" component={Api}/>
                 </Route>
             </Router>
         );

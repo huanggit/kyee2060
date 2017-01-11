@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from "react";
 
 
-class Header extends Component {
+export default class Header extends Component {
 
     render() {
         return (
             <div className="header">
-                 header
+                 kyee|开发xxx
             </div>
         )
     }
 }
 
-export default Header;
+
