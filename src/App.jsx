@@ -1,26 +1,18 @@
 import React, {Component} from "react"
+import { Link } from 'react-router';
 import {Layout} from 'antd'
-const {Header, Footer, Sider, Content} = Layout;
+const {Header, Footer} = Layout;
 
-// import Header from "./common/Header";
-// import Footer from "./common/Footer";
 
 class App extends Component {
 
     render() {
         return (
             <Layout>
-                <Header className="test1">头部随便写写|</Header>
-                <div className="body">{this.props.children}</div>
-
+                <Header className="test1"><Link to={"/"}>KYEE | 开发学习平台</Link></Header>
+                {this.props.children}
                 <Footer className="test">Footer</Footer>
-
             </Layout>
-            // <div id="content">
-            //     {/*<Header/>*/}
-            //     <div className="body">{this.props.children}</div>
-            //     {/*<Footer/>*/}
-            // </div>
         )
     }
 }
