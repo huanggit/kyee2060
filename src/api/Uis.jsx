@@ -6,13 +6,16 @@ export default class Uis extends Component {
 
     render() {
         return (
-            <Grid caption={this.props.caption} items={this.props.items} />
+            <Grid caption={this.props.caption} items={this.props.items}/>
         )
     }
 };
 
 Uis.defaultProps = {
-    caption: "",
-    items: []
+    caption: "公共UI",
+    items: [
+        {"link": "/module/api", "title": "UI模板"},
+        {"link": "/module/api", "title": "常用图标库"},
+    ]
 };
 
