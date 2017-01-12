@@ -4,7 +4,7 @@ import {Layout} from 'antd';
 const {Content} = Layout;
 
 
-class Home extends Component {
+export default  class Home extends Component {
     render() {
         return (
             <Layout>
@@ -25,7 +25,7 @@ class Home extends Component {
                                 <h1>架构规范</h1>
                             </div>
                             <ul>
-                                <li><Link to={"/"}>技术架构</Link></li>
+                                <li><Link to={"/tech"}>技术架构</Link></li>
                                 <li><Link to={"/"}>研发规范</Link></li>
                                 <li><Link to={"/"}>运营机制</Link></li>
                             </ul>
@@ -35,9 +35,9 @@ class Home extends Component {
                                 <h1>技术学习</h1>
                             </div>
                             <ul>
-                                <li><Link to={"/"}>后端技术</Link></li>
-                                <li><Link to={"/"}>前端技术</Link></li>
-                                <li><Link to={"/"}>业务学习</Link></li>
+                                <li><Link to={"/backend"}>后端技术</Link></li>
+                                <li><Link to={"/frontend"}>前端技术</Link></li>
+                                <li><Link to={"/business"}>业务学习</Link></li>
                             </ul>
                         </div>
 
@@ -48,4 +48,3 @@ class Home extends Component {
     }
 }
 
-export default Home;
