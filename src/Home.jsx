@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { Link } from 'react-router';
 import {Layout} from 'antd';
 import Banner from './common/Banner'
+import Entry from './common/Entry'
 const {Content} = Layout;
 
 
@@ -16,35 +17,18 @@ export default  class Home extends Component {
                             <h3> 公共资源 </h3>
                             <p className="ever">本平台提供常用公共资源组件等，方便复用，提高效率</p>
                             <div className="welcome-grids">
-                                <div className="col-md-4 welcome-grid">
-                                    <Link to={"/modules"}>
-                                        <div className="welcome-grd">
-                                            <div className="icons">
-                                                <span className="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                                            </div>
-                                            <h4>公共组件</h4>
-                                            <p> 在这里提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件下载、 组件升级日志等。</p>
-                                        </div>
-                                    </Link>
-                                </div>
-                                <div className="col-md-4 welcome-grid">
-                                    <div className="welcome-grd">
-                                        <div className="icons">
-                                            <span className="glyphicon glyphicon-user" aria-hidden="true"></span>
-                                        </div>
-                                        <h4>公共服务</h4>
-                                        <p>在这里提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件下载、 组件升级日志等。</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 welcome-grid">
-                                    <div className="welcome-grd">
-                                        <div className="icons">
-                                            <span className="glyphicon glyphicon-file" aria-hidden="true"> </span>
-                                        </div>
-                                        <h4>样本模板</h4>
-                                        <p>在这里提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件下载、 组件升级日志等。</p>
-                                    </div>
-                                </div>
+                                <Entry  link="/modules"
+                                        icon="cog"
+                                        title="公共组件"
+                                        sub="在这里提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件升级日志等。"/>
+                                <Entry  link="/services"
+                                        icon="user"
+                                        title="公共服务"
+                                        sub="在这里提供详细的微服务使用文档，包括微服务简介、微服务详细API参考文档、升级日志等。"/>
+                                <Entry  link="/uis"
+                                        icon="file"
+                                        title="UI模板"
+                                        sub=""/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
@@ -55,34 +39,18 @@ export default  class Home extends Component {
                             <h3> 架构规范 </h3>
                             <p className="ever">本平台提供常用公共资源组件等，方便复用，提高效率</p>
                             <div className="welcome-grids">
-                                <div className="col-md-4 welcome-grid">
-                                    <div className="welcome-grd">
-                                        <div className="icons">
-                                            <span className="glyphicon glyphicon-send" aria-hidden="true"></span>
-                                        </div>
-                                        <h4> 架构技术 </h4>
-                                        <p> 在这里提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件下载、 组件升级日志等。</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 welcome-grid">
-                                    <div className="welcome-grd">
-                                        <div className="icons">
-                                            <span className="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                                        </div>
-                                        <h4>研发规范</h4>
-                                        <p>在这里提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件下载、 组件升级日志等。</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 welcome-grid">
-                                    <div className="welcome-grd">
-                                        <div className="icons">
-                                            <span className="glyphicon glyphicon-home" aria-hidden="true"></span>
-                                        </div>
-                                        <h4>运营机制</h4>
-                                        <p>在这里提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件下载、 组件升级日志等。</p>
-                                    </div>
-                                </div>
-
+                                <Entry  link="/tech"
+                                        icon="send"
+                                        title="技术架构"
+                                        sub=""/>
+                                <Entry  link="/tech"
+                                        icon="list-alt"
+                                        title="研发规范"
+                                        sub=""/>
+                                <Entry  link="/tech"
+                                        icon="home"
+                                        title="运营机制"
+                                        sub=""/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
@@ -93,34 +61,18 @@ export default  class Home extends Component {
                             <h3>学习地图</h3>
                             <p className="ever">本平台提供常用公共资源组件等，方便复用，提高效率</p>
                             <div className="welcome-grids">
-                                <div className="col-md-4 welcome-grid">
-                                    <div className="welcome-grd">
-                                        <div className="icons">
-                                            <span className="glyphicon glyphicon-fire" aria-hidden="true"></span>
-                                        </div>
-                                        <h4>后端技术</h4>
-                                        <p> 在这里提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件下载、 组件升级日志等。</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 welcome-grid">
-                                    <div className="welcome-grd">
-                                        <div className="icons">
-                                            <span className="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                                        </div>
-                                        <h4>前端技术</h4>
-                                        <p>在这里提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件下载、 组件升级日志等。</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4 welcome-grid">
-                                    <div className="welcome-grd">
-                                        <div className="icons">
-                                            <span className="glyphicon glyphicon-filter" aria-hidden="true"></span>
-                                        </div>
-                                        <h4>业务知识</h4>
-                                        <p>在这里提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件下载、 组件升级日志等。</p>
-                                    </div>
-                                </div>
-
+                                <Entry  link="/backend"
+                                        icon="fire"
+                                        title="后端技术"
+                                        sub=""/>
+                                <Entry  link="/frontend"
+                                        icon="globe"
+                                        title="前端技术"
+                                        sub=""/>
+                                <Entry  link="/business"
+                                        icon="filter"
+                                        title="业务知识"
+                                        sub=""/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

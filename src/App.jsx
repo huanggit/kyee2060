@@ -6,7 +6,6 @@ const {Header, Footer} = Layout;
 
 
 export default class App extends Component {
-
     render() {
         return (
             <Layout>
@@ -17,15 +16,14 @@ export default class App extends Component {
                                 <nav className="navbar navbar-default">
                                     <div className="navbar-header">
                                         <div className="logo">
-                                            <i></i>
-                                            <span>开放学习平台</span>
+                                            <Link to="/"><i></i><span>开放学习平台</span></Link>
                                         </div>
                                     </div>
                                     <div className="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                                         <ul className="nav navbar-nav">
-                                            <li className="hvr-sweep-to-bottom active"><Link to={"/modules"}>公共组件</Link></li>
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/services"} class="scroll">公共服务</Link></li>
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/uis"} class="scroll">UI模板</Link> </li>
+                                            <li className="hvr-sweep-to-bottom active"><Link to={"/modules"}>公共资源</Link></li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/tech"} class="scroll">架构规范</Link></li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/backend"} class="scroll">学习地图</Link> </li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -45,24 +43,23 @@ export default class App extends Component {
                                     <ul>
                                         <li><a href="">公共组件</a></li>
                                         <li><a href="">公共服务</a></li>
-                                        <li><a href="">样本模板</a></li>
+                                        <li><a href="">UI模板</a></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-4 footer-grid">
                                     <h3 className="title">架构规范</h3>
                                     <ul>
                                         <li><a href="">技术架构</a></li>
-                                        <li><a href="">编码规范</a></li>
-                                        <li><a href="">运营机构</a></li>
-                                        <li><a href="">开发流程</a></li>
+                                        <li><a href="">研发规范</a></li>
+                                        <li><a href="">运营机制</a></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-4 footer-grid">
-                                    <h3 className="title">技术学习</h3>
+                                    <h3 className="title">学习地图</h3>
                                     <ul>
-                                        <li><a href="">JAVA</a></li>
-                                        <li><a href=""> 前端 </a></li>
-                                        <li><a href=""> 产品</a></li>
+                                        <li><a href="">后端技术</a></li>
+                                        <li><a href="">前端技术</a></li>
+                                        <li><a href="">业务知识</a></li>
                                     </ul>
                                 </div>
                                 <div className="clearfix"> </div>

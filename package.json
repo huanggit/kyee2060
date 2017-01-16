@@ -28,5 +28,5 @@
     "express": "^4.13.3",
     "webpack": "^1.12.8"
   },
-  "homepage": "https://"
+  "homepage": "http://"
 }
