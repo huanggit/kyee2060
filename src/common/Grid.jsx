@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import {Layout} from 'antd';
 const {Content} = Layout;
 
-class Grid extends Component {
+export default  class Grid extends Component {
 
     render() {
         return (
@@ -25,4 +25,3 @@ class Grid extends Component {
     }
 }
 
-export default Grid;
