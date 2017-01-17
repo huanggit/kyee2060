@@ -41,25 +41,25 @@ export default class App extends Component {
                                 <div className="col-md-4 footer-grid">
                                     <h3 className="title">公共资源</h3>
                                     <ul>
-                                        <li><a href="">公共组件</a></li>
-                                        <li><a href="">公共服务</a></li>
-                                        <li><a href="">UI模板</a></li>
+                                        <li><Link to="/modules">公共组件</Link></li>
+                                        <li><Link to="/services">公共服务</Link></li>
+                                        <li><Link to="/uis">UI模板</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-4 footer-grid">
                                     <h3 className="title">架构规范</h3>
                                     <ul>
-                                        <li><a href="">技术架构</a></li>
-                                        <li><a href="">研发规范</a></li>
-                                        <li><a href="">运营机制</a></li>
+                                        <li><Link to="/tech">技术架构</Link></li>
+                                        <li><Link to="">研发规范</Link></li>
+                                        <li><Link to="">运营机制</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-4 footer-grid">
                                     <h3 className="title">学习地图</h3>
                                     <ul>
-                                        <li><a href="">后端技术</a></li>
-                                        <li><a href="">前端技术</a></li>
-                                        <li><a href="">业务知识</a></li>
+                                        <li><Link to="/backend">后端技术</Link></li>
+                                        <li><Link to="/frontend">前端技术</Link></li>
+                                        <li><Link to="/business">业务知识</Link></li>
                                     </ul>
                                 </div>
                                 <div className="clearfix"> </div>
