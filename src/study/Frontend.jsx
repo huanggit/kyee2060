@@ -13,6 +13,7 @@ export default class Frontend extends Component {
                     <div className="welcome">
                         <div className="container">
                             <div className="intro">
+                                <div className="tips"> 简介 </div>
                                 从基础的CSS+Javascript，到SASS+React，浏览器开发者工具，前端技术一网打尽。
                             </div>
                             <h3>前端技术</h3>
@@ -21,35 +22,43 @@ export default class Frontend extends Component {
                                 <Entry  link="/module/api"
                                         icon="cog"
                                         title="浏览器开发工具"
-                                        sub=""/>
+                                        viewed="26"
+                                        needed="4"/>
                                 <Entry  link="/module/api"
                                         icon="fire"
                                         title="JavaScript"
-                                        sub=""/>
+                                        viewed="16"
+                                        needed="33"/>
                                 <Entry  link="/module/api"
                                         icon="globe"
                                         title="HTML"
-                                        sub=""/>
+                                        viewed="44"
+                                        needed="31"/>
                                 <Entry  link="/module/api"
                                         icon="user"
                                         title="CSS"
-                                        sub=""/>
+                                        viewed="146"
+                                        needed="33"/>
                                 <Entry  link="/module/api"
                                         icon="filter"
                                         title="Bootstrap"
-                                        sub=""/>
+                                        viewed="198"
+                                        needed="33"/>
                                 <Entry  link="/module/api"
                                         icon="filter"
                                         title="jQuery"
-                                        sub=""/>
+                                        viewed="222"
+                                        needed="23"/>
                                 <Entry  link="/module/api"
                                         icon="cog"
                                         title="AngularJS"
-                                        sub=""/>
+                                        viewed="33"
+                                        needed="11"/>
                                 <Entry  link="/module/api"
                                         icon="fire"
                                         title="React"
-                                        sub=""/>
+                                        viewed="46"
+                                        needed="4"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

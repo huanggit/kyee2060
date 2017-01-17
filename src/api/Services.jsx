@@ -13,6 +13,7 @@ export default class Services extends Component {
                     <div className="welcome">
                         <div className="container">
                             <div className="intro">
+                                <div className="tips"> 简介 </div>
                                 公司公共服务API文档。通过HTTP为所有项目组提供公共服务。
                             </div>
                             <h3>内部服务</h3>
@@ -21,15 +22,18 @@ export default class Services extends Component {
                                 <Entry  link="/module/api"
                                         icon="cog"
                                         title="登录+权限管理"
-                                        sub=""/>
+                                        viewed="16"
+                                        needed="3"/>
                                 <Entry  link="/module/api"
                                         icon="user"
                                         title="短信发送"
-                                        sub=""/>
+                                        viewed="16"
+                                        needed="3"/>
                                 <Entry  link="/module/api"
                                         icon="file"
                                         title="邮件发送"
-                                        sub=""/>
+                                        viewed="16"
+                                        needed="3"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
@@ -43,23 +47,28 @@ export default class Services extends Component {
                                 <Entry  link="/module/api"
                                         icon="fire"
                                         title="语音对接"
-                                        sub=""/>
+                                        viewed="316"
+                                        needed="2"/>
                                 <Entry  link="/module/api"
                                         icon="globe"
                                         title="IM对接"
-                                        sub=""/>
+                                        viewed="33"
+                                        needed="1"/>
                                 <Entry  link="/module/api"
                                         icon="filter"
                                         title="微信公众号对接"
-                                        sub=""/>
+                                        viewed="211"
+                                        needed="3"/>
                                 <Entry  link="/module/api"
                                         icon="filter"
                                         title="OSS对接"
-                                        sub=""/>
+                                        viewed="16"
+                                        needed="0"/>
                                 <Entry  link="/module/api"
                                         icon="fire"
                                         title="天气预报对接"
-                                        sub=""/>
+                                        viewed="331"
+                                        needed="5"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

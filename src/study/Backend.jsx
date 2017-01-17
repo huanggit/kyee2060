@@ -13,6 +13,7 @@ export default class Backend extends Component {
                     <div className="welcome">
                         <div className="container">
                             <div className="intro">
+                                <div className="tips"> 简介 </div>
                                 玩转IDE的各种黑科技，spring系列全攻略，缓存的N种用法，优化SQL的正确姿势，进阶JAVA8。
                             </div>
                             <h3>后端技术</h3>
@@ -21,47 +22,58 @@ export default class Backend extends Component {
                                 <Entry  link="/module/api"
                                         icon="cog"
                                         title="Java & Jdk"
-                                        sub=""/>
+                                        viewed="367"
+                                        needed="45"/>
                                 <Entry  link="/module/api"
                                         icon="fire"
                                         title="Idea"
-                                        sub=""/>
+                                        viewed="457"
+                                        needed="89"/>
                                 <Entry  link="/module/api"
                                         icon="globe"
                                         title="Eclipse"
-                                        sub=""/>
+                                        viewed="432"
+                                        needed="31"/>
                                 <Entry  link="/module/api"
                                         icon="file"
                                         title="Spring Framework"
-                                        sub=""/>
+                                        viewed="146"
+                                        needed="31"/>
                                 <Entry  link="/module/api"
                                         icon="send"
                                         title="Spring MVC"
-                                        sub=""/>
+                                        viewed="226"
+                                        needed="22"/>
                                 <Entry  link="/module/api"
                                         icon="list-alt"
                                         title="Spring Boot"
-                                        sub=""/>
+                                        viewed="643"
+                                        needed="31"/>
                                 <Entry  link="/module/api"
                                         icon="home"
                                         title="Spring Cloud"
-                                        sub=""/>
+                                        viewed="16"
+                                        needed="3"/>
                                 <Entry  link="/module/api"
                                         icon="user"
                                         title="Python"
-                                        sub=""/>
+                                        viewed="55"
+                                        needed="5"/>
                                 <Entry  link="/module/api"
                                         icon="filter"
                                         title="Http & Tomcat"
-                                        sub=""/>
+                                        viewed="886"
+                                        needed="63"/>
                                 <Entry  link="/module/api"
                                         icon="filter"
                                         title="Cache"
-                                        sub=""/>
+                                        viewed="416"
+                                        needed="55"/>
                                 <Entry  link="/module/api"
                                         icon="cog"
                                         title="MySql"
-                                        sub=""/>
+                                        viewed="876"
+                                        needed="47"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

@@ -14,6 +14,7 @@ export default class Modules extends Component {
                     <div className="welcome">
                         <div className="container">
                             <div className="intro">
+                                <div className="tips"> 简介 </div>
                                 公司公共组件库API文档。
                                 公司maven私服地址：http://115.28.172.54:8081。
                                 公司git地址：http://192.168.1.11/git。
@@ -24,24 +25,28 @@ export default class Modules extends Component {
                                 <Entry  link="/module/api"
                                         icon="cog"
                                         title="权限管理"
-                                        sub=""/>
-
+                                        viewed="648"
+                                        needed="21"/>
                                 <Entry  link="/module/api"
                                         icon="user"
                                         title="对称加密"
-                                        sub=""/>
+                                        viewed="153"
+                                        needed="3"/>
                                 <Entry  link="/module/api"
                                         icon="file"
                                         title="非对称加密"
-                                        sub=""/>
+                                        viewed="174"
+                                        needed="1"/>
                                 <Entry  link="/module/api"
                                         icon="file"
                                         title="消息推送"
-                                        sub=""/>
+                                        viewed="437"
+                                        needed="26"/>
                                 <Entry  link="/module/api"
                                         icon="cog"
                                         title="后台分页组件"
-                                        sub=""/>
+                                        viewed="690"
+                                        needed="35"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
@@ -55,15 +60,18 @@ export default class Modules extends Component {
                                 <Entry  link="/module/api"
                                         icon="send"
                                         title="网页视频"
-                                        sub=""/>
+                                        viewed="11"
+                                        needed="0"/>
                                 <Entry  link="/module/api"
                                         icon="list-alt"
                                         title="验证组件"
-                                        sub=""/>
+                                        viewed="209"
+                                        needed="12"/>
                                 <Entry  link="/module/api"
                                         icon="home"
                                         title="验证码组件"
-                                        sub=""/>
+                                        viewed="164"
+                                        needed="6"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
@@ -77,27 +85,33 @@ export default class Modules extends Component {
                                 <Entry  link="/module/api"
                                         icon="fire"
                                         title="IOS消息推送"
-                                        sub=""/>
+                                        viewed="46"
+                                        needed="0"/>
                                 <Entry  link="/module/api"
                                         icon="globe"
                                         title="Android消息推送"
-                                        sub=""/>
+                                        viewed="31"
+                                        needed="0"/>
                                 <Entry  link="/module/api"
                                         icon="filter"
                                         title="cordova视频插件"
-                                        sub=""/>
+                                        viewed="12"
+                                        needed="1"/>
                                 <Entry  link="/module/api"
                                         icon="filter"
                                         title="cordova通讯插件"
-                                        sub=""/>
+                                        viewed="29"
+                                        needed="0"/>
                                 <Entry  link="/module/api"
                                         icon="fire"
                                         title="cordova直播插件"
-                                        sub=""/>
+                                        viewed="30"
+                                        needed="1"/>
                                 <Entry  link="/module/api"
                                         icon="globe"
                                         title="Android消息推送"
-                                        sub=""/>
+                                        viewed="31"
+                                        needed="2"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
