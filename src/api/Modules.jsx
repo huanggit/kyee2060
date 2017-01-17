@@ -47,6 +47,11 @@ export default class Modules extends Component {
                                         title="后台分页组件"
                                         viewed="690"
                                         needed="35"/>
+                                <Entry  link="/module/api"
+                                        icon="list-alt"
+                                        title="搜索组件"
+                                        viewed="209"
+                                        needed="12"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
@@ -112,6 +117,31 @@ export default class Modules extends Component {
                                         title="Android消息推送"
                                         viewed="31"
                                         needed="2"/>
+                                <div className="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="welcome">
+                        <div className="container">
+                            <h3>业务组件</h3>
+                            <p className="ever"></p>
+                            <div className="welcome-grids">
+                                <Entry  link="/module/api"
+                                        icon="send"
+                                        title="挂号组件"
+                                        viewed="11"
+                                        needed="0"/>
+                                <Entry  link="/module/api"
+                                        icon="list-alt"
+                                        title="疾病组件"
+                                        viewed="209"
+                                        needed="12"/>
+                                <Entry  link="/module/api"
+                                        icon="home"
+                                        title="体温表组件"
+                                        viewed="164"
+                                        needed="6"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

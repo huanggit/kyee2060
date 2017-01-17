@@ -22,8 +22,8 @@ export default class App extends Component {
                                     <div className="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                                         <ul className="nav navbar-nav">
                                             <li className="hvr-sweep-to-bottom"><Link to={"/modules"}>公共资源</Link></li>
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/tech"} class="scroll">架构规范</Link></li>
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/backend"} class="scroll">学习地图</Link> </li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/tech"} className="scroll">架构规范</Link></li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/backend"} className="scroll">学习地图</Link> </li>
                                         </ul>
                                     </div>
                                 </nav>
