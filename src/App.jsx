@@ -50,8 +50,8 @@ export default class App extends Component {
                                     <h3 className="title">架构规范</h3>
                                     <ul>
                                         <li><Link to="/tech">技术架构</Link></li>
-                                        <li><Link to="">研发规范</Link></li>
-                                        <li><Link to="">运营机制</Link></li>
+                                        <li><Link to="/dev">研发规范</Link></li>
+                                        <li><Link to="/ops">运营机制</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-4 footer-grid">

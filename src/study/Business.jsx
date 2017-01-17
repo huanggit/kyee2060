@@ -1,22 +1,41 @@
 import React, {Component} from "react";
-import Grid from "../common/Grid"
+import { Link } from 'react-router';
+import {Layout} from 'antd';
+import Entry from '../common/Entry'
+const {Content} = Layout;
 
 export default class Business extends Component {
 
 
     render() {
         return (
-            <Grid caption={this.props.caption}
-                  items={this.props.items} />
+            <Layout>
+                <Content>
+                    <div className="welcome">
+                        <div className="container">
+                            <div className="intro">
+                                医疗行业有哪些细分市场？公司几十个项目组都在做什么？要想代码写的好，业务知识要学好。
+                            </div>
+                            <h3>业务学习</h3>
+                            <p className="ever"></p>
+                            <div className="welcome-grids">
+                                <Entry  link="/module/api"
+                                        icon="cog"
+                                        title="HIS业务"
+                                        sub=""/>
+                                <Entry  link="/module/api"
+                                        icon="fire"
+                                        title="趣医业务"
+                                        sub=""/>
+                                <div className="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </Content>
+            </Layout>
         )
     }
 };
 
-Business.defaultProps = {
-    caption: "业务学习",
-    items: [
-        {"link":"/module/api","title":"HIS业务"},
-        {"link":"/module/api","title":"趣医业务"},
-    ]
-};
 

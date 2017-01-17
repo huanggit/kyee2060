@@ -19,12 +19,10 @@ html,body{
   height: 100%;
   min-height: 100%;
   font-size: 14px;
+  margin:0 auto;
   font-family: "Microsoft YaHei", "微软雅黑","Hiragino Sans GB", "宋体", Arial, Verdana, sans-serif;
 }
-html{
-  width: 1349px;
-/*  margin: 0 auto;*/
-}
+
 ul{
   list-style-type: none;
   margin-bottom: 0;
@@ -210,6 +208,18 @@ ul{
   padding:50px;
   .container {
     margin: 0 auto;
+    .intro{
+      text-align: left;
+      padding-left:10px;
+      padding-bottom: 30px;
+      width:100%;
+      height:54px;
+      line-height: 54px;
+      font-size: 16px;
+      color:#333;
+      margin-bottom: 30px;
+      border-bottom: 1px #D8D8D8 solid;
+    }
   }
    h3 {
     color: #108ee9;
@@ -228,10 +238,45 @@ ul{
    }
   .welcome-grids{
     margin:6em 0 0;
+    .listcount{
+      width: 40%;
+      margin:0 auto;
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+      .view{
+        float: left;
+        height: 16px;
+        .glyphicon{
+          padding-left: 5px;
+        }
+        cite{
+
+          font-family: Tahoma;
+          padding-left: 3px;
+          font-size: 14px;
+          font-style: normal;
+        }
+      }
+      .need{
+        float: right;
+        height: 16px;
+        .glyphicon{
+          padding-left: 5px;
+        }
+        cite{
+          font-family: Tahoma;
+          padding-left: 3px;
+          font-size: 14px;
+          font-style: normal;
+        }
+      }
+    }
   }
 }
 .welcome-grd {
   margin: 0 auto;
+  margin:40px;
   border-radius: 125px;
   box-shadow: 0px 0px 5px #D8D8D8;
   padding: 1em 1em 0 1em;
@@ -430,6 +475,34 @@ p.ever{
         width:80%;
         padding:40px;
         border-left: 1px #e6e7ec solid;
+        .doc-need {
+          display: block;
+          margin-bottom: 50px;
+          a{
+            width: 160px;
+            height: 45px;
+            line-height: 45px;
+            float: right;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            background-color: #fb7305;
+            display: block;
+            text-align: center;
+
+            cite{
+              font-family: Tahoma;
+              padding-left: 5px;
+              font-size: 14px;
+              font-style: normal;
+            }
+            &:hover{
+              background-color: #8f8f8f;
+              display: block;
+              text-align: center;
+            }
+          }
+        }
        .doc-content{
           h2{
             color: #333;
@@ -437,7 +510,7 @@ p.ever{
             float: none;
             font-weight: normal;
             }
-         lable{
+         label{
            color: #8f8f8f;
            padding:10px;
            span{
