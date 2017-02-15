@@ -1,0 +1,14 @@
+server:
+  port: 8888
+  address: localhost
+  contextPath: /
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/kyeeplatform
+
+logging:
+  config: classpath:config/log4j2.xml
+debug: false
+
