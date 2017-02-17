@@ -1,6 +1,5 @@
 package com.kyee.openplatform.controller;
 
-import com.kyee.openplatform.config.web.ApiResult;
 import com.kyee.openplatform.repositorys.user.UserInfo;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,12 +16,12 @@ public class UserController {
     }
 
     @RequestMapping("/login")
-    public ApiResult login(HttpServletRequest request,
+    public String login(HttpServletRequest request,
                            String username, String password) {
         HttpSession session = request.getSession(true);
         UserInfo userInfo = new UserInfo("x", "x", "x");
         session.setAttribute("userInfo", userInfo);
-        return ApiResult.successInstance();
+        return "ok";
     }
 
 }

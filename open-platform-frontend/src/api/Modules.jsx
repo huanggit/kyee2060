@@ -9,20 +9,20 @@ export default class Modules extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            backendApi: []
+            api: {"back":[],"front":[],"app":[],"bus":[]}
         }
     }
 
     componentDidMount() {
-        global.get("/api/findAll", function (result) {
+        global.get("/api/components", function (result) {
             this.setState({
-                backendApi : result
+                api : result
             })
         }.bind(this));
     }
 
     render() {
-        var s = this.state;
+        var api = this.state.api;
         return (
             <Layout>
                 <Content>
@@ -38,9 +38,9 @@ export default class Modules extends Component {
                             <p className="ever"></p>
                             <div className="welcome-grids">
                                 {
-                                    s.backendApi.map(function (api,i) {
+                                    api.back.map(function (api,i) {
                                         return <Entry  key={i}
-                                                       link="/module/api"
+                                                       link={"/api/"+api.id+"/method/1"}
                                                        icon={api.icon}
                                                        title={api.name}
                                                        viewed={api.viewed}
@@ -57,21 +57,16 @@ export default class Modules extends Component {
                             <h3>前端组件</h3>
                             <p className="ever"></p>
                             <div className="welcome-grids">
-                                <Entry  link="/module/api"
-                                        icon="send"
-                                        title="网页视频"
-                                        viewed="11"
-                                        needed="0"/>
-                                <Entry  link="/module/api"
-                                        icon="list-alt"
-                                        title="验证组件"
-                                        viewed="209"
-                                        needed="12"/>
-                                <Entry  link="/module/api"
-                                        icon="home"
-                                        title="验证码组件"
-                                        viewed="164"
-                                        needed="6"/>
+                                {
+                                    api.front.map(function (api,i) {
+                                        return <Entry  key={i}
+                                                       link={"/api/"+api.id+"/method/1"}
+                                                       icon={api.icon}
+                                                       title={api.name}
+                                                       viewed={api.viewed}
+                                                       needed={api.needed}/>
+                                    })
+                                }
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
@@ -82,36 +77,16 @@ export default class Modules extends Component {
                             <h3>APP组件</h3>
                             <p className="ever"></p>
                             <div className="welcome-grids">
-                                <Entry  link="/module/api"
-                                        icon="fire"
-                                        title="IOS消息推送"
-                                        viewed="46"
-                                        needed="0"/>
-                                <Entry  link="/module/api"
-                                        icon="globe"
-                                        title="Android消息推送"
-                                        viewed="31"
-                                        needed="0"/>
-                                <Entry  link="/module/api"
-                                        icon="filter"
-                                        title="cordova视频插件"
-                                        viewed="12"
-                                        needed="1"/>
-                                <Entry  link="/module/api"
-                                        icon="filter"
-                                        title="cordova通讯插件"
-                                        viewed="29"
-                                        needed="0"/>
-                                <Entry  link="/module/api"
-                                        icon="fire"
-                                        title="cordova直播插件"
-                                        viewed="30"
-                                        needed="1"/>
-                                <Entry  link="/module/api"
-                                        icon="globe"
-                                        title="Android消息推送"
-                                        viewed="31"
-                                        needed="2"/>
+                                {
+                                    api.app.map(function (api,i) {
+                                        return <Entry  key={i}
+                                                       link={"/module/api/"+api.id}
+                                                       icon={api.icon}
+                                                       title={api.name}
+                                                       viewed={api.viewed}
+                                                       needed={api.needed}/>
+                                    })
+                                }
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
@@ -122,21 +97,16 @@ export default class Modules extends Component {
                             <h3>业务组件</h3>
                             <p className="ever"></p>
                             <div className="welcome-grids">
-                                <Entry  link="/module/api"
-                                        icon="send"
-                                        title="挂号组件"
-                                        viewed="11"
-                                        needed="0"/>
-                                <Entry  link="/module/api"
-                                        icon="list-alt"
-                                        title="疾病组件"
-                                        viewed="209"
-                                        needed="12"/>
-                                <Entry  link="/module/api"
-                                        icon="home"
-                                        title="体温表组件"
-                                        viewed="164"
-                                        needed="6"/>
+                                {
+                                    api.bus.map(function (api,i) {
+                                        return <Entry  key={i}
+                                                       link={"/module/api/"+api.id}
+                                                       icon={api.icon}
+                                                       title={api.name}
+                                                       viewed={api.viewed}
+                                                       needed={api.needed}/>
+                                    })
+                                }
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

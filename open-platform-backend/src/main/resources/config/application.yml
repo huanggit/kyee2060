@@ -6,7 +6,7 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/kyeeplatform
+      uri: mongodb://118.190.8.227:27017/kyeeplatform
 
 logging:
   config: classpath:config/log4j2.xml

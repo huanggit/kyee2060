@@ -3,7 +3,31 @@ import {Layout} from 'antd';
 const {Content, Sider} = Layout;
 
 export default class ModuleApi extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            methods: [],
+            method:{"req":[],"rsp":[]}
+        }
+    }
+
+    componentDidMount() {
+        global.get("/api/"+this.props.params.apiId, function (result) {
+            this.setState({
+                methods : result
+            })
+        }.bind(this));
+        global.get("/api/method/"+this.props.params.methodId, function (result) {
+            this.setState({
+                method : result
+            })
+        }.bind(this));
+    }
+
     render() {
+        var methods = this.state.methods;
+        var method = this.state.method;
         return (
             <Layout>
                 <div className="wrap">
@@ -13,10 +37,13 @@ export default class ModuleApi extends Component {
                                 <div className="wrap-left">
                                     <h3>技术文档</h3>
                                     <ul className="menu-list">
-                                        <li className="active"><a href="javascript:void(0)">获取用户信息</a></li>
-                                        <li><a href="javascript:void(0)">登录接口</a></li>
-                                        <li><a href="javascript:void(0)">登出接口</a></li>
-                                        <li><a href="javascript:void(0)">更新用户信息</a></li>
+                                        {
+                                            methods.map(function (api,i) {
+                                                return <li key={i} className="active">
+                                                    <a href="javascript:void(0)">{api.name}</a>
+                                                </li>
+                                            })
+                                        }
                                     </ul>
                                     <div className="clear"></div>
                                 </div>
@@ -33,24 +60,24 @@ export default class ModuleApi extends Component {
                                             <span>请求接口</span>
                                             <div className="doc-table">
                                                 <table>
+                                                    <tbody>
                                                     <tr>
                                                         <th> 参数 </th>
                                                         <th> 类型 </th>
                                                         <th> 描述 </th>
                                                         <th> 示例 </th>
                                                     </tr>
-                                                    <tr>
-                                                        <td> personId </td>
-                                                        <td> String </td>
-                                                        <td> 用户ID </td>
-                                                        <td> 2014072300007148 </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td> timestamp </td>
-                                                        <td> long </td>
-                                                        <td> 发送请求的时间，格式"yyyy-MM-dd HH:mm:ss" </td>
-                                                        <td> 2014-07-24 03:07:50 </td>
-                                                    </tr>
+                                                    {
+                                                        method.req.map(function (param,i) {
+                                                            return <tr key={i}>
+                                                                <td>{param.name}</td>
+                                                                <td>{param.type}</td>
+                                                                <td>{param.desc}</td>
+                                                                <td>{param.sample}</td>
+                                                            </tr>
+                                                        })
+                                                    }
+                                                    </tbody>
                                                 </table>
                                             </div>
                                             <p>
@@ -60,30 +87,24 @@ export default class ModuleApi extends Component {
                                             <span>响应接口</span>
                                             <div className="doc-table">
                                                 <table>
+                                                    <tbody>
                                                     <tr>
                                                         <th> 参数 </th>
                                                         <th> 类型 </th>
                                                         <th> 描述 </th>
                                                         <th> 示例 </th>
                                                     </tr>
-                                                    <tr>
-                                                        <td> personId </td>
-                                                        <td> String </td>
-                                                        <td> 用户ID </td>
-                                                        <td> 2014072300007148 </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td> personName </td>
-                                                        <td> String </td>
-                                                        <td> 用户姓名 </td>
-                                                        <td> 张三 </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td> idNo </td>
-                                                        <td> String </td>
-                                                        <td> 用户证件号码 </td>
-                                                        <td> 32011199912121133 </td>
-                                                    </tr>
+                                                    {
+                                                        method.rsp.map(function (param,i) {
+                                                            return <tr key={i}>
+                                                                <td>{param.name}</td>
+                                                                <td>{param.type}</td>
+                                                                <td>{param.desc}</td>
+                                                                <td>{param.sample}</td>
+                                                            </tr>
+                                                        })
+                                                    }
+                                                    </tbody>
                                                 </table>
                                             </div>
                                             <p>
@@ -93,6 +114,7 @@ export default class ModuleApi extends Component {
                                     </div>
                                 </div>
                             </Content>
+
                         </div>
                     </div>
                 </div>

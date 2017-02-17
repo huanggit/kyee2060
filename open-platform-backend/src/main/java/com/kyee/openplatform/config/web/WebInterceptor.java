@@ -55,7 +55,7 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
                     RequestAttributes.SCOPE_REQUEST);
     }
 
-    private UserInfo getSessionUser(HttpServletRequest request) {
+    public static UserInfo getSessionUser(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         UserInfo user = (session == null) ? null : (UserInfo) session.getAttribute("userInfo");
         return user;

@@ -6,7 +6,7 @@ import Home from "./Home";
 import Modules from "./api/Modules";
 import Services from "./api/Services";
 import Uis from "./api/Uis";
-import ModuleApi from "./api/ModuleApi";
+import Detail from "./api/Detail";
 import Tech from "./framework/Tech";
 import Dev from "./framework/Dev";
 import Ops from "./framework/Ops";
@@ -24,8 +24,8 @@ export default class AppRouter extends Component {
             <Router>
                 <Route path="/" component={App}>
                     <IndexRoute component={Home}/>
+                    <Route path="api/:apiId/method/:methodId" component={Detail}/>
                     <Route path="modules" component={Modules}/>
-                    <Route path="module/api" component={ModuleApi}/>
                     <Route path="services" component={Services}/>
                     <Route path="uis" component={Uis}/>
 
