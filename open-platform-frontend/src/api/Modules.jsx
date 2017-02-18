@@ -40,7 +40,7 @@ export default class Modules extends Component {
                                 {
                                     api.back.map(function (api,i) {
                                         return <Entry  key={i}
-                                                       link={"/api/"+api.id+"/method/1"}
+                                                       link={"/api/"+api.id}
                                                        icon={api.icon}
                                                        title={api.name}
                                                        viewed={api.viewed}
@@ -60,7 +60,7 @@ export default class Modules extends Component {
                                 {
                                     api.front.map(function (api,i) {
                                         return <Entry  key={i}
-                                                       link={"/api/"+api.id+"/method/1"}
+                                                       link={"/api/"+api.id}
                                                        icon={api.icon}
                                                        title={api.name}
                                                        viewed={api.viewed}
@@ -80,7 +80,7 @@ export default class Modules extends Component {
                                 {
                                     api.app.map(function (api,i) {
                                         return <Entry  key={i}
-                                                       link={"/module/api/"+api.id}
+                                                       link={"/api/"+api.id}
                                                        icon={api.icon}
                                                        title={api.name}
                                                        viewed={api.viewed}
@@ -100,7 +100,7 @@ export default class Modules extends Component {
                                 {
                                     api.bus.map(function (api,i) {
                                         return <Entry  key={i}
-                                                       link={"/module/api/"+api.id}
+                                                       link={"/api/"+api.id}
                                                        icon={api.icon}
                                                        title={api.name}
                                                        viewed={api.viewed}

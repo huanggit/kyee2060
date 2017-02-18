@@ -24,7 +24,7 @@ export default class AppRouter extends Component {
             <Router>
                 <Route path="/" component={App}>
                     <IndexRoute component={Home}/>
-                    <Route path="api/:apiId/method/:methodId" component={Detail}/>
+                    <Route path="api/:apiId" component={Detail}/>
                     <Route path="modules" component={Modules}/>
                     <Route path="services" component={Services}/>
                     <Route path="uis" component={Uis}/>

@@ -8,26 +8,43 @@ export default class ModuleApi extends Component {
         super(props);
         this.state = {
             methods: [],
-            method:{"req":[],"rsp":[]}
-        }
+            method: {"req": [], "rsp": []},
+            activeLine: 0
+        };
     }
 
     componentDidMount() {
-        global.get("/api/"+this.props.params.apiId, function (result) {
+        global.get("/api/" + this.props.params.apiId, function (result) {
             this.setState({
-                methods : result
-            })
+                methods: result
+            });
+            var ms = this.state.methods;
+            if (ms.length > 0) {
+                global.get("/api/method/" + ms[0].id, function (result) {
+                    this.setState({
+                        method: result
+                    })
+                }.bind(this));
+            }
         }.bind(this));
-        global.get("/api/method/"+this.props.params.methodId, function (result) {
+    }
+
+    apiById(id, lineNum){
+        this.setState({
+            activeLine: lineNum
+        });
+        global.get("/api/method/" + id, function (result) {
             this.setState({
-                method : result
+                method: result
             })
         }.bind(this));
     }
 
     render() {
-        var methods = this.state.methods;
-        var method = this.state.method;
+        var t = this;
+        var s = this.state;
+        var methods = s.methods;
+        var method = s.method;
         return (
             <Layout>
                 <div className="wrap">
@@ -38,9 +55,11 @@ export default class ModuleApi extends Component {
                                     <h3>技术文档</h3>
                                     <ul className="menu-list">
                                         {
-                                            methods.map(function (api,i) {
-                                                return <li key={i} className="active">
-                                                    <a href="javascript:void(0)">{api.name}</a>
+                                            methods.map(function (api, i) {
+                                                return <li key={i}
+                                                           className={(i == s.activeLine) ? "active" : ""}
+                                                           onClick={t.apiById.bind(t, api.id, i)}>
+                                                    <a>{api.name}</a>
                                                 </li>
                                             })
                                         }
@@ -52,7 +71,8 @@ export default class ModuleApi extends Component {
                             <Content>
                                 <div className="wrap-right">
                                     <div className="doc-need">
-                                        <a href="#"> <span className="glyphicon glyphicon-heart" > </span> 我需要 <cite>(6)</cite> </a>
+                                        <a href="#"> <span className="glyphicon glyphicon-heart"> </span> 我需要
+                                            <cite>(6)</cite> </a>
                                     </div>
                                     <div className="doc-content">
                                         <h2> 获取用户信息 </h2>
@@ -62,13 +82,13 @@ export default class ModuleApi extends Component {
                                                 <table>
                                                     <tbody>
                                                     <tr>
-                                                        <th> 参数 </th>
-                                                        <th> 类型 </th>
-                                                        <th> 描述 </th>
-                                                        <th> 示例 </th>
+                                                        <th> 参数</th>
+                                                        <th> 类型</th>
+                                                        <th> 描述</th>
+                                                        <th> 示例</th>
                                                     </tr>
                                                     {
-                                                        method.req.map(function (param,i) {
+                                                        method.req.map(function (param, i) {
                                                             return <tr key={i}>
                                                                 <td>{param.name}</td>
                                                                 <td>{param.type}</td>
@@ -89,13 +109,13 @@ export default class ModuleApi extends Component {
                                                 <table>
                                                     <tbody>
                                                     <tr>
-                                                        <th> 参数 </th>
-                                                        <th> 类型 </th>
-                                                        <th> 描述 </th>
-                                                        <th> 示例 </th>
+                                                        <th> 参数</th>
+                                                        <th> 类型</th>
+                                                        <th> 描述</th>
+                                                        <th> 示例</th>
                                                     </tr>
                                                     {
-                                                        method.rsp.map(function (param,i) {
+                                                        method.rsp.map(function (param, i) {
                                                             return <tr key={i}>
                                                                 <td>{param.name}</td>
                                                                 <td>{param.type}</td>

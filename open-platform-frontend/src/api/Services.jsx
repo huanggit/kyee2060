@@ -6,7 +6,24 @@ const {Content} = Layout;
 
 export default class Services extends Component {
 
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            api: {"inner":[],"outer":[]}
+        }
+    }
+
+    componentDidMount() {
+        global.get("/api/services", function (result) {
+            this.setState({
+                api : result
+            })
+        }.bind(this));
+    }
+
     render() {
+        var api = this.state.api;
         return (
             <Layout>
                 <Content>
@@ -19,21 +36,16 @@ export default class Services extends Component {
                             <h3>内部服务</h3>
                             <p className="ever"></p>
                             <div className="welcome-grids">
-                                <Entry  link="/module/api"
-                                        icon="cog"
-                                        title="登录+权限管理"
-                                        viewed="16"
-                                        needed="3"/>
-                                <Entry  link="/module/api"
-                                        icon="user"
-                                        title="短信发送"
-                                        viewed="16"
-                                        needed="3"/>
-                                <Entry  link="/module/api"
-                                        icon="file"
-                                        title="邮件发送"
-                                        viewed="16"
-                                        needed="3"/>
+                                {
+                                    api.inner.map(function (api,i) {
+                                        return <Entry  key={i}
+                                                       link={"/api/"+api.id}
+                                                       icon={api.icon}
+                                                       title={api.name}
+                                                       viewed={api.viewed}
+                                                       needed={api.needed}/>
+                                    })
+                                }
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
@@ -44,31 +56,16 @@ export default class Services extends Component {
                             <h3>外部服务</h3>
                             <p className="ever"></p>
                             <div className="welcome-grids">
-                                <Entry  link="/module/api"
-                                        icon="fire"
-                                        title="语音对接"
-                                        viewed="316"
-                                        needed="2"/>
-                                <Entry  link="/module/api"
-                                        icon="globe"
-                                        title="IM对接"
-                                        viewed="33"
-                                        needed="1"/>
-                                <Entry  link="/module/api"
-                                        icon="filter"
-                                        title="微信公众号对接"
-                                        viewed="211"
-                                        needed="3"/>
-                                <Entry  link="/module/api"
-                                        icon="filter"
-                                        title="OSS对接"
-                                        viewed="16"
-                                        needed="0"/>
-                                <Entry  link="/module/api"
-                                        icon="fire"
-                                        title="天气预报对接"
-                                        viewed="331"
-                                        needed="5"/>
+                                {
+                                    api.outer.map(function (api,i) {
+                                        return <Entry  key={i}
+                                                       link={"/api/"+api.id}
+                                                       icon={api.icon}
+                                                       title={api.name}
+                                                       viewed={api.viewed}
+                                                       needed={api.needed}/>
+                                    })
+                                }
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
