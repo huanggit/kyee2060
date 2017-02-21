@@ -9,17 +9,18 @@ export default class ModuleApi extends Component {
         this.state = {
             methods: [],
             method: {"req": [], "rsp": []},
-            activeLine: 0
+            activeLine: 0,
+            needed: 9,
         };
     }
 
     componentDidMount() {
-        global.get("/api/" + this.props.params.apiId, function (result) {
+        global.get("/api/component/" + this.props.params.apiId, function (result) {
             this.setState({
                 methods: result
             });
             var ms = this.state.methods;
-            if (ms.length > 0) {
+            if (ms!=null && ms.length > 0) {
                 global.get("/api/method/" + ms[0].id, function (result) {
                     this.setState({
                         method: result
@@ -40,6 +41,16 @@ export default class ModuleApi extends Component {
         }.bind(this));
     }
 
+    needed(id){
+        global.get("/count/need/" + id, function (result) {
+            if("ok"==result.msg){
+                this.setState({
+                    needed: this.state.needed + 1,
+                })
+            }
+        }.bind(this));
+    }
+
     render() {
         var t = this;
         var s = this.state;
@@ -55,7 +66,7 @@ export default class ModuleApi extends Component {
                                     <h3>技术文档</h3>
                                     <ul className="menu-list">
                                         {
-                                            methods.map(function (api, i) {
+                                            (methods==null?[]:methods).map(function (api, i) {
                                                 return <li key={i}
                                                            className={(i == s.activeLine) ? "active" : ""}
                                                            onClick={t.apiById.bind(t, api.id, i)}>
@@ -70,9 +81,9 @@ export default class ModuleApi extends Component {
 
                             <Content>
                                 <div className="wrap-right">
-                                    <div className="doc-need">
-                                        <a href="#"> <span className="glyphicon glyphicon-heart"> </span> 我需要
-                                            <cite>(6)</cite> </a>
+                                    <div className="doc-need" onClick={t.needed.bind(t, this.props.params.apiId)}>
+                                        <a> <span className="glyphicon glyphicon-heart"> </span> 我需要
+                                            <cite>({s.needed})</cite> </a>
                                     </div>
                                     <div className="doc-content">
                                         <h2> 获取用户信息 </h2>
@@ -88,7 +99,7 @@ export default class ModuleApi extends Component {
                                                         <th> 示例</th>
                                                     </tr>
                                                     {
-                                                        method.req.map(function (param, i) {
+                                                        (method.req==null?[]:method.req).map(function (param, i) {
                                                             return <tr key={i}>
                                                                 <td>{param.name}</td>
                                                                 <td>{param.type}</td>
@@ -115,7 +126,7 @@ export default class ModuleApi extends Component {
                                                         <th> 示例</th>
                                                     </tr>
                                                     {
-                                                        method.rsp.map(function (param, i) {
+                                                        (method.rsp==null?[]:method.rsp).map(function (param, i) {
                                                             return <tr key={i}>
                                                                 <td>{param.name}</td>
                                                                 <td>{param.type}</td>

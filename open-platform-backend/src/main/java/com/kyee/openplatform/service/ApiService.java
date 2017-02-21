@@ -1,8 +1,10 @@
 package com.kyee.openplatform.service;
 
 import com.kyee.openplatform.repositorys.api.*;
+import com.kyee.openplatform.util.IdUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -50,7 +52,16 @@ public class ApiService {
         apiParamRepository.save(new ApiParam("8", "3", "idNo", "string", "用户证件号码", "32011199912121133", "rsp"));
     }
 
+    public void saveComponent(ApiComponent apiComponent) {
+        if (StringUtils.isEmpty(apiComponent.getId())) {
+            apiComponent.setId(IdUtil.uuid());
+        }
+        componentRepository.save(apiComponent);
+    }
 
+    public void deleteComponent(String id) {
+        componentRepository.delete(id);
+    }
 
     //@Cacheable
     public Map<String, List<ApiComponent>> apiComponentByClazz(String clazz) {
@@ -59,9 +70,31 @@ public class ApiService {
         return apiComponents.stream().collect(Collectors.groupingBy(ApiComponent::getType));
     }
 
+    public void saveApiMethod(ApiMethod apiMethod) {
+        if (StringUtils.isEmpty(apiMethod.getId())) {
+            apiMethod.setId(IdUtil.uuid());
+        }
+        apiMethodRepository.save(apiMethod);
+    }
+
+    public void deleteApiMethod(String id) {
+        apiMethodRepository.delete(id);
+    }
+
     public List<ApiMethod> apiMethodsByParentId(String parentId) {
         List<ApiMethod> apiMethods = apiMethodRepository.findByParentId(parentId);
         return apiMethods;
+    }
+
+    public void saveApiParam(ApiParam apiParam) {
+        if (StringUtils.isEmpty(apiParam.getId())) {
+            apiParam.setId(IdUtil.uuid());
+        }
+        apiParamRepository.save(apiParam);
+    }
+
+    public void deleteApiParam(String id) {
+        apiParamRepository.delete(id);
     }
 
     public Map<String, List<ApiParam>> apiParamsByParentId(String parentId) {

@@ -35,13 +35,24 @@ public class ApiController {
         return apiService.apiComponentByClazz("service");
     }
 
-    @RequestMapping("/{id}")
+
+
+    @RequestMapping("/component/{id}")
     public List<ApiMethod> apiMethodsById(@PathVariable("id")String id){
+
         return apiService.apiMethodsByParentId(id);
+    }
+
+    public String saveComponent(String name,  String type, String desc, String icon){
+
+//        apiService.saveComponent(new ApiComponent());
+        return "ok";
     }
 
     @RequestMapping("/method/{id}")
     public Map<String, List<ApiParam>> apiParamsById(@PathVariable("id")String id){
         return apiService.apiParamsByParentId(id);
     }
+
+
 }

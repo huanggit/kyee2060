@@ -22,7 +22,12 @@ export default class Services extends Component {
         }.bind(this));
     }
 
+    componentLink(id) {
+        return "/api/"+id;
+    }
+
     render() {
+        var t = this;
         var api = this.state.api;
         return (
             <Layout>
@@ -39,7 +44,7 @@ export default class Services extends Component {
                                 {
                                     api.inner.map(function (api,i) {
                                         return <Entry  key={i}
-                                                       link={"/api/"+api.id}
+                                                       link={t.componentLink(api.id)}
                                                        icon={api.icon}
                                                        title={api.name}
                                                        viewed={api.viewed}
@@ -59,7 +64,7 @@ export default class Services extends Component {
                                 {
                                     api.outer.map(function (api,i) {
                                         return <Entry  key={i}
-                                                       link={"/api/"+api.id}
+                                                       link={t.componentLink(api.id)}
                                                        icon={api.icon}
                                                        title={api.name}
                                                        viewed={api.viewed}

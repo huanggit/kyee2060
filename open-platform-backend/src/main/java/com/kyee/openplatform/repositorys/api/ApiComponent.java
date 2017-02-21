@@ -1,17 +1,19 @@
 package com.kyee.openplatform.repositorys.api;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 @Data
+@AllArgsConstructor
 public class ApiComponent {
     @Id
-    private final String id;
-    private final String name;
-    private final String type;
-    private final String desc;
-    private final String icon;
-    private final int viewed;
-    private final int needed;
-    private final String clazz;
+    private String id;
+    private String name;
+    private String type;
+    private String desc;
+    private String icon;
+    private int viewed;
+    private int needed;
+    private String clazz;
 }
