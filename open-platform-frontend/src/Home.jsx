@@ -39,7 +39,7 @@ export default  class Home extends Component {
                             <h3> 架构规范 </h3>
                             <p className="ever">包括公司推荐技术选型、推荐版本号，异常处理、日志等基础设施。编码规范，多系统对接规范。开发架构不再烦恼！</p>
                             <div className="welcome-grids">
-                                <HomeEntry  link="/tech"
+                                <HomeEntry  link="/tech/qs"
                                         icon="send"
                                         title="技术架构"
                                         sub="公司推荐技术选型、推荐版本号。异常处理、日志等基础设施。一站式开发平台。"/>

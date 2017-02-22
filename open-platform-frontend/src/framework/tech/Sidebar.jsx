@@ -4,7 +4,7 @@ import {Layout} from 'antd';
 const { Sider} = Layout;
 
 
-export default class Siderbar extends Component {
+export default class Sidebar extends Component {
 
     render() {
         return (
@@ -16,12 +16,9 @@ export default class Siderbar extends Component {
                                 <div className="wrap-left">
                                     <h3>推荐技术选型</h3>
                                     <ul className="menu-list">
-                                        <li className="active"><Link to="/tech">开发环境</Link></li>
-                                        <li><Link to="/tech/java">Java框架</Link></li>
-                                        <li><Link to="/tech/js">JS框架</Link></li>
-                                        <li><Link to="/tech/env">运行环境</Link></li>
-                                        <li><Link to="/tech/app">移动端框架</Link></li>
-                                        <li><Link to="/tech/tool">支持工具</Link></li>
+                                        {this.props.caption.map(function (t) {
+                                            return <li><Link to={"/tech/"+t.link} activeClassName="active">{t.name}</Link></li>
+                                        })}
                                     </ul>
                                     <div className="clear"></div>
                                 </div>
@@ -37,6 +34,12 @@ export default class Siderbar extends Component {
     }
 }
 
-Siderbar.defaultProps = {
-    caption: ['检查日期', '检查项目']
+Sidebar.defaultProps = {
+    caption: [
+        {"link":"qs","name":"快速开发"},
+        {"link":"java","name":"Java框架"},
+        {"link":"js","name":"前端框架"},
+        {"link":"env","name":"环境&中间件&DB"},
+        {"link":"tool","name":"语言&工具"}
+    ]
 };

@@ -417,21 +417,18 @@ p.ever{
              padding-left:20px;
              display:block;
              border-bottom:1px #e6e7ec solid;
-            &:hover, &:focus {
+             &:hover, &:focus {
                color:#198ad8;
                background-color: #f5f6f6;
                border-left:2px #198ad8 solid;
                border-bottom:1px #e6e7ec solid;
              }
-            }
-           &.active{
-             a{
+             &.active{
                color:#198ad8;
                background-color: #f5f6f6;
                border-left:2px #198ad8 solid;
              }
-
-           }
+            }
          }
        }
       }

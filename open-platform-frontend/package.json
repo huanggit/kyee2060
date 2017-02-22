@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "webpack --watch --colors --progress --config webpack.config.js",
     "pub": "webpack --colors --optimize-minimize --config webpack.config.js",
+    "css": "node-sass scss/_all.scss dist/style.css",
     "server": "node server.js"
   },
   "author": "alan",

@@ -7,13 +7,12 @@ import Modules from "./api/Modules";
 import Services from "./api/Services";
 import Uis from "./api/Uis";
 import Detail from "./api/Detail";
-import TechSide from "./framework/tech/Siderbar";
-import TechDev from "./framework/tech/Dev"
+import TechSide from "./framework/tech/Sidebar";
+import TechQuickStart from "./framework/tech/QuickStart"
 import TechJava from "./framework/tech/Java"
 import TechJs from "./framework/tech/Js"
 import TechEvn from "./framework/tech/Env"
 import TechTool from "./framework/tech/Tool"
-import TechApp from "./framework/tech/App"
 import Dev from "./framework/Dev";
 import Ops from "./framework/Ops";
 import Backend from "./study/Backend";
@@ -35,12 +34,11 @@ export default class AppRouter extends Component {
                     <Route path="uis" component={Uis}/>
 
                     <Route path="tech" component={TechSide}>
-                        <IndexRoute component={TechDev}/>
+                        <Route path="qs" component={TechQuickStart}/>
                         <Route path="java" component={TechJava}/>
                         <Route path="js" component={TechJs}/>
                         <Route path="env" component={TechEvn}/>
-                        <Route path="js" component={TechTool}/>
-                        <Route path="js" component={TechApp}/>
+                        <Route path="tool" component={TechTool}/>
                     </Route>
                     <Route path="dev" component={Dev}/>
                     <Route path="ops" component={Ops}/>
