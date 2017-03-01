@@ -19,9 +19,9 @@ export default class Backend extends Component {
                             <h3>后端技术</h3>
                             <p className="ever"></p>
                             <div className="welcome-grids">
-                                <Entry  link="/module/api"
+                                <Entry  link="/java8/interface-default"
                                         icon="cog"
-                                        title="Java & Jdk"
+                                        title="Java8"
                                         viewed="367"
                                         needed="45"/>
                                 <Entry  link="/module/api"

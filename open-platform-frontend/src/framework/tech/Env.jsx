@@ -1,60 +1,61 @@
 import React, {Component} from "react";
-import { Link } from 'react-router';
-import {Layout} from 'antd';
-const {Content} = Layout;
+import RightMarkDown from '../../common/RightMarkDown';
 
 
 export default class Env extends Component {
     render() {
         return (
-            <Content>
-                <div className="wrap-right">
-                    <div className="doc-content">
-                        <h2>环境&中间件&DB</h2>
-                        <label>
-                            <span>关系型数据库</span>
-                            <p>MySQL 版本：5.6, 5.7 优先使用阿里云服务</p>
-                            <p>Oracle 版本：11 仅院端系统可采用</p>
-                            <p>PPAS 版本：9.3</p>
+            <RightMarkDown source={['## 环境&中间件&DB',
+                '***',
+                '#### 关系型数据库',
+                '* MySQL | 版本： 5.6, 5.7 | 优先使用阿里云服务 ',
+                '* Oracle | 版本： 11 | 仅院端系统可采用 ',
+                '* PPAS | 版本： 9.3 ',
 
-                            <span>NoSQL</span>
-                            <p>Redis 阿里云服务</p>
-                            <p>MongoDB 阿里云服务</p>
+                '***',
+                '#### NoSQL',
+                '* Redis 阿里云服务',
+                '* MongoDB 阿里云服务',
 
-                            <span>操作系统</span>
-                            <p>centos 版本：7.2 64位 云端项目统一使用 centos</p>
-                            <p>windows server 版本：2008 64位 院端项目可采用 windows</p>
+                '***',
+                '#### 操作系统',
+                '* centos | 版本：7.2 64位 | 云端项目统一使用 centos',
+                '* windows server | 版本：2008 64位 | 院端项目可采用 windows',
 
-                            <span>容器服务</span>
-                            <p>docker 鉴于 oracle jdk 版权原因，docker 中统一使用 open jdk 版本</p>
+                '***',
+                '#### 容器服务',
+                '* docker 鉴于 oracle jdk 版权原因，docker 中统一使用 open jdk 版本',
 
-                            <span>JDK</span>
-                            <p>oracle jdk 版本：8u121</p>
+                '***',
+                '#### JDK',
+                '* oracle jdk 版本：8u121',
 
-                            <span>servlet容器</span>
-                            <p>Tomcat 版本：8</p>
+                '***',
+                '#### servlet容器',
+                '* Tomcat | 版本：8',
 
-                            <span>HTTP服务器</span>
-                            <p>nginx 版本：1.10.3</p>
-                            <p>tengine 版本：2.1.2</p>
-                            <p>apache http server 版本：2.4.25</p>
+                '***',
+                '#### HTTP服务器',
+                '* nginx | 版本：1.10.3',
+                '* tengine | 版本：2.1.2',
+                '* apache http server | 版本：2.4.25',
 
-                            <span>代理服务器</span>
-                            <p>squid 版本：3.5.24</p>
+                '***',
+                '#### 代理服务器',
+                '* squid | 版本：3.5.24',
 
-                            <span>消息队列</span>
-                            <p>rabbitMQ 版本：3.6.6</p>
-                            <p>Kafka 版本：0.10.1.1</p>
-                            <p>emqttd 版本：2.0.7</p>
-                            <p>阿里云消息服务</p>
+                '***',
+                '#### 消息队列',
+                '* rabbitMQ | 版本：3.6.6',
+                '* Kafka | 版本：0.10.1.1',
+                '* emqttd | 版本：2.0.7',
+                '* 阿里云消息服务',
 
-                            <span>搜索引擎</span>
-                            <p>elasticsearch 版本：5.2.0</p>
-
-                        </label>
-                    </div>
-                </div>
-            </Content>
-        )
+                '***',
+                '#### 搜索引擎',
+                '* elasticsearch | 版本：5.2.0',
+            ]}/>
+        );
     }
 }
+

@@ -19,6 +19,10 @@ import Backend from "./study/Backend";
 import Frontend from "./study/Frontend";
 import Business from "./study/Business";
 
+import Java8Sidebar from "./study/backend/java8/Sidebar"
+import InterfaceDefault from "./study/backend/java8/InterfaceDefault"
+import DateTime from "./study/backend/java8/DateTime"
+
 import '../config'
 
 
@@ -44,6 +48,11 @@ export default class AppRouter extends Component {
                     <Route path="ops" component={Ops}/>
 
                     <Route path="backend" component={Backend}/>
+                    <Route path="java8" component={Java8Sidebar}>
+                        <Route path="interface-default" component={InterfaceDefault}/>
+                        <Route path="date-time" component={DateTime}/>
+                    </Route>
+
                     <Route path="frontend" component={Frontend}/>
                     <Route path="business" component={Business}/>
                 </Route>

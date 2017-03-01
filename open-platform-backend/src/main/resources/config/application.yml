@@ -7,6 +7,8 @@ spring:
   data:
     mongodb:
       uri: mongodb://118.190.8.227:27017/kyeeplatform
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
 
 logging:
   config: classpath:config/log4j2.xml

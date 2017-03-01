@@ -1,320 +1,257 @@
 import React, {Component} from "react";
-import { Link } from 'react-router';
-import {Layout} from 'antd';
-const {Content} = Layout;
+import RightMarkDown from '../../common/RightMarkDown';
 
 
 export default class Java extends Component {
     render() {
         return (
-            <Content>
-                <div className="wrap-right">
-                    <div className="doc-content">
-                        <h2>Java框架</h2>
-                        <label>
-                            <span>脚手架 - Spring Boot</span>
-                            <p>
-                                简化新Spring应用的初始搭建以及开发过程。
-                                该框架通过项目依赖来配置相应bean对象，从而使开发人员不再需要定义xml。
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#13;&#10;
-                                    &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;&#13;&#10;
-                                    &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
+            <RightMarkDown source={['## Java框架',
+                '***',
+                '### 脚手架 - Spring Boot',
+                '> 简化新Spring应用的初始搭建以及开发过程。该框架通过项目依赖来配置相应bean对象，从而使开发人员不再需要定义xml。',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.springframework.boot</groupId>',
+                '\t<artifactId>spring-boot-starter</artifactId>',
+                '\t<version>1.5.1.RELEASE</version>',
+                '</dependency>',
+                '```',
 
-                            <span>MVC Web - Spring Boot Web</span>
-                            <p>
-                                简化新Spring应用的初始搭建以及开发过程。
-                                该框架通过项目依赖来配置相应bean对象，从而使开发人员不再需要定义xml。
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                    &emsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#13;&#10;
-                                    &emsp;&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;&#13;&#10;
-                                    &emsp;&lt;version&gt;1.5.1.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### MVC Web - Spring Boot Web',
+                '> 快速搭建java web项目',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.springframework.boot</groupId>',
+                '\t<artifactId>spring-boot-starter-web</artifactId>',
+                '\t<version>1.5.1.RELEASE</version>',
+                '</dependency>',
+                '```',
 
-                            <span>ORM - 持久化框架</span>
-                            <p>
-                                Mybatis with spring-boot
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="10" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;1.2.0&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;&#13;&#10;
-                                    &lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.mybatis&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;mybatis&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;3.4.2&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
-                            <p>
-                                Spring Data Jpa with Hibernate
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
-                            <p>
-                                Hibernate
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.hibernate&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;hibernate-core&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;5.2.7.Final&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### ORM - 持久化框架',
+                '> Mybatis with spring-boot',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.mybatis.spring.boot</groupId>',
+                '\t<artifactId>mybatis-spring-boot-starter</artifactId>',
+                '\t<version>1.2.0</version>',
+                '</dependency>',
+                '<dependency>',
+                '\t<groupId>org.mybatis</groupId>',
+                '\t<artifactId>mybatis</artifactId>',
+                '\t<version>3.4.2</version>',
+                '</dependency>',
+                '```',
+                '> Spring Data Jpa with Hibernate',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.springframework.boot</groupId>',
+                '\t<artifactId>spring-boot-starter-data-jpa</artifactId>',
+                '\t<version>1.5.1.RELEASE</version>',
+                '</dependency>',
+                '```',
+                '> Hibernate',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.hibernate</groupId>',
+                '\t<artifactId>hibernate-core</artifactId>',
+                '\t<version>5.2.7.Final</version>',
+                '</dependency>',
+                '```',
 
-                            <span>DB连接池</span>
-                            <p>
-                                c3p0
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                            &lt;groupId&gt;com.mchange&lt;/groupId&gt;&#13;&#10;
-                                            &lt;artifactId&gt;c3p0&lt;/artifactId&gt;&#13;&#10;
-                                            &lt;version&gt;0.9.5.2&lt;/version&gt;&#13;&#10;
-                                        &lt;/dependency&gt;"/>
-                            </p>
-                            <p>
-                                druid
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;&#13;&#10;
-                                            &lt;artifactId&gt;druid&lt;/artifactId&gt;&#13;&#10;
-                                            &lt;version&gt;1.0.27&lt;/version&gt;&#13;&#10;
-                                        &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### DB连接池',
+                '> c3p0',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>com.mchange</groupId>',
+                '\t<artifactId>c3p0</artifactId>',
+                '\t<version>0.9.5.2</version>',
+                '</dependency>',
+                '```',
+                '> druid',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>com.alibaba</groupId>',
+                '\t<artifactId>druid</artifactId>',
+                '\t<version>1.0.27</version>',
+                '</dependency>',
+                '```',
 
-                            <span>模板引擎</span>
-                            <p>
-                                thymeleaf
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="10" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;&#13;&#10;
-                                    &lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.thymeleaf&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;thymeleaf&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;3.0.3.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
-                            <p>
-                                freemarker
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="10" cols="40"
-                                          value="&lt;dependency&gt;
-                                        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;spring-boot-starter-freemarker&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;&#13;&#10;
-                                    &lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.freemarker&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;freemarker&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;2.3.23&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### 模板引擎',
+                '> thymeleaf',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.springframework.boot</groupId>',
+                '\t<artifactId>spring-boot-starter-thymeleaf</artifactId>',
+                '\t<version>1.5.1.RELEASE</version>',
+                '</dependency>',
+                '<dependency>',
+                '\t<groupId>org.thymeleaf</groupId>',
+                '\t<artifactId>thymeleaf</artifactId>',
+                '\t<version>3.0.3.RELEASE</version>',
+                '</dependency>',
+                '```',
+                '> freemarker',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.springframework.boot</groupId>',
+                '\t<artifactId>spring-boot-starter-freemarker</artifactId>',
+                '\t<version>1.5.1.RELEASE</version>',
+                '</dependency>',
+                '<dependency>',
+                '\t<groupId>org.freemarker</groupId>',
+                '\t<artifactId>freemarker</artifactId>',
+                '\t<version>2.3.23</version>',
+                '</dependency>',
+                '```',
 
-                            <span>缓存</span>
-                            <p>
-                                ehcache 本地缓存
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="11" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;spring-boot-starter-cache&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;&#13;&#10;
-                                    &lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;net.sf.ehcache&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;ehcache&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;2.10.3&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
-                            <p>
-                                redis 集中缓存
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="11" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;&#13;&#10;
-                                    &lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;redis.clients&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;jedis&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;2.9.0&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### 缓存',
+                '> ehcache 本地缓存',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.springframework.boot</groupId>',
+                '\t<artifactId>spring-boot-starter-cache</artifactId>',
+                '\t<version>1.5.1.RELEASE</version>',
+                '</dependency>',
+                '<dependency>',
+                '\t<groupId>net.sf.ehcache</groupId>',
+                '\t<artifactId>ehcache</artifactId>',
+                '\t<version>2.10.3</version>',
+                '</dependency>',
+                '```',
+                '> redis 集中缓存',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.springframework.boot</groupId>',
+                '\t<artifactId>spring-boot-starter-data-redis</artifactId>',
+                '\t<version>1.5.1.RELEASE</version>',
+                '</dependency>',
+                '<dependency>',
+                '\t<groupId>redis.clients</groupId>',
+                '\t<artifactId>jedis</artifactId>',
+                '\t<version>2.9.0</version>',
+                '</dependency>',
+                '```',
 
-                            <span>微服务 - Spring Cloud</span>
-                            <p>
-                                简化新Spring应用的初始搭建以及开发过程。
-                                该框架通过项目依赖来配置相应bean对象，从而使开发人员不再需要定义xml。
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;spring-cloud-starter&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;1.1.7.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### 微服务 - Spring Cloud',
+                '> 微服务框架',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.springframework.cloud</groupId>',
+                '\t<artifactId>spring-cloud-starter</artifactId>',
+                '\t<version>1.1.7.RELEASE</version>',
+                '</dependency>',
+                '```',
 
-                            <span>权限框架</span>
-                            <p>
-                                Spring Security
-                                spring-boot + spring-web
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="10" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;&#13;&#10;
-                                    &lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;spring-security-web&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;4.2.1.RELEASE&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
-                            <p>
-                                Apache Shiro
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="10" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;shiro-core&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;1.3.2&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;&#13;&#10;
-                                    &lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt&#13;&#10;;
-                                        &lt;artifactId&gt;shiro-spring&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;1.3.2&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
 
-                            <span>定时任务 - Quartz</span>
-                            <p>
-                                Quartz with Spring
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="13" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                        &lt;groupId&gt;org.springframework&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt; &#13;&#10;
-                                    &lt;/dependency&gt;&#13;&#10;
-                                    &lt;dependency&gt; &#13;&#10;
-                                        &lt;groupId&gt;org.springframework&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;spring-tx&lt;/artifactId&gt; &#13;&#10;
-                                    &lt;/dependency&gt;&#13;&#10;
-                                    &lt;dependency&gt; &#13;&#10;
-                                        &lt;groupId&gt;org.quartz-scheduler&lt;/groupId&gt;&#13;&#10;
-                                        &lt;artifactId&gt;quartz&lt;/artifactId&gt;&#13;&#10;
-                                        &lt;version&gt;2.2.1&lt;/version&gt;&#13;&#10;
-                                    &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### 权限框架',
+                '> Spring Security',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.springframework.boot</groupId>',
+                '\t<artifactId>spring-boot-starter-security</artifactId>',
+                '\t<version>1.5.1.RELEASE</version>',
+                '</dependency>',
+                '<dependency>',
+                '\t<groupId>org.springframework.security</groupId>',
+                '\t<artifactId>spring-security-core</artifactId>',
+                '\t<version>4.2.1.RELEASE</version>',
+                '</dependency>',
+                '```',
+                '> Apache Shiro',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.apache.shiro</groupId>',
+                '\t<artifactId>shiro-core</artifactId>',
+                '\t<version>1.3.2</version>',
+                '</dependency>',
+                '<dependency>',
+                '\t<groupId>org.apache.shiro</groupId>',
+                '\t<artifactId>shiro-spring</artifactId>',
+                '\t<version>1.3.2</version>',
+                '</dependency>',
+                '```',
 
-                            <span>NIO框架 - Netty</span>
-                            <p>
-                                NIO通信。
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                    &lt;groupId&gt;io.netty&lt;/groupId&gt;&#13;&#10;
-                                    &lt;artifactId&gt;netty-all&lt;/artifactId&gt;&#13;&#10;
-                                    &lt;version&gt;4.1.8.Final&lt;/version&gt;&#13;&#10;
-                                &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### 定时任务 - Quartz',
+                '> spring-boot自带@EnableScheduling和@Scheduled注解，可以快速开发定时任务，也可以单独使用quartz。',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.quartz-scheduler</groupId>',
+                '\t<artifactId>quartz</artifactId>',
+                '\t<version>2.2.1</version>',
+                '</dependency>',
+                '```',
 
-                            <span>搜索引擎 - Lucene</span>
-                            <p>
-                                Lucene
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                    &lt;groupId&gt;org.apache.lucene&lt;/groupId&gt;&#13;&#10;
-                                    &lt;artifactId&gt;lucene-core&lt;/artifactId&gt;&#13;&#10;
-                                    &lt;version&gt;6.4.1&lt;/version&gt;&#13;&#10;
-                                &lt;/dependency&gt;"/>
-                            </p>
 
-                            <span>DDD框架 - Apache Isis</span>
-                            <p>
-                                DDD
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                    &lt;groupId&gt;org.apache.isis.core&lt;/groupId&gt;&#13;&#10;
-                                    &lt;artifactId&gt;isis-core-applib&lt;/artifactId&gt;&#13;&#10;
-                                    &lt;version&gt;1.13.2&lt;/version&gt;&#13;&#10;
-                                &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### NIO框架 - Netty',
+                '> NIO通信。',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>io.netty</groupId>',
+                '\t<artifactId>netty-all</artifactId>',
+                '\t<version>4.1.8.Final</version>',
+                '</dependency>',
+                '```',
 
-                            <span>规则引擎 - Drools</span>
-                            <p>
-                                规则引擎
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                    &lt;groupId&gt;org.drools&lt;/groupId&gt;&#13;&#10;
-                                    &lt;artifactId&gt;drools-core&lt;/artifactId&gt;&#13;&#10;
-                                    &lt;version&gt;6.5.0.Final&lt;/version&gt;&#13;&#10;
-                                &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### 搜索引擎 - Lucene',
+                '> Lucene。',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.apache.lucene</groupId>',
+                '\t<artifactId>lucene-core</artifactId>',
+                '\t<version>6.4.1</version>',
+                '</dependency>',
+                '```',
 
-                            <span>工作流 - Activiti</span>
-                            <p>
-                                工作流
-                            </p>
-                            <p>
-                                <textarea readOnly="true" rows="5" cols="40"
-                                          value="&lt;dependency&gt;&#13;&#10;
-                                    &lt;groupId&gt;org.activiti&lt;/groupId&gt;&#13;&#10;
-                                    &lt;artifactId&gt;activiti-engine&lt;/artifactId&gt;&#13;&#10;
-                                    &lt;version&gt;5.22.0&lt;/version&gt;&#13;&#10;
-                                &lt;/dependency&gt;"/>
-                            </p>
+                '***',
+                '### DDD框架 - Apache Isis',
+                '> 领域驱动设计。',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.apache.isis.core</groupId>',
+                '\t<artifactId>isis-core-applib</artifactId>',
+                '\t<version>1.14.0</version>',
+                '</dependency>',
+                '```',
 
-                            <span>ETL - kettle</span>
-                            <p>
-                                ETL 6.0
-                            </p>
-                        </label>
-                    </div>
-                </div>
-            </Content>
+                '***',
+                '### 规则引擎 - Drools',
+                '> 规则引擎。',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.drools</groupId>',
+                '\t<artifactId>drools-core</artifactId>',
+                '\t<version>6.5.0.Final</version>',
+                '</dependency>',
+                '```',
+
+                '***',
+                '### 工作流 - Activiti',
+                '> 工作流。',
+                '```xml',
+                '<dependency>',
+                '\t<groupId>org.activiti</groupId>',
+                '\t<artifactId>activiti-engine</artifactId>',
+                '\t<version>5.22.0</version>',
+                '</dependency>',
+                '```',
+
+                '***',
+                '### ETL - kettle',
+                '> ETL 6.0。',
+
+            ]}/>
         )
     }
 }
+
+
