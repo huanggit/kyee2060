@@ -16,8 +16,8 @@ export default class Sidebar extends Component {
                                 <div className="wrap-left">
                                     <h3>推荐技术选型</h3>
                                     <ul className="menu-list">
-                                        {this.props.caption.map(function (t) {
-                                            return <li><Link to={"/tech/"+t.link} activeClassName="active">{t.name}</Link></li>
+                                        {this.props.caption.map(function (t, i) {
+                                            return <li key={i}><Link to={"/tech/"+t.link} activeClassName="active">{t.name}</Link></li>
                                         })}
                                     </ul>
                                     <div className="clear"></div>
