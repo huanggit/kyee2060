@@ -68,7 +68,7 @@ ul{
             a{
               color: #fff;
               font-size:16px;
-              padding: 10px 25px ;
+              padding: 5px 5px ;
               &:hover,&:focus{
                 color:#fff;
                 font-size:16px;
@@ -176,13 +176,10 @@ ul{
    .container{
      margin:0 auto;
      .flex-viewport{
-       overflow: hidden;
-       position: relative;
        .banner-info{
          width:80%;
          margin:8em auto 0;
          .banner-info-left{
-           width:80%;
            text-align:center;
            h1{
              text-transform:capitalize;

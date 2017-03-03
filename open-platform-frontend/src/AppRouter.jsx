@@ -1,29 +1,36 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
 import {Router, Route, IndexRoute, History, hashHistory} from "react-router";
+
 import App from "./App";
 import Home from "./Home";
 import Modules from "./api/Modules";
 import Services from "./api/Services";
 import Uis from "./api/Uis";
 import Detail from "./api/Detail";
+
 import TechSide from "./framework/tech/Sidebar";
 import TechQuickStart from "./framework/tech/QuickStart"
 import TechJava from "./framework/tech/Java"
 import TechJs from "./framework/tech/Js"
 import TechEvn from "./framework/tech/Env"
 import TechTool from "./framework/tech/Tool"
-import Dev from "./framework/Dev";
-import Ops from "./framework/Ops";
-import Backend from "./study/Backend";
-import Frontend from "./study/Frontend";
-import Business from "./study/Business";
 
+import DevSide from "./framework/dev/Sidebar";
+import CloudDev from "./framework/dev/CloudDev"
+import LocalDev from "./framework/dev/LocalDev"
+import CodeSpecs from "./framework/dev/CodeSpecs"
+import SqlSpecs from "./framework/dev/SqlSpecs"
+
+import Backend from "./study/Backend";
 import Java8Sidebar from "./study/backend/java8/Sidebar"
 import InterfaceDefault from "./study/backend/java8/InterfaceDefault"
 import DateTime from "./study/backend/java8/DateTime"
 import Lambda from "./study/backend/java8/Lambda"
 import Stream from "./study/backend/java8/Stream"
+
+import Frontend from "./study/Frontend";
+import Business from "./study/Business";
 
 import '../config'
 
@@ -46,8 +53,13 @@ export default class AppRouter extends Component {
                         <Route path="env" component={TechEvn}/>
                         <Route path="tool" component={TechTool}/>
                     </Route>
-                    <Route path="dev" component={Dev}/>
-                    <Route path="ops" component={Ops}/>
+
+                    <Route path="dev" component={DevSide}>
+                        <Route path="cloud-dev" component={CloudDev}/>
+                        <Route path="local-dev" component={LocalDev}/>
+                        <Route path="code-spec" component={CodeSpecs}/>
+                        <Route path="sql-spec" component={SqlSpecs}/>
+                    </Route>
 
                     <Route path="backend" component={Backend}/>
                     <Route path="java8" component={Java8Sidebar}>

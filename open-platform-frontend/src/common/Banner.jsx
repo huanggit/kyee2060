@@ -13,10 +13,12 @@ export default class Banner extends Component {
                                 <li className="clone">
                                     <div className="banner-info">
                                         <div className="banner-info-left">
-                                            <h1>在这里，我们一起当学霸</h1>
-                                            <p>Spring Cloud是Pivotal提供的用于简化分布式系统构建的工具集。
-                                                Spring Cloud引入了云平台连接器(Cloud Connector)和服务连接器(Service Connector)的概念。
-                                                云平台连接器是一个接口，需要由云平台提供者进行实现，以便库中的其他模块可以与该云平台协同工作。</p>
+                                            <Link to={"/java8/interface-default"}>
+                                            <h1>学习Java8，让我们一起当学霸</h1>
+                                            <p>Java8紧跟时代，引入了函数式语言的特性，是一个新的里程碑。
+                                                Java8带来了前所未有的诸多特性，lambda表达式，Stream API，新的Date time api，
+                                                多核并发支持，重大安全问题改进等。让我们立刻开始学习常用新特性以及相关的用法。</p>
+                                            </Link>
                                         </div>
                                     </div>
                                 </li>

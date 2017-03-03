@@ -16,14 +16,20 @@ export default class App extends Component {
                                 <nav className="navbar navbar-default">
                                     <div className="navbar-header">
                                         <div className="logo">
-                                            <Link to="/"><i></i><span>开放学习平台</span></Link>
+                                            <Link to="/"><i></i><span>京颐知识共享平台</span></Link>
                                         </div>
                                     </div>
                                     <div className="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                                         <ul className="nav navbar-nav">
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/modules"}>公共资源</Link></li>
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/tech"} className="scroll">架构规范</Link></li>
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/backend"} className="scroll">学习地图</Link> </li>
+                                            {/*<li className="hvr-sweep-to-bottom"><Link to={"/modules"}>组件</Link></li>*/}
+                                            {/*<li className="hvr-sweep-to-bottom"><Link to={"/services"}>服务</Link></li>*/}
+                                            {/*<li className="hvr-sweep-to-bottom"><Link to={"/uis"}>UI</Link></li>*/}
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/tech/qs"}>架构</Link></li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/dev/cloud-dev"}>研发</Link></li>
+                                            {/*<li className="hvr-sweep-to-bottom"><Link to={"/ops"}>运维</Link></li>*/}
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/backend"}>后端</Link> </li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/frontend"}>前端</Link> </li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/business"}>业务</Link> </li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -39,29 +45,23 @@ export default class App extends Component {
                         <div className="container">
                             <div className="footer-grids">
                                 <div className="col-md-4 footer-grid">
-                                    <h3 className="title">公共资源</h3>
+                                    <h3 className="title">站点地图</h3>
                                     <ul>
-                                        <li><Link to="/modules">公共组件</Link></li>
-                                        <li><Link to="/services">公共服务</Link></li>
-                                        <li><Link to="/uis">UI模板</Link></li>
+                                        <li><a href="http://www.kyee.com.cn/webmap.asp" target="_blank">京颐股份</a></li>
                                     </ul>
                                 </div>
-                                <div className="col-md-4 footer-grid">
-                                    <h3 className="title">架构规范</h3>
-                                    <ul>
-                                        <li><Link to="/tech">技术架构</Link></li>
-                                        <li><Link to="/dev">研发规范</Link></li>
-                                        <li><Link to="/ops">运营机制</Link></li>
-                                    </ul>
-                                </div>
-                                <div className="col-md-4 footer-grid">
-                                    <h3 className="title">学习地图</h3>
-                                    <ul>
-                                        <li><Link to="/backend">后端技术</Link></li>
-                                        <li><Link to="/frontend">前端技术</Link></li>
-                                        <li><Link to="/business">业务知识</Link></li>
-                                    </ul>
-                                </div>
+                                {/*<div className="col-md-4 footer-grid">*/}
+                                    {/*<h3 className="title">站点地图</h3>*/}
+                                    {/*<ul>*/}
+                                        {/*<li><a href="http://www.kyee.com.cn/webmap.asp" target="_blank">京颐股份</a></li>*/}
+                                    {/*</ul>*/}
+                                {/*</div>*/}
+                                {/*<div className="col-md-4 footer-grid">*/}
+                                    {/*<h3 className="title">站点地图</h3>*/}
+                                    {/*<ul>*/}
+                                        {/*<li><a href="http://www.kyee.com.cn/webmap.asp" target="_blank">京颐股份</a></li>*/}
+                                    {/*</ul>*/}
+                                {/*</div>*/}
                                 <div className="clearfix"> </div>
                             </div>
                         </div>
