@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Link } from 'react-router';
 import {Layout} from 'antd';
-import Entry from '../common/Entry'
+import Entry from '../../common/Entry'
 const {Content} = Layout;
 
 export default class Backend extends Component {
@@ -19,6 +19,11 @@ export default class Backend extends Component {
                             <h3>后端技术</h3>
                             <p className="ever"></p>
                             <div className="welcome-grids">
+                                <Entry  link="/basic/speed"
+                                        icon="bold"
+                                        title="基础技能"
+                                        viewed="0"
+                                        needed="0"/>
                                 <Entry  link="/java8/interface-default"
                                         icon="cog"
                                         title="Java8"

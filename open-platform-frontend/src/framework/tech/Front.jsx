@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import RightMarkDown from '../../common/RightMarkDown';
 
 
-export default class Js extends Component {
+export default class Front extends Component {
     render() {
         return (
             <RightMarkDown source={['## 前端框架',

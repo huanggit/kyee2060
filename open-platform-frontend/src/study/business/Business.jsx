@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Link } from 'react-router';
 import {Layout} from 'antd';
-import Entry from '../common/Entry'
+import Entry from '../../common/Entry'
 const {Content} = Layout;
 
 export default class Business extends Component {

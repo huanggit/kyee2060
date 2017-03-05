@@ -12,7 +12,7 @@ import Detail from "./api/Detail";
 import TechSide from "./framework/tech/Sidebar";
 import TechQuickStart from "./framework/tech/QuickStart"
 import TechJava from "./framework/tech/Java"
-import TechJs from "./framework/tech/Js"
+import TechJs from "./framework/tech/Front"
 import TechEvn from "./framework/tech/Env"
 import TechTool from "./framework/tech/Tool"
 
@@ -22,15 +22,18 @@ import LocalDev from "./framework/dev/LocalDev"
 import CodeSpecs from "./framework/dev/CodeSpecs"
 import SqlSpecs from "./framework/dev/SqlSpecs"
 
-import Backend from "./study/Backend";
+import BasicSidebar from "./study/backend/basic/Sidebar";
+import Speed from "./study/backend/basic/Speed";
+import Solve from "./study/backend/basic/Solve";
+import Backend from "./study/backend/Backend";
 import Java8Sidebar from "./study/backend/java8/Sidebar"
 import InterfaceDefault from "./study/backend/java8/InterfaceDefault"
 import DateTime from "./study/backend/java8/DateTime"
 import Lambda from "./study/backend/java8/Lambda"
 import Stream from "./study/backend/java8/Stream"
 
-import Frontend from "./study/Frontend";
-import Business from "./study/Business";
+import Frontend from "./study/frontend/Frontend";
+import Business from "./study/business/Business";
 
 import '../config'
 
@@ -61,6 +64,10 @@ export default class AppRouter extends Component {
                         <Route path="sql-spec" component={SqlSpecs}/>
                     </Route>
 
+                    <Route path="basic" component={BasicSidebar}>
+                        <Route path="speed" component={Speed}/>
+                        <Route path="solve" component={Solve}/>
+                    </Route>
                     <Route path="backend" component={Backend}/>
                     <Route path="java8" component={Java8Sidebar}>
                         <Route path="interface-default" component={InterfaceDefault}/>
@@ -70,6 +77,13 @@ export default class AppRouter extends Component {
                     </Route>
 
                     <Route path="frontend" component={Frontend}/>
+                    <Route path="js" component={Java8Sidebar}>
+                        <Route path="interface-default" component={InterfaceDefault}/>
+                        <Route path="date-time" component={DateTime}/>
+                        <Route path="lambda" component={Lambda}/>
+                        <Route path="stream" component={Stream}/>
+                    </Route>
+
                     <Route path="business" component={Business}/>
                 </Route>
             </Router>
