@@ -38,7 +38,7 @@ Sidebar.defaultProps = {
     caption: [
         {"link":"cloud-dev","name":"云端研发流程"},
         // {"link":"local-dev","name":"院端研发流程"},
-        // {"link":"code-spec","name":"代码规范"},
-        // {"link":"sql-spec","name":"SQL规范"},
+        {"link":"code-spec","name":"代码开发规范"},
+        // {"link":"sql-spec","name":"SQL开发规范"},
     ]
 };
