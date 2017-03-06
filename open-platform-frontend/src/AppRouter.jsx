@@ -35,8 +35,6 @@ import Stream from "./study/backend/java8/Stream"
 import Frontend from "./study/frontend/Frontend";
 import Business from "./study/business/Business";
 
-import '../config'
-
 
 export default class AppRouter extends Component {
     render() {

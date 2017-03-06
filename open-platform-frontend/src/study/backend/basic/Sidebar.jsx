@@ -38,5 +38,6 @@ Sidebar.defaultProps = {
     caption: [
         {"link":"speed","name":"提高编程速度"},
         {"link":"solve","name":"定位解决问题"},
+        // {"link":"design-pattern","name":"设计模式"},
     ]
 };

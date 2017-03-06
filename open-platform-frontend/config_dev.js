@@ -1,0 +1,1 @@
+global.restUrl="http://localhost:8888/"

@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "KYEE Open Platform",
   "scripts": {
-    "dev": "webpack --watch --colors --progress --config webpack.config.js",
-    "pub": "webpack --colors --optimize-minimize --config webpack.config.js",
+    "dev": "export NODE_ENV=dev && webpack --watch --colors --progress --config webpack.config.js",
     "css": "node-sass scss/_all.scss dist/style.css",
-    "server": "node server.js"
+    "node": "node server.js",
+    "dockerrun": "docker run -dit --name kop -p 80:80 -v $PWD/:/usr/local/apache2/htdocs/ httpd:2.4",
+    "run": "docker start kop",
+    "pub": "export NODE_ENV=prod && webpack --colors --optimize-minimize --config webpack.config.js"
   },
   "author": "alan",
   "license": "ISC",
@@ -23,9 +25,6 @@
   "devDependencies": {
     "babel-core": "^5.8.29",
     "babel-loader": "^5.3.2",
-    "eslint": "^3.10.2",
-    "eslint-plugin-react": "^6.7.1",
-    "express": "^4.13.3",
     "webpack": "^1.12.8"
   }
 }

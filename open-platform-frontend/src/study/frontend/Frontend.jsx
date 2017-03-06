@@ -29,11 +29,11 @@ export default class Frontend extends Component {
                                         title="基础技能"
                                         viewed="0"
                                         needed="0"/>
-                                <Entry  link="/js/api"
-                                        icon="pencil"
-                                        title="JavaScript"
-                                        viewed="0"
-                                        needed="0"/>
+                                {/*<Entry  link="/js/api"*/}
+                                        {/*icon="pencil"*/}
+                                        {/*title="JavaScript"*/}
+                                        {/*viewed="0"*/}
+                                        {/*needed="0"/>*/}
                                 {/*<Entry  link="/module/api"*/}
                                         {/*icon="globe"*/}
                                         {/*title="HTML"*/}

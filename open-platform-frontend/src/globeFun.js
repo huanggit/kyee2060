@@ -1,8 +1,6 @@
-global.apiUrlPrefix = "http://localhost:8888/";
-
 
 global.get = function(url, handler){
-    fetch(global.apiUrlPrefix+url, {credentials: 'include'})
+    fetch(global.restUrl+url, {credentials: 'include'})
         .then(function(response){
             if(response.status!==200){
                 return;

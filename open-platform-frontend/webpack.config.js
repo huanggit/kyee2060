@@ -1,9 +1,11 @@
 var webpack = require('webpack');
 
+
+
 module.exports = {
     context: __dirname,
     entry: [
-        "./src/index"
+        (process.env.NODE_ENV == 'prod')?"./src/entry_prod" : "./src/entry_dev"
     ],
     resolve: {
         extensions: ['', '.js', '.jsx']

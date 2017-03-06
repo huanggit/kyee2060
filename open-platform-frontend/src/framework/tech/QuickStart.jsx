@@ -3,6 +3,7 @@ import RightMarkDown from '../../common/RightMarkDown';
 
 
 export default class QuickStart extends Component {
+
     render() {
         return (
             <RightMarkDown source={['## 快速搭建',

@@ -7,7 +7,7 @@ export default class InterfaceDefault extends Component {
         return (
             <RightMarkDown source={['### 接口默认方法(default method)',
                 '***',
-                'java8为接口提供了默认方法，使得interface的方法定义在java8里也可以和abstract class一样可以有默认实现。同时默认方法也可以是static的。',
+                'java8为接口提供了默认方法，关键词`default`，使得interface的方法定义在java8里也可以和abstract class一样可以有默认实现。同时默认方法也可以是`static`的。',
                 '```java',
                 '// 车辆接口，有默认的print方法',
                 'public interface Vehicle {',
@@ -32,6 +32,7 @@ export default class InterfaceDefault extends Component {
                 '\t public void print(){',
                 '\t\t Vehicle.super.print();',
                 '\t\t FourWheeler.super.print();',
+                '\t\t Vehicle.blowHorn();',
                 '\t\t System.out.println("I am a Car!");',
                 '\t }',
                 '}',

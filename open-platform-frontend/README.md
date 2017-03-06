@@ -1,6 +1,6 @@
 # kyee2060
 
-### Run Web Server (localhost:8080)
+### Run Web Server
 
 ```
 $ npm run server
@@ -16,4 +16,10 @@ $ npm run dev
 
 ```
 $ npm run pub
+```
+
+### compile scss
+
+```
+$ npm run css
 ```
