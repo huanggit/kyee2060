@@ -29,6 +29,11 @@ export default class Backend extends Component {
                                         title="Java8"
                                         viewed="0"
                                         needed="0"/>
+                                <Entry  link="/spring-boot/quick-start"
+                                        icon="music"
+                                        title="Spring Boot"
+                                        viewed="0"
+                                        needed="0"/>
                                 {/*<Entry  link="/module/api"*/}
                                         {/*icon="file"*/}
                                         {/*title="Spring Framework"*/}
@@ -39,11 +44,7 @@ export default class Backend extends Component {
                                         {/*title="Spring MVC"*/}
                                         {/*viewed="226"*/}
                                         {/*needed="22"/>*/}
-                                {/*<Entry  link="/module/api"*/}
-                                        {/*icon="list-alt"*/}
-                                        {/*title="Spring Boot"*/}
-                                        {/*viewed="643"*/}
-                                        {/*needed="31"/>*/}
+
                                 {/*<Entry  link="/module/api"*/}
                                         {/*icon="home"*/}
                                         {/*title="Spring Cloud"*/}
