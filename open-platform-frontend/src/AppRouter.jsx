@@ -33,6 +33,17 @@ import Lambda from "./study/backend/java8/Lambda"
 import Stream from "./study/backend/java8/Stream"
 import SpringBootSidebar from "./study/backend/springboot/Sidebar"
 import SpringBootQuick from "./study/backend/springboot/QuickStart"
+import EhcacheSidebar from "./study/backend/ehcache/Sidebar"
+import EhcacheQuick from "./study/backend/ehcache/QuickStart"
+import JpaSidebar from "./study/backend/jpa/Sidebar"
+import JpaQuick from "./study/backend/jpa/QuickStart"
+import MybatisSidebar from "./study/backend/mybatis/Sidebar"
+import MybatisQuick from "./study/backend/mybatis/QuickStart"
+import ThymeleafSidebar from "./study/backend/thymeleaf/Sidebar"
+import ThymeleafQuick from "./study/backend/thymeleaf/QuickStart"
+import ScheduledSidebar from "./study/backend/scheduled/Sidebar"
+import ScheduledQuick from "./study/backend/scheduled/QuickStart"
+
 
 import Frontend from "./study/frontend/Frontend";
 // import Business from "./study/business/Business";
@@ -94,6 +105,21 @@ export default class AppRouter extends Component {
                     </Route>
                     <Route path="spring-boot" component={SpringBootSidebar}>
                         <Route path="quick-start" component={SpringBootQuick}/>
+                    </Route>
+                    <Route path="jpa" component={JpaSidebar}>
+                        <Route path="quick-start" component={JpaQuick}/>
+                    </Route>
+                    <Route path="mybatis" component={MybatisSidebar}>
+                        <Route path="quick-start" component={MybatisQuick}/>
+                    </Route>
+                    <Route path="thymeleaf" component={ThymeleafSidebar}>
+                        <Route path="quick-start" component={ThymeleafQuick}/>
+                    </Route>
+                    <Route path="ehcache" component={EhcacheSidebar}>
+                        <Route path="quick-start" component={EhcacheQuick}/>
+                    </Route>
+                    <Route path="scheduled" component={ScheduledSidebar}>
+                        <Route path="quick-start" component={ScheduledQuick}/>
                     </Route>
 
                     <Route path="frontend" component={Frontend}/>
