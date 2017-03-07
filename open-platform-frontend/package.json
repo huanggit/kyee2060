@@ -6,7 +6,7 @@
     "dev": "export NODE_ENV=dev && webpack --watch --colors --progress --config webpack.config.js",
     "css": "node-sass scss/_all.scss dist/style.css",
     "dockerrun": "docker run -dit --name kop -p 7777:80 -v $PWD/:/usr/local/apache2/htdocs/ httpd:2.4",
-    "run": "docker start kop",
+    "start": "docker start kop",
     "pub": "export NODE_ENV=prod && webpack --colors --optimize-minimize --config webpack.config.js",
     "scp": "sshpass -p 'kyeegroup@ksp#' scp -P 15312 -r index.html dist/ static/ ksplatform@139.129.219.176:~/kop"
   },
