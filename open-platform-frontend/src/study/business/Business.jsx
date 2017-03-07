@@ -21,15 +21,10 @@ export default class Business extends Component {
                             <p className="ever"></p>
                             <div className="welcome-grids">
                                 <Entry  link="/module/api"
-                                        icon="cog"
-                                        title="HIS业务"
-                                        viewed="213"
-                                        needed="44"/>
-                                <Entry  link="/module/api"
-                                        icon="fire"
-                                        title="趣医业务"
-                                        viewed="33"
-                                        needed="3"/>
+                                        icon="plane"
+                                        title="京颐集团产品手册"
+                                        viewed="0"
+                                        needed="0"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

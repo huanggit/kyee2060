@@ -33,7 +33,25 @@ import Lambda from "./study/backend/java8/Lambda"
 import Stream from "./study/backend/java8/Stream"
 
 import Frontend from "./study/frontend/Frontend";
-import Business from "./study/business/Business";
+// import Business from "./study/business/Business";
+import BusinessSidebar from "./study/business/all/Sidebar";
+import BusinessAll from "./study/business/all/All";
+import BusinessApp from "./study/business/all/App";
+import BusinessCloud from "./study/business/all/Cloud";
+import BusinessCreative from "./study/business/all/Creative";
+import BusinessEdu from "./study/business/all/Edu";
+import BusinessHcrm from "./study/business/all/Hcrm";
+import BusinessHierarchical from "./study/business/all/Hierarchical";
+import BusinessHrp from "./study/business/all/Hrp";
+import BusinessInsurance from "./study/business/all/Insurance";
+import BusinessIot from "./study/business/all/Iot";
+import BusinessMobile from "./study/business/all/Mobile";
+import BusinessOneCardPass from "./study/business/all/OneCardPass";
+import Businesspay from "./study/business/all/Pay";
+import BusinessSupply from "./study/business/all/Supply";
+import BusinessYhis from "./study/business/all/Yhis";
+import BusinessNurse from "./study/business/all/Nursing";
+
 
 
 export default class AppRouter extends Component {
@@ -54,7 +72,6 @@ export default class AppRouter extends Component {
                         <Route path="env" component={TechEvn}/>
                         <Route path="tool" component={TechTool}/>
                     </Route>
-
                     <Route path="dev" component={DevSide}>
                         <Route path="cloud-dev" component={CloudDev}/>
                         <Route path="local-dev" component={LocalDev}/>
@@ -76,13 +93,28 @@ export default class AppRouter extends Component {
 
                     <Route path="frontend" component={Frontend}/>
                     <Route path="js" component={Java8Sidebar}>
-                        <Route path="interface-default" component={InterfaceDefault}/>
-                        <Route path="date-time" component={DateTime}/>
-                        <Route path="lambda" component={Lambda}/>
-                        <Route path="stream" component={Stream}/>
+
                     </Route>
 
-                    <Route path="business" component={Business}/>
+                    {/*<Route path="business" component={Business}/>*/}
+                    <Route path="business" component={BusinessSidebar}>
+                        <Route path="all" component={BusinessAll}/>
+                        <Route path="app" component={BusinessApp}/>
+                        <Route path="cloud" component={BusinessCloud}/>
+                        <Route path="creative-center" component={BusinessCreative}/>
+                        <Route path="edu" component={BusinessEdu}/>
+                        <Route path="hcrm" component={BusinessHcrm}/>
+                        <Route path="hierarchical-medical" component={BusinessHierarchical}/>
+                        <Route path="hrp" component={BusinessHrp}/>
+                        <Route path="insurance" component={BusinessInsurance}/>
+                        <Route path="lot" component={BusinessIot}/>
+                        <Route path="mobile" component={BusinessMobile}/>
+                        <Route path="one-card-pass" component={BusinessOneCardPass}/>
+                        <Route path="pay" component={Businesspay}/>
+                        <Route path="supply" component={BusinessSupply}/>
+                        <Route path="yhis" component={BusinessYhis}/>
+                        <Route path="nursing" component={BusinessNurse}/>
+                    </Route>
                 </Route>
             </Router>
         );

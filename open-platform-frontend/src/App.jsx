@@ -29,7 +29,7 @@ export default class App extends Component {
                                             {/*<li className="hvr-sweep-to-bottom"><Link to={"/ops"}>运维</Link></li>*/}
                                             <li className="hvr-sweep-to-bottom"><Link to={"/backend"}>后端</Link> </li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/frontend"}>前端</Link> </li>
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/business"}>业务</Link> </li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/business/all"}>业务</Link> </li>
                                         </ul>
                                     </div>
                                 </nav>
