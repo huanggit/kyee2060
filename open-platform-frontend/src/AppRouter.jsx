@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {render} from "react-dom";
 import {Router, Route, IndexRoute, History, hashHistory} from "react-router";
 
+import Login from "./Login";
 import App from "./App";
 import Home from "./Home";
 import Modules from "./api/Modules";
@@ -10,39 +11,39 @@ import Uis from "./api/Uis";
 import Detail from "./api/Detail";
 
 import TechSide from "./framework/tech/Sidebar";
-import TechQuickStart from "./framework/tech/QuickStart"
-import TechJava from "./framework/tech/Java"
-import TechJs from "./framework/tech/Front"
-import TechEvn from "./framework/tech/Env"
-import TechTool from "./framework/tech/Tool"
+import TechQuickStart from "./framework/tech/QuickStart";
+import TechJava from "./framework/tech/Java";
+import TechJs from "./framework/tech/Front";
+import TechEvn from "./framework/tech/Env";
+import TechTool from "./framework/tech/Tool";
 
 import DevSide from "./framework/dev/Sidebar";
-import CloudDev from "./framework/dev/CloudDev"
-import LocalDev from "./framework/dev/LocalDev"
-import CodeSpecs from "./framework/dev/CodeSpecs"
-import SqlSpecs from "./framework/dev/SqlSpecs"
+import CloudDev from "./framework/dev/CloudDev";
+import LocalDev from "./framework/dev/LocalDev";
+import CodeSpecs from "./framework/dev/CodeSpecs";
+import SqlSpecs from "./framework/dev/SqlSpecs";
 
 import BasicSidebar from "./study/backend/basic/Sidebar";
 import Speed from "./study/backend/basic/Speed";
 import Solve from "./study/backend/basic/Solve";
 import Backend from "./study/backend/Backend";
-import Java8Sidebar from "./study/backend/java8/Sidebar"
-import InterfaceDefault from "./study/backend/java8/InterfaceDefault"
-import DateTime from "./study/backend/java8/DateTime"
-import Lambda from "./study/backend/java8/Lambda"
-import Stream from "./study/backend/java8/Stream"
-import SpringBootSidebar from "./study/backend/springboot/Sidebar"
-import SpringBootQuick from "./study/backend/springboot/QuickStart"
-import EhcacheSidebar from "./study/backend/ehcache/Sidebar"
-import EhcacheQuick from "./study/backend/ehcache/QuickStart"
-import JpaSidebar from "./study/backend/jpa/Sidebar"
-import JpaQuick from "./study/backend/jpa/QuickStart"
-import MybatisSidebar from "./study/backend/mybatis/Sidebar"
-import MybatisQuick from "./study/backend/mybatis/QuickStart"
-import ThymeleafSidebar from "./study/backend/thymeleaf/Sidebar"
-import ThymeleafQuick from "./study/backend/thymeleaf/QuickStart"
-import ScheduledSidebar from "./study/backend/scheduled/Sidebar"
-import ScheduledQuick from "./study/backend/scheduled/QuickStart"
+import Java8Sidebar from "./study/backend/java8/Sidebar";
+import InterfaceDefault from "./study/backend/java8/InterfaceDefault";
+import DateTime from "./study/backend/java8/DateTime";
+import Lambda from "./study/backend/java8/Lambda";
+import Stream from "./study/backend/java8/Stream";
+import SpringBootSidebar from "./study/backend/springboot/Sidebar";
+import SpringBootQuick from "./study/backend/springboot/QuickStart";
+import EhcacheSidebar from "./study/backend/ehcache/Sidebar";
+import EhcacheQuick from "./study/backend/ehcache/QuickStart";
+import JpaSidebar from "./study/backend/jpa/Sidebar";
+import JpaQuick from "./study/backend/jpa/QuickStart";
+import MybatisSidebar from "./study/backend/mybatis/Sidebar";
+import MybatisQuick from "./study/backend/mybatis/QuickStart";
+import ThymeleafSidebar from "./study/backend/thymeleaf/Sidebar";
+import ThymeleafQuick from "./study/backend/thymeleaf/QuickStart";
+import ScheduledSidebar from "./study/backend/scheduled/Sidebar";
+import ScheduledQuick from "./study/backend/scheduled/QuickStart";
 
 
 import Frontend from "./study/frontend/Frontend";
@@ -66,13 +67,13 @@ import BusinessYhis from "./study/business/all/Yhis";
 import BusinessNurse from "./study/business/all/Nursing";
 
 
-
 export default class AppRouter extends Component {
     render() {
         return (
             <Router>
-                <Route path="/" component={App}>
-                    <IndexRoute component={Home}/>
+                <Route path="/" component={Login}/>
+                <Route component={App}>
+                    <Route path="/index" component={Home}/>
                     <Route path="api/:apiId" component={Detail}/>
                     <Route path="modules" component={Modules}/>
                     <Route path="services" component={Services}/>

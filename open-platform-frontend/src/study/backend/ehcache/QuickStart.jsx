@@ -6,7 +6,7 @@ export default class QuickStart extends Component {
     render() {
         return (
             <RightMarkDown source={['## 快速开始',
-                'EhCache是十分流行的内衬缓存框架，配合Spring Boot可以通过注解轻松使用其来缓存一些访问量比较大，又不常更新的数据，提高系统性能。',
+                'EhCache是十分流行的内存缓存框架，配合Spring Boot可以通过注解轻松使用其来缓存一些访问量比较大，又不常更新的数据，提高系统性能。',
 
                 '***',
                 '### maven依赖',
