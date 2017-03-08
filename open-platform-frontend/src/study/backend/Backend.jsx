@@ -51,12 +51,12 @@ export default class Backend extends Component {
                                         needed="0"/>
                                 <Entry  link="/ehcache/quick-start"
                                         icon="repeat"
-                                        title="EhCache"
+                                        title="EhCache缓存"
                                         viewed="0"
                                         needed="0"/>
                                 <Entry  link="/scheduled/quick-start"
                                         icon="calendar"
-                                        title="Scheduled"
+                                        title="定时任务"
                                         viewed="0"
                                         needed="0"/>
                                 <div className="clearfix"> </div>
