@@ -5,10 +5,13 @@ import RightMarkDown from '../../../common/RightMarkDown';
 export default class QuickStart extends Component {
     render() {
         return (
-            <RightMarkDown source={['### 快速开始',
+            <RightMarkDown source={['## 快速开始',
+                'Spring Boot作为新一代的Spring脚手架，直接根据pom文件中的依赖和配置文件中的参数自动配置bean。' +
+                '免去了Spring需要再次配置xml文件创建bean的重复劳动。有了Spring Boot，搭建一个简单的web项目只需要2个文件，十分简单方便。',
+
                 '***',
-                '#### maven',
-                '先c建立文件`pom.xml`。',
+                '### maven依赖',
+                '先在项目根目录下建立文件`pom.xml`。',
                 '```xml',
                 '<?xml version="1.0" encoding="UTF-8"?>',
                 '<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"',
@@ -57,7 +60,7 @@ export default class QuickStart extends Component {
                 '```',
 
                 '***',
-                '#### App.java',
+                '### java代码',
                 '项目根目录下建立文件夹：`src/main/java/com/kyee/quickstart`，然后在该文件夹下建立java文件`App.java`：',
                 '```java',
                 'package quickstart;',
@@ -81,7 +84,7 @@ export default class QuickStart extends Component {
                 '```',
 
                 '***',
-                '#### 运行，访问',
+                '### 运行，访问',
                 '最后回到项目根目录，运行：`mvn spring-boot:run`。',
                 '在浏览器里访问`http://localhost:8080`。',
             ]}/>
