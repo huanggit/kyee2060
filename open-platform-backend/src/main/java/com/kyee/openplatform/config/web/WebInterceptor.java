@@ -28,9 +28,11 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
             return true;
 //        HandlerMethod handlerMethod = (HandlerMethod) handler;
 //        if(isAllowAnonymous(handlerMethod))return true;
+        if("/isLogin".equals(request.getRequestURI()))
+            return true;
         if("/login".equals(request.getRequestURI()))
             return true;
-        throw new Exception("请登录");
+        throw new Exception("未登录");
     }
 
     @Override

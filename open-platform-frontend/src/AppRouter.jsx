@@ -3,7 +3,7 @@ import {render} from "react-dom";
 import {Router, Route, IndexRoute, History, hashHistory} from "react-router";
 
 import Login from "./Login";
-import App from "./App";
+import AppLayout from "./AppLayout";
 import Home from "./Home";
 import Modules from "./api/Modules";
 import Services from "./api/Services";
@@ -68,12 +68,35 @@ import BusinessNurse from "./study/business/all/Nursing";
 
 
 export default class AppRouter extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            loggedIn: !global.requireLogin,
+        }
+    }
+
+    requireAuth(next, replace) {
+        if (!this.state.loggedIn) {
+            global.syncGet("isLogin", function (result) {
+                if (result == true) {
+                    this.setState({
+                        loggedIn: true
+                    })
+                }
+            }.bind(this));
+        }
+        if (!this.state.loggedIn) {
+            replace({nextPathname: next.location.pathname}, '/login');
+        }
+    }
+
     render() {
         return (
             <Router>
-                <Route path="/" component={Login}/>
-                <Route component={App}>
-                    <Route path="/index" component={Home}/>
+                <Route path="/login" component={Login}/>
+                <Route path="/" component={AppLayout} onEnter={this.requireAuth.bind(this)}>
+                    <IndexRoute component={Home}/>
                     <Route path="api/:apiId" component={Detail}/>
                     <Route path="modules" component={Modules}/>
                     <Route path="services" component={Services}/>
@@ -125,7 +148,6 @@ export default class AppRouter extends Component {
 
                     <Route path="frontend" component={Frontend}/>
                     <Route path="js" component={Java8Sidebar}>
-
                     </Route>
 
                     {/*<Route path="business" component={Business}/>*/}

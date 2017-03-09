@@ -5,7 +5,7 @@ const {Header, Footer} = Layout;
 
 
 
-export default class App extends Component {
+export default class AppLayout extends Component {
     render() {
         return (
             <Layout>
@@ -16,7 +16,7 @@ export default class App extends Component {
                                 <nav className="navbar navbar-default">
                                     <div className="navbar-header">
                                         <div className="logo">
-                                            <Link to="/index"><i></i><span>京颐知识共享平台</span></Link>
+                                            <Link to="/"><i></i><span>京颐知识共享平台</span></Link>
                                         </div>
                                     </div>
                                     <div className="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">

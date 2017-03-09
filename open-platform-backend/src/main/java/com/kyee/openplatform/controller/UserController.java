@@ -17,11 +17,18 @@ public class UserController {
 
     @RequestMapping("/login")
     public String login(HttpServletRequest request,
-                           String username, String password) {
+                        String username, String password) {
         HttpSession session = request.getSession(true);
-        UserInfo userInfo = new UserInfo("x", "x", "x");
+        UserInfo userInfo = new UserInfo("id", "name", "dept");
         session.setAttribute("userInfo", userInfo);
         return "ok";
+    }
+
+    @RequestMapping("/isLogin")
+    public Boolean isLogin(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        UserInfo user = (session == null) ? null : (UserInfo) session.getAttribute("userInfo");
+        return user != null;
     }
 
 }
