@@ -47,8 +47,7 @@ export default class Services extends Component {
                                                        link={t.componentLink(api.id)}
                                                        icon={api.icon}
                                                        title={api.name}
-                                                       viewed={api.viewed}
-                                                       needed={api.needed}/>
+                                                       needed={api.like}/>
                                     })
                                 }
                                 <div className="clearfix"> </div>
@@ -67,8 +66,7 @@ export default class Services extends Component {
                                                        link={t.componentLink(api.id)}
                                                        icon={api.icon}
                                                        title={api.name}
-                                                       viewed={api.viewed}
-                                                       needed={api.needed}/>
+                                                       needed={api.like}/>
                                     })
                                 }
                                 <div className="clearfix"> </div>

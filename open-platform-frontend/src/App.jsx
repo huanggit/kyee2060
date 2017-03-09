@@ -16,7 +16,7 @@ export default class App extends Component {
                                 <nav className="navbar navbar-default">
                                     <div className="navbar-header">
                                         <div className="logo">
-                                            <Link to="/"><i></i><span>京颐知识共享平台</span></Link>
+                                            <Link to="/index"><i></i><span>京颐知识共享平台</span></Link>
                                         </div>
                                     </div>
                                     <div className="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
@@ -37,9 +37,9 @@ export default class App extends Component {
                         </div>
                     </div>
                 </Header>
-
+                <div className="content">
                 {this.props.children}
-
+                </div>
                 <Footer>
                     <div className="footer">
                         <div className="container">

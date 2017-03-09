@@ -19,52 +19,11 @@ export default class Frontend extends Component {
                             <h3>前端技术</h3>
                             <p className="ever"></p>
                             <div className="welcome-grids">
-                                {/*<Entry  link="/module/api"*/}
-                                        {/*icon="cog"*/}
-                                        {/*title="浏览器开发工具"*/}
-                                        {/*viewed="26"*/}
-                                        {/*needed="4"/>*/}
                                 <Entry  link="/basic/speed"
                                         icon="bold"
                                         title="基础技能"
-                                        viewed="0"
-                                        needed="0"/>
-                                {/*<Entry  link="/js/api"*/}
-                                        {/*icon="pencil"*/}
-                                        {/*title="JavaScript"*/}
-                                        {/*viewed="0"*/}
-                                        {/*needed="0"/>*/}
-                                {/*<Entry  link="/module/api"*/}
-                                        {/*icon="globe"*/}
-                                        {/*title="HTML"*/}
-                                        {/*viewed="44"*/}
-                                        {/*needed="31"/>*/}
-                                {/*<Entry  link="/module/api"*/}
-                                        {/*icon="user"*/}
-                                        {/*title="CSS"*/}
-                                        {/*viewed="146"*/}
-                                        {/*needed="33"/>*/}
-                                {/*<Entry  link="/module/api"*/}
-                                        {/*icon="filter"*/}
-                                        {/*title="Bootstrap"*/}
-                                        {/*viewed="198"*/}
-                                        {/*needed="33"/>*/}
-                                {/*<Entry  link="/module/api"*/}
-                                        {/*icon="filter"*/}
-                                        {/*title="jQuery"*/}
-                                        {/*viewed="222"*/}
-                                        {/*needed="23"/>*/}
-                                {/*<Entry  link="/module/api"*/}
-                                        {/*icon="cog"*/}
-                                        {/*title="AngularJS"*/}
-                                        {/*viewed="33"*/}
-                                        {/*needed="11"/>*/}
-                                {/*<Entry  link="/module/api"*/}
-                                        {/*icon="fire"*/}
-                                        {/*title="React"*/}
-                                        {/*viewed="46"*/}
-                                        {/*needed="4"/>*/}
-                                {/*<div className="clearfix"> </div>*/}
+                                        like="0"/>
+                                <div className="clearfix"> </div>
                             </div>
                         </div>
                     </div>

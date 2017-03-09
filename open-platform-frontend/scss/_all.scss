@@ -49,10 +49,16 @@ ul{
   }
 }
 
+.content{
+  padding-top: 64px;
+}
+
 .header {
   background-color:#34495e;
   width:100%;
   height:64px;
+  position:fixed;
+  z-index:9999;
   .container{
     margin:0 auto;
      nav{
@@ -551,11 +557,11 @@ p.ever{
       font-size: 14px;
       color:#333;
       text-align: left;
-      padding:20px;
+      padding-left:150px;
       .tips{
         color:#fff;
         float: left;
-        padding:1px 10px;
+        padding:0px 10px;
         border-radius: 3px;
         background: #fa991b;
         margin-right:10px;
@@ -599,35 +605,17 @@ p.ever{
               .listcount{
                 width:100%;
                 margin:0 auto;
-                padding-top: 20px;
+                padding-top: 15px;
                 text-align: center;
                 font-size: 14px;
                 color: #999;
-                .view{
-                  float: left;
-                  height: 16px;
-                  .glyphicon{
-                    padding-left: 5px;
-                  }
-                  cite{
-
-                    font-family: Tahoma;
-                    padding-left: 3px;
-                    font-size: 14px;
-                    font-style: normal;
-                  }
-                }
-                .need{
+                .like{
                   float: right;
-                  height: 16px;
-                  padding-left: 15px;
-                  .glyphicon{
-                    padding-left: 5px;
-                  }
+                  height: 18px;
                   cite{
                     font-family: Tahoma;
-                    padding-left: 3px;
-                    font-size: 14px;
+                    padding-left: 4px;
+                    font-size: 16px;
                     font-style: normal;
                   }
                 }

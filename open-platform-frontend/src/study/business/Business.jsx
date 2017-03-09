@@ -23,8 +23,7 @@ export default class Business extends Component {
                                 <Entry  link="/module/api"
                                         icon="plane"
                                         title="京颐集团产品手册"
-                                        viewed="0"
-                                        needed="0"/>
+                                        like="0"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

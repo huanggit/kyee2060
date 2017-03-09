@@ -14,8 +14,8 @@ export default  class Entry extends Component {
                             <div className="list-item-title">{this.props.title}</div>
                             <div className="list-item-count">
                                 <div className="listcount">
-                                    <span className="view glyphicon glyphicon-eye-open"><cite>{this.props.viewed}</cite></span>
-                                    <span className="need glyphicon glyphicon-heart"><cite>{this.props.needed}</cite></span>
+                                    {/*<span className="view glyphicon glyphicon-eye-open"><cite>{this.props.viewed}</cite></span>*/}
+                                    <span className="like glyphicon glyphicon-heart"><cite>{this.props.like}</cite></span>
                                 </div>
                             </div>
                         </div>
