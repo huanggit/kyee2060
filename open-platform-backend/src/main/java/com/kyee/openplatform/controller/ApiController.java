@@ -1,5 +1,6 @@
 package com.kyee.openplatform.controller;
 
+import com.kyee.openplatform.config.web.ResultApi;
 import com.kyee.openplatform.repositorys.api.ApiComponent;
 import com.kyee.openplatform.repositorys.api.ApiMethod;
 import com.kyee.openplatform.repositorys.api.ApiParam;
@@ -26,32 +27,30 @@ public class ApiController {
     }
 
     @RequestMapping("/components")
-    public Map<String, List<ApiComponent>> apiComponents() {
-        return apiService.apiComponentByClazz("jar");
+    public ResultApi apiComponents() {
+        return ResultApi.successInstance(apiService.apiComponentByClazz("jar"));
     }
 
     @RequestMapping("/services")
-    public Map<String, List<ApiComponent>> apiServices() {
-        return apiService.apiComponentByClazz("service");
+    public ResultApi apiServices() {
+        return ResultApi.successInstance(apiService.apiComponentByClazz("service"));
     }
-
 
 
     @RequestMapping("/component/{id}")
-    public List<ApiMethod> apiMethodsById(@PathVariable("id")String id){
+    public ResultApi apiMethodsById(@PathVariable("id") String id) {
 
-        return apiService.apiMethodsByParentId(id);
+        return ResultApi.successInstance(apiService.apiMethodsByParentId(id));
     }
 
-    public String saveComponent(String name,  String type, String desc, String icon){
-
+    public String saveComponent(String name, String type, String desc, String icon) {
 //        apiService.saveComponent(new ApiComponent());
         return "ok";
     }
 
     @RequestMapping("/method/{id}")
-    public Map<String, List<ApiParam>> apiParamsById(@PathVariable("id")String id){
-        return apiService.apiParamsByParentId(id);
+    public ResultApi apiParamsById(@PathVariable("id") String id) {
+        return ResultApi.successInstance(apiService.apiParamsByParentId(id));
     }
 
 

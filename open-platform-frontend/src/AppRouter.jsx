@@ -79,10 +79,8 @@ export default class AppRouter extends Component {
     requireAuth(next, replace) {
         if (!this.state.loggedIn) {
             global.syncGet("isLogin", function (result) {
-                if (result == true) {
-                    this.setState({
-                        loggedIn: true
-                    })
+                if (result == 'true') {
+                    this.state.loggedIn = true;
                 }
             }.bind(this));
         }

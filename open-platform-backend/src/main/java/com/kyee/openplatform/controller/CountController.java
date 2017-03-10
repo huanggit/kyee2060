@@ -15,10 +15,10 @@ public class CountController {
     @Autowired
     CountService countService;
 
-    @RequestMapping("/need/{componentId}")
-    public ResultApi need(@PathVariable("componentId") String componentId) {
-        countService.needComponent("", componentId);
-        return ResultApi.SUCCESS;
-    }
+//    @RequestMapping("/need/{componentId}")
+//    public ResultApi need(@PathVariable("componentId") String componentId) {
+//        countService.needComponent("", componentId);
+//        return ResultApi.SUCCESS;
+//    }
 
 }

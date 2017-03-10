@@ -7,7 +7,11 @@ global.get = function(url, handler){
                 return;
             }
             response.json().then(function(data){
-                handler(data)
+                if(data.success){
+                    handler(data.data)
+                }else {
+                    alert(data.message);
+                }
             });
         })
         .catch(function(err){
@@ -18,6 +22,7 @@ global.get = function(url, handler){
 global.syncGet = function (url, handler) {
     var request = new XMLHttpRequest();
     request.open('GET', global.restUrl+url, false);
+    request.withCredentials = true;
     request.send(null);
     if (request.status === 200) {
         handler(request.responseText);
@@ -25,3 +30,27 @@ global.syncGet = function (url, handler) {
         console.log("response status:"+request.status);
     }
 }
+
+global.post = function(url, body, handler){
+    fetch(global.restUrl+url, {
+        method:"POST",
+        body:body,
+        credentials: 'include'
+    })
+    .then(function(response){
+        if(response.status!==200){
+            console.log("response status:"+response.status);
+            return;
+        }
+        response.json().then(function(data){
+            if(data.success){
+                handler(data.data)
+            }else {
+                alert(data.message);
+            }
+        });
+    })
+    .catch(function(err){
+        console.log("Fetch错误:"+err);
+    });
+};
