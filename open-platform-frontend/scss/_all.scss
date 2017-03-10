@@ -65,52 +65,54 @@ ul{
      &.navbar {
        margin-bottom: 0;
      }
-        &.navbar-default{
-          color: #fff;
-          font-size:16px;
-          border: none;
-          background: none;
-          li{
-            a{
-              color: #fff;
+      &.navbar-default{
+        color: #fff;
+        font-size:16px;
+        border: none;
+        background: none;
+        li{
+          a{
+            color: #fff;
+            font-size:16px;
+            padding: 5px 5px ;
+            &:hover,&:focus{
+              color:#fff;
               font-size:16px;
-              padding: 5px 5px ;
-              &:hover,&:focus{
-                color:#fff;
-                font-size:16px;
-                border: none;
-                background:#108ee9;
-              }
+              border: none;
+              background:#108ee9;
             }
           }
-          .navbar-header{
-            float:left;
-            vertical-align:middle;
-            line-height:64px;
-            display:inline-block;
-             .logo{
-               float: left;
-               i{
-                 background:url("./../static/images/system_logo.png") 0 0 no-repeat;
-                 display: inline-block;
-                 height: 24px;
-                 width:69px;
-                 margin:5px 10px 0 0;
-               }
-               span{
-                 font-size:28px;
-                 color:#fff;
-               }
+        }
+        .navbar-header{
+          float:left;
+          vertical-align:middle;
+          line-height:64px;
+          display:inline-block;
+           .logo{
+             float: left;
+             i{
+               background:url("./../static/images/system_logo.png") 0 0 no-repeat;
+               display: inline-block;
+               height: 24px;
+               width:69px;
+               margin:5px 10px 0 0;
              }
-          }
+             span{
+               font-size:28px;
+               color:#fff;
+             }
+           }
+        }
     }
 
      .navbar-collapse{
        border: none;
        font-size:16px;
        background: none;
+
        .navbar-nav {
          float: right;
+         padding-right: 80px;
          li{
            a{
              padding-top: 22px;
@@ -163,6 +165,16 @@ ul{
                background-color:#108ee9;
              }
            }
+         }
+       }
+       .logout {
+         position: absolute;
+         top:20px;
+         right: 10px;
+         z-index: 99999;
+         a{
+           color: #AAAAAA;
+           text-decoration:underline;
          }
        }
      }

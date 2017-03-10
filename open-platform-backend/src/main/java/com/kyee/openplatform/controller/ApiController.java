@@ -1,17 +1,11 @@
 package com.kyee.openplatform.controller;
 
 import com.kyee.openplatform.config.web.ResultApi;
-import com.kyee.openplatform.repositorys.api.ApiComponent;
-import com.kyee.openplatform.repositorys.api.ApiMethod;
-import com.kyee.openplatform.repositorys.api.ApiParam;
 import com.kyee.openplatform.service.ApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api")

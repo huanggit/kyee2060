@@ -1,27 +1,21 @@
 package com.kyee.openplatform.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.kyee.openplatform.config.web.ResultApi;
 import com.kyee.openplatform.pojo.HrpQueryResult;
 import com.kyee.openplatform.repositorys.user.UserInfo;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.FormHttpMessageConverter;
-import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -44,6 +38,18 @@ public class UserController {
         }
         HttpSession session = request.getSession(true);
         session.setAttribute("userInfo", userInfo);
+        return ResultApi.successInstance(true);
+    }
+
+    @RequestMapping("/isLogin")
+    public Boolean isLogin(UserInfo user) {
+        return user != null;
+    }
+
+    @RequestMapping("/doLogout")
+    public ResultApi doLogout(HttpServletRequest request) throws IOException {
+        HttpSession session = request.getSession(true);
+        session.removeAttribute("userInfo");
         return ResultApi.successInstance(true);
     }
 
@@ -76,11 +82,6 @@ public class UserController {
         }
         Map<String, String> map = user.getRows().get(0);
         return new UserInfo(userName, map.get("USER_NAME"), map.get("DEPT_NAME"));
-    }
-
-    @RequestMapping("/isLogin")
-    public Boolean isLogin(UserInfo user) {
-        return user != null;
     }
 
 }

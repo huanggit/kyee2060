@@ -32,7 +32,7 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
             return true;
         if("/doLogin".equals(request.getRequestURI()))
             return true;
-        throw new Exception("未登录");
+        return false;
     }
 
     @Override

@@ -20,14 +20,18 @@ global.get = function(url, handler){
 };
 
 global.syncGet = function (url, handler) {
-    var request = new XMLHttpRequest();
-    request.open('GET', global.restUrl+url, false);
-    request.withCredentials = true;
-    request.send(null);
-    if (request.status === 200) {
-        handler(request.responseText);
-    }else {
-        console.log("response status:"+request.status);
+    try {
+        var request = new XMLHttpRequest();
+        request.open('GET', global.restUrl+url, false);
+        request.withCredentials = true;
+        request.send(null);
+        if (request.status === 200) {
+            handler(request.responseText);
+        }else {
+            console.log("response status:"+request.status);
+        }
+    }catch(err){
+        console.log("syncGet错误:"+err);
     }
 }
 

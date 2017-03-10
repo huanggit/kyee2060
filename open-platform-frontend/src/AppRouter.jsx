@@ -89,10 +89,17 @@ export default class AppRouter extends Component {
         }
     }
 
+    logout(){
+        this.setState({
+            loggedIn: false
+        });
+        global.get("doLogout", function () {});
+    }
+
     render() {
         return (
             <Router>
-                <Route path="/login" component={Login}/>
+                <Route path="/login" component={Login} onEnter={this.logout.bind(this)}/>
                 <Route path="/" component={AppLayout} onEnter={this.requireAuth.bind(this)}>
                     <IndexRoute component={Home}/>
                     <Route path="api/:apiId" component={Detail}/>

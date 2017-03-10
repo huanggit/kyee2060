@@ -31,6 +31,7 @@ export default class AppLayout extends Component {
                                             <li className="hvr-sweep-to-bottom"><Link to={"/frontend"}>前端</Link> </li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/business/all"}>业务</Link> </li>
                                         </ul>
+                                        <div className="logout"><Link to={"/login"}>Logout</Link></div>
                                     </div>
                                 </nav>
                             </div>
