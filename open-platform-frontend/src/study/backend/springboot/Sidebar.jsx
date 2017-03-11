@@ -8,7 +8,7 @@ export default class Sidebar extends Component {
             {"link":"quick-start","name":"快速开始"},
         ]
         return (
-            <SidebarTemplate title="Spring Boot" nav="spring-boot" caption={caption} children={this.props.children} />
+            <SidebarTemplate title="Spring Boot" nav="springBoot" caption={caption} children={this.props.children} />
         )
     }
 }

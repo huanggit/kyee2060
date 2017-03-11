@@ -27,4 +27,9 @@ public class LikeController {
         return ResultApi.SUCCESS;
     }
 
+    @RequestMapping("/countGroupingByTitle")
+    public ResultApi getLikesGroupingByTitle(){
+        return ResultApi.successInstance(likeService.getLikesGroupingByTitle());
+    }
+
 }

@@ -5,6 +5,10 @@ import com.kyee.openplatform.repositorys.like.LikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
+import static java.util.stream.Collectors.*;
+
 @Service
 public class LikeService {
 
@@ -22,6 +26,11 @@ public class LikeService {
         }else {
             likeRepository.save(new Like(id, userId, title));
         }
+    }
+
+    public Map<String, Long> getLikesGroupingByTitle(){
+        return likeRepository.findAll().stream()
+                .collect(groupingBy(Like::getTitle, counting()));
     }
 
     private String compositeId(String userId, String title) {

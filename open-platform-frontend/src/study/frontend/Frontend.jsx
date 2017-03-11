@@ -2,11 +2,14 @@ import React, {Component} from "react";
 import { Link } from 'react-router';
 import {Layout} from 'antd';
 import Entry from '../../common/Entry'
+import EntryList from "../../common/EntryList";
 const {Content} = Layout;
 
-export default class Frontend extends Component {
+export default class Frontend extends EntryList {
 
     render() {
+        var t = this;
+        var likes = this.state.likesByTitle;
         return (
             <Layout>
                 <Content>
@@ -22,7 +25,7 @@ export default class Frontend extends Component {
                                 <Entry  link="/basic/speed"
                                         icon="bold"
                                         title="基础技能"
-                                        like="0"/>
+                                        like={t.dis(likes.basic)}/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

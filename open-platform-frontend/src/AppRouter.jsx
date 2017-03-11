@@ -132,7 +132,7 @@ export default class AppRouter extends Component {
                         <Route path="lambda" component={Lambda}/>
                         <Route path="stream" component={Stream}/>
                     </Route>
-                    <Route path="spring-boot" component={SpringBootSidebar}>
+                    <Route path="springBoot" component={SpringBootSidebar}>
                         <Route path="quick-start" component={SpringBootQuick}/>
                     </Route>
                     <Route path="jpa" component={JpaSidebar}>
@@ -156,7 +156,7 @@ export default class AppRouter extends Component {
                     </Route>
 
                     {/*<Route path="business" component={Business}/>*/}
-                    <Route path="business-overall" component={BusinessSidebar}>
+                    <Route path="businessOverall" component={BusinessSidebar}>
                         <Route path="all" component={BusinessAll}/>
                         <Route path="app" component={BusinessApp}/>
                         <Route path="cloud" component={BusinessCloud}/>

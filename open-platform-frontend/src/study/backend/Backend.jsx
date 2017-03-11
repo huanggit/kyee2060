@@ -2,11 +2,14 @@ import React, {Component} from "react";
 import { Link } from 'react-router';
 import {Layout} from 'antd';
 import Entry from '../../common/Entry'
+import EntryList from "../../common/EntryList";
 const {Content} = Layout;
 
-export default class Backend extends Component {
+export default class Backend extends EntryList {
 
     render() {
+        var t = this;
+        var likes = this.state.likesByTitle;
         return (
             <Layout>
                 <Content>
@@ -22,35 +25,35 @@ export default class Backend extends Component {
                                 <Entry  link="/basic/speed"
                                         icon="bold"
                                         title="基础技能"
-                                        like="0"/>
+                                        like={t.dis(likes.basic)}/>
                                 <Entry  link="/java8/interface-default"
                                         icon="cog"
                                         title="Java8"
-                                        like="0"/>
-                                <Entry  link="/spring-boot/quick-start"
+                                        like={t.dis(likes.java8)}/>
+                                <Entry  link="/springBoot/quick-start"
                                         icon="music"
                                         title="Spring Boot"
-                                        like="0"/>
+                                        like={t.dis(likes.springBoot)}/>
                                 <Entry  link="/jpa/quick-start"
                                         icon="floppy-saved"
                                         title="Spring Jpa"
-                                        like="0"/>
+                                        like={t.dis(likes.jpa)}/>
                                 <Entry  link="/mybatis/quick-start"
                                         icon="log-in"
                                         title="MyBatis"
-                                        like="0"/>
+                                        like={t.dis(likes.mybatis)}/>
                                 <Entry  link="/thymeleaf/quick-start"
                                         icon="leaf"
                                         title="Thymeleaf"
-                                        like="0"/>
+                                        like={t.dis(likes.thymeleaf)}/>
                                 <Entry  link="/ehcache/quick-start"
                                         icon="repeat"
                                         title="EhCache缓存"
-                                        like="0"/>
+                                        like={t.dis(likes.ehcache)}/>
                                 <Entry  link="/scheduled/quick-start"
                                         icon="calendar"
                                         title="定时任务"
-                                        like="0"/>
+                                        like={t.dis(likes.scheduled)}/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

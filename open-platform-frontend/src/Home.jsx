@@ -69,7 +69,7 @@ export default  class Home extends Component {
                                         icon="expand"
                                         title="前端技术"
                                         sub="从基础的CSS+Javascript，到SASS+React，浏览器开发者工具，前端技术一网打尽。"/>
-                                <HomeEntry  link="/business-overall/all"
+                                <HomeEntry  link="/businessOverall/all"
                                         icon="briefcase"
                                         title="业务知识"
                                         sub="医疗行业有哪些细分市场？公司几十个项目组都在做什么？要想代码写的好，业务知识要学好。"/>
