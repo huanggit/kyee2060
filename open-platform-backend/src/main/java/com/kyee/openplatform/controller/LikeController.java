@@ -23,7 +23,7 @@ public class LikeController {
 
     @RequestMapping("/toggle/{title}")
     public ResultApi toggle(UserInfo userInfo, @PathVariable("title") String title) {
-        likeService.toggleike(userInfo.getId(),title);
+        likeService.toggleLike(userInfo.getId(),title);
         return ResultApi.SUCCESS;
     }
 

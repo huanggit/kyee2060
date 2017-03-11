@@ -3,11 +3,15 @@ package com.kyee.openplatform.service;
 import com.kyee.openplatform.repositorys.like.Like;
 import com.kyee.openplatform.repositorys.like.LikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 @Service
 public class LikeService {
@@ -15,11 +19,17 @@ public class LikeService {
     @Autowired
     LikeRepository likeRepository;
 
+    @Cacheable("isLike")
     public Boolean isLike(String userId, String title) {
+        System.out.println("isLike");
         return null != likeRepository.findOne(compositeId(userId, title));
     }
 
-    public void toggleike(String userId, String title) {
+    @Caching(evict = {
+            @CacheEvict(value="isLike"),
+            @CacheEvict(value="getLikesGroupingByTitle", allEntries = true)})
+    public void toggleLike(String userId, String title) {
+        System.out.println("toggleLike");
         String id = compositeId(userId, title);
         if (isLike(userId, title)) {
             likeRepository.delete(id);
@@ -28,7 +38,9 @@ public class LikeService {
         }
     }
 
+    @Cacheable("getLikesGroupingByTitle")
     public Map<String, Long> getLikesGroupingByTitle(){
+        System.out.println("getLikesGroupingByTitle");
         return likeRepository.findAll().stream()
                 .collect(groupingBy(Like::getTitle, counting()));
     }
