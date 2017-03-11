@@ -1,42 +1,14 @@
 import React, {Component} from "react";
-import { Link } from 'react-router';
-import {Layout} from 'antd';
-const { Sider} = Layout;
-
+import SidebarTemplate from './../../../common/SidebarTemplate'
 
 export default class Sidebar extends Component {
 
     render() {
+        var caption = [
+            {"link":"quick-start","name":"快速开始"},
+        ]
         return (
-            <Layout>
-                <div className="wrap">
-                    <div className="container">
-                        <div className="wrap-content clearfix">
-                            <Sider>
-                                <div className="wrap-left">
-                                    <h3>Spring Boot</h3>
-                                    <ul className="menu-list">
-                                        {this.props.caption.map(function (t, i) {
-                                            return <li key={i}><Link to={"/spring-boot/"+t.link} activeClassName="active">{t.name}</Link></li>
-                                        })}
-                                    </ul>
-                                    <div className="clear"></div>
-                                </div>
-                            </Sider>
-
-                            {this.props.children}
-
-                        </div>
-                    </div>
-                </div>
-            </Layout>
+            <SidebarTemplate title="Spring Boot" nav="spring-boot" caption={caption} children={this.props.children} />
         )
     }
 }
-
-Sidebar.defaultProps = {
-    caption: [
-        {"link":"quick-start","name":"快速开始"},
-
-    ]
-};

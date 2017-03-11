@@ -156,7 +156,7 @@ export default class AppRouter extends Component {
                     </Route>
 
                     {/*<Route path="business" component={Business}/>*/}
-                    <Route path="business" component={BusinessSidebar}>
+                    <Route path="business-overall" component={BusinessSidebar}>
                         <Route path="all" component={BusinessAll}/>
                         <Route path="app" component={BusinessApp}/>
                         <Route path="cloud" component={BusinessCloud}/>

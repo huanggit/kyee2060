@@ -20,7 +20,7 @@ export default class Business extends Component {
                             <h3>业务学习</h3>
                             <p className="ever"></p>
                             <div className="welcome-grids">
-                                <Entry  link="/module/api"
+                                <Entry  link="/business-overall/all"
                                         icon="plane"
                                         title="京颐集团产品手册"
                                         like="0"/>

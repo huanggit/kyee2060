@@ -408,7 +408,32 @@ p.ever{
         float: left;
         width: 20%;
         text-align: left;
-
+        .like-it {
+          display: block;
+          width: 50px;
+          line-height: 60px;
+          float: right;
+          color: #888888;
+          font-size: 26px;
+          cursor: pointer;
+          text-align: center;
+          &:hover{
+            color: #FF3300;
+          }
+        }
+        .liked-it {
+          display: block;
+          width: 50px;
+          line-height: 60px;
+          float: right;
+          color: #FF3300;
+          font-size: 26px;
+          cursor: pointer;
+          text-align: center;
+          &:hover{
+            color: #888888;
+          }
+        }
         h3 {
           line-height: 40px;
           font-size: 24px;
@@ -469,34 +494,6 @@ p.ever{
           color: #33FF33;
           background: #444444;
           font-size: 14px;
-        }
-        .doc-need {
-          display: block;
-          margin-bottom: 50px;
-          a{
-            width: 160px;
-            height: 45px;
-            line-height: 45px;
-            float: right;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-            background-color: #fb7305;
-            display: block;
-            text-align: center;
-
-            cite{
-              font-family: Tahoma;
-              padding-left: 5px;
-              font-size: 14px;
-              font-style: normal;
-            }
-            &:hover{
-              background-color: #8f8f8f;
-              display: block;
-              text-align: center;
-            }
-          }
         }
        .doc-content{
           h2{

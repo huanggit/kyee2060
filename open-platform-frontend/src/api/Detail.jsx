@@ -41,16 +41,6 @@ export default class ModuleApi extends Component {
         }.bind(this));
     }
 
-    needed(id){
-        global.get("/count/need/" + id, function (result) {
-            if("ok"==result.msg){
-                this.setState({
-                    needed: this.state.needed + 1,
-                })
-            }
-        }.bind(this));
-    }
-
     render() {
         var t = this;
         var s = this.state;
@@ -81,10 +71,6 @@ export default class ModuleApi extends Component {
 
                             <Content>
                                 <div className="wrap-right">
-                                    <div className="doc-need" onClick={t.needed.bind(t, this.props.params.apiId)}>
-                                        <a> <span className="glyphicon glyphicon-heart"> </span> 我需要
-                                            <cite>({s.needed})</cite> </a>
-                                    </div>
                                     <div className="doc-content">
                                         <h2> 获取用户信息 </h2>
                                         <label>
