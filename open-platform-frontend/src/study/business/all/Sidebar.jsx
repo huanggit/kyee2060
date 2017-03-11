@@ -25,7 +25,7 @@ export default class Sidebar extends Component {
         ];
 
         return (
-            <SidebarTemplate title="产品手册" nav="business-overall" caption={caption} children={this.props.children} />
+            <SidebarTemplate title="产品手册" nav="businessOverall" caption={caption} children={this.props.children} />
         )
     }
 }
