@@ -16,7 +16,7 @@ export default class AppLayout extends Component {
                                 <nav className="navbar navbar-default">
                                     <div className="navbar-header">
                                         <div className="logo">
-                                            <Link to="/"><i></i><span>京颐知识共享平台</span></Link>
+                                            <Link to="/"><i></i><span>| 知识共享平台</span></Link>
                                         </div>
                                     </div>
                                     <div className="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
@@ -71,7 +71,7 @@ export default class AppLayout extends Component {
                     <div className="copy">
                         <div className="container">
                             <div className="copy-left">
-                                <p>Copyright © 2015技术支持：上海京颐科技股份有限公司</p>
+                                <p>© 2017 上海京颐云杏网络技术有限公司 | 2060实验室</p>
                             </div>
                             <div className="clearfix"> </div>
                         </div>

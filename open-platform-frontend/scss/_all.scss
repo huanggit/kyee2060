@@ -86,20 +86,22 @@ ul{
         .navbar-header{
           float:left;
           vertical-align:middle;
-          line-height:64px;
+          line-height:70px;
           display:inline-block;
            .logo{
              float: left;
              i{
-               background:url("./../static/images/system_logo.png") 0 0 no-repeat;
+               background:url("./../static/images/logo.png") 0 0 no-repeat;
+               background-size: 80%;
                display: inline-block;
-               height: 24px;
-               width:69px;
-               margin:5px 10px 0 0;
+               height: 45px;
+               width: 175px;
+               vertical-align:middle;
              }
              span{
-               font-size:28px;
+               font-size:30px;
                color:#fff;
+               margin-left: -40px;
              }
            }
         }

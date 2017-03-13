@@ -1,15 +1,17 @@
 import React, {Component} from "react"
 import {Link} from 'react-router';
-
+import CryptoJS from 'crypto-js' ;
 
 export default class Login extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            isRememberPassword: (localStorage.getItem("isRememberPassword") == 'true'),
             error: false,
             loading: false
         }
+        this.rememberPassword = this.rememberPassword.bind(this);
     }
 
     login(){
@@ -34,6 +36,29 @@ export default class Login extends Component {
         }.bind(this));
     }
 
+    handleCheckboxChange(event) {
+        var isChecked = event.target.checked;
+        this.setState({
+            isRememberPassword:isChecked
+        });
+        localStorage.setItem("isRememberPassword", isChecked);
+        this.rememberPassword();
+    }
+
+    rememberPassword(){
+        var isChecked = (localStorage.getItem("isRememberPassword") == 'true');
+        if(isChecked){
+            var encrypted = CryptoJS.AES.encrypt(
+                this.refs.password.value,
+                "125");
+            localStorage.setItem("userName", this.refs.userName.value);
+            localStorage.setItem("password", encrypted);
+        }else {
+            localStorage.removeItem("userName");
+            localStorage.removeItem("password");
+        }
+    }
+
     render() {
         return (
             <div className="login_body">
@@ -45,15 +70,22 @@ export default class Login extends Component {
                             <div className="loginForm_content">
                                 <fieldset>
                                     <div className="inputWrap">
-                                        <input ref={"userName"} type="text" name="userName" placeholder="请输入工号" autofocus required/>
+                                        <input ref={"userName"} defaultValue={localStorage.getItem("userName")}
+                                               onBlur={this.rememberPassword}
+                                               type="text" name="userName" placeholder="请输入工号" autofocus required/>
                                     </div>
                                     <div className="inputWrap">
-                                        <input ref={"password"} type="password" name="password" placeholder="请输入密码" required/>
+                                        <input ref={"password"} onBlur={this.rememberPassword}
+                                               defaultValue={localStorage.getItem("password")==null?"":
+                                                   CryptoJS.AES.decrypt(localStorage.getItem("password"),"125").toString(CryptoJS.enc.Utf8)}
+                                               type="password" name="password" placeholder="请输入密码" required/>
                                     </div>
                                 </fieldset>
                                 <fieldset>
-                                    <input type="checkbox"/>
-                                    <span>下次自动登录</span>
+                                    <input type="checkbox"
+                                           onChange={this.handleCheckboxChange.bind(this)}
+                                           checked={this.state.isRememberPassword}/>
+                                    <span>记住密码</span>
                                     <input type="submit" value="登录" onClick={this.login.bind(this)}/>
                                     {this.state.loading && (
                                         <p className="loginLoading">登录中...请稍候...</p>
