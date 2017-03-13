@@ -654,11 +654,11 @@ p.ever{
     padding-top: 180px;
     .logo_title{
       float: left;
-      margin-left: 480px;
+      margin-left: 25%;
       margin-top: 80px;
       font-size: 40px;
       color: #f2f2f2;
-      letter-spacing: 5px;
+      //letter-spacing: 5px;
       /*text-shadow:#fff 1px 0 0,#fff 1px 0,#fff -1px 0 0,#fff 0 -1px 0;*/
       .logo{
         display: block;
@@ -670,7 +670,7 @@ p.ever{
       }
     }
     .wrap {
-      margin-left: 1000px;
+      margin-left: 55%;
       .loginForm {
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.2), 0 3px 0 #fff, 0 4px 0
         rgba(0, 0, 0, 0.2), 0 6px 0 #fff, 0 7px 0 rgba(0, 0, 0, 0.2);
@@ -715,7 +715,7 @@ p.ever{
             background-image: linear-gradient(right, #777, #fff);
             left: 0;
           }
-          &after{
+          &:after{
             background-color: #777;
             content: "";
             height: 1px;
@@ -741,6 +741,11 @@ p.ever{
           .loginError{
             font-size:16px;
             color: #FF3300;
+            margin-left:110px;
+          }
+          .loginLoading{
+            font-size:16px;
+            color: #1a75c5;
             margin-left:110px;
           }
           .inputWrap {

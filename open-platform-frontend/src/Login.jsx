@@ -8,10 +8,15 @@ export default class Login extends Component {
         super(props);
         this.state = {
             error: false,
+            loading: false
         }
     }
 
     login(){
+        this.setState({
+            loading: true,
+            error: false
+        })
         let formData = new FormData();
         formData.append("userName",this.refs.userName.value);
         formData.append("password",this.refs.password.value);
@@ -22,6 +27,7 @@ export default class Login extends Component {
                 window.location.href = subUrl;
             }else {
                 this.setState({
+                    loading: false,
                     error: true
                 })
             }
@@ -49,6 +55,9 @@ export default class Login extends Component {
                                     <input type="checkbox"/>
                                     <span>下次自动登录</span>
                                     <input type="submit" value="登录" onClick={this.login.bind(this)}/>
+                                    {this.state.loading && (
+                                        <p className="loginLoading">登录中...请稍候...</p>
+                                    )}
                                     {this.state.error && (
                                         <p className="loginError">用户名或密码错误</p>
                                     )}

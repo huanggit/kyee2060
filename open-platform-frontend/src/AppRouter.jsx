@@ -98,9 +98,9 @@ export default class AppRouter extends Component {
 
     render() {
         return (
-            <Router>
+            <Router onUpdate={() => window.scrollTo(0, 0)} >
                 <Route path="/login" component={Login} onEnter={this.logout.bind(this)}/>
-                <Route path="/" component={AppLayout} onEnter={this.requireAuth.bind(this)}>
+                <Route path="/" component={AppLayout} onEnter={this.requireAuth.bind(this)} >
                     <IndexRoute component={Home}/>
                     <Route path="api/:apiId" component={Detail}/>
                     <Route path="modules" component={Modules}/>

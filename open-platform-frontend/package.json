@@ -8,7 +8,8 @@
     "dockerrun": "docker run -dit --name kop -p 7777:80 -v $PWD/:/usr/local/apache2/htdocs/ httpd:2.4",
     "start": "docker start kop",
     "pub": "export NODE_ENV=prod && webpack --colors --optimize-minimize --config webpack.config.js",
-    "scp": "sshpass -p 'kyeegroup@ksp#' scp -P 15312 -r index.html dist/ static/ ksplatform@139.129.219.176:~/kop"
+    "pub-back": "export NODE_ENV=prod && webpack --colors --config webpack.config.js",
+    "scp": "sshpass -p 'kyeegroup@ksp#' scp -P 15312 -r index.html dist/ static/ ksplatform@139.129.219.176:~/front"
   },
   "author": "alan",
   "license": "ISC",
@@ -20,7 +21,8 @@
     "react": "0.14.3",
     "react-dom": "0.14.3",
     "react-markdown": "^2.4.4",
-    "react-router": "1.0.2"
+    "react-router": "1.0.2",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-core": "^5.8.29",

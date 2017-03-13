@@ -13,11 +13,15 @@ export default class Banner extends Component {
                                 <li className="clone">
                                     <div className="banner-info">
                                         <div className="banner-info-left">
-                                            <Link to={"/java8/interface-default"}>
-                                            <h1>学习Java8，让我们一起当学霸</h1>
-                                            <p>Java8紧跟时代，引入了函数式语言的特性，是一个新的里程碑。
-                                                Java8带来了前所未有的诸多特性，lambda表达式，Stream API，新的Date time api，
-                                                多核并发支持，重大安全问题改进等。让我们立刻开始学习常用新特性以及相关的用法。</p>
+                                            <Link to={"/"}>
+                                                <h1>京颐知识共享平台初版上线</h1>
+                                                <p>京颐集团发展迅速，目前已有逾14个事业部，超过50个产品。
+                                                    为了统一集团资源，流程，方案，避免各个事业部各自作战，重复开发，
+                                                    集团集中优势兵力，推出京颐知识共享平台。
+                                                    在这里，你可以学习公司推荐技术选型，查看公司规范；
+                                                    你可以通过学习地图学习技术，业务；可以查看使用各种公共组件，UI资源。
+                                                    初版上线，各种新内容新功能敬请期待。
+                                                </p>
                                             </Link>
                                         </div>
                                     </div>

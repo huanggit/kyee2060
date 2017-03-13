@@ -31,7 +31,7 @@ export default class AppLayout extends Component {
                                             <li className="hvr-sweep-to-bottom"><Link to={"/frontend"}>前端</Link> </li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/businessOverall/all"}>业务</Link> </li>
                                         </ul>
-                                        <div className="logout"><Link to={"/login"}>Logout</Link></div>
+                                        <div className="logout"><Link to={"/login"}>退出</Link></div>
                                     </div>
                                 </nav>
                             </div>
@@ -49,6 +49,7 @@ export default class AppLayout extends Component {
                                     <h3 className="title">站点地图</h3>
                                     <ul>
                                         <li><a href="http://www.kyee.com.cn/webmap.asp" target="_blank">京颐股份</a></li>
+                                        <li><a href="http://nexus.kyeegroup.com/" target="_blank">集团nexus</a></li>
                                     </ul>
                                 </div>
                                 {/*<div className="col-md-4 footer-grid">*/}

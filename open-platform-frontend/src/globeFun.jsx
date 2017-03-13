@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 
 global.get = function(url, handler){
     fetch(global.restUrl+url, {credentials: 'include'})
@@ -58,3 +59,4 @@ global.post = function(url, body, handler){
         console.log("Fetch错误:"+err);
     });
 };
+
