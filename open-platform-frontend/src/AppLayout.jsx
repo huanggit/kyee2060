@@ -23,7 +23,7 @@ export default class AppLayout extends Component {
                                         <ul className="nav navbar-nav">
                                             {/*<li className="hvr-sweep-to-bottom"><Link to={"/modules"}>组件</Link></li>*/}
                                             {/*<li className="hvr-sweep-to-bottom"><Link to={"/services"}>服务</Link></li>*/}
-                                            {/*<li className="hvr-sweep-to-bottom"><Link to={"/uis"}>UI</Link></li>*/}
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/ui/webSpecs"}>UI</Link></li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/tech/qs"}>架构</Link></li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/dev/cloud-dev"}>研发</Link></li>
                                             {/*<li className="hvr-sweep-to-bottom"><Link to={"/ops"}>运维</Link></li>*/}
@@ -49,15 +49,16 @@ export default class AppLayout extends Component {
                                     <h3 className="title">站点地图</h3>
                                     <ul>
                                         <li><a href="http://www.kyee.com.cn/webmap.asp" target="_blank">京颐股份</a></li>
-                                        <li><a href="http://nexus.kyeegroup.com/" target="_blank">集团nexus</a></li>
                                     </ul>
                                 </div>
-                                {/*<div className="col-md-4 footer-grid">*/}
-                                    {/*<h3 className="title">站点地图</h3>*/}
-                                    {/*<ul>*/}
-                                        {/*<li><a href="http://www.kyee.com.cn/webmap.asp" target="_blank">京颐股份</a></li>*/}
-                                    {/*</ul>*/}
-                                {/*</div>*/}
+                                <div className="col-md-4 footer-grid">
+                                    <h3 className="title">基础设施</h3>
+                                    <ul>
+                                        <li><a href="http://nexus.kyeegroup.com/" target="_blank">依赖仓库Nexus</a></li>
+                                        <li><a href="http://git.kyeegroup.com/" target="_blank">代码协作GitLab</a></li>
+                                        <li><a href="https://sonar.kyeegroup.com/" target="_blank">代码质量Sonar</a></li>
+                                    </ul>
+                                </div>
                                 {/*<div className="col-md-4 footer-grid">*/}
                                     {/*<h3 className="title">站点地图</h3>*/}
                                     {/*<ul>*/}
@@ -71,7 +72,7 @@ export default class AppLayout extends Component {
                     <div className="copy">
                         <div className="container">
                             <div className="copy-left">
-                                <p>© 2017 上海京颐云杏网络技术有限公司 | 2060实验室</p>
+                                <p>© 2017 京颐集团 | 2060实验室</p>
                             </div>
                             <div className="clearfix"> </div>
                         </div>

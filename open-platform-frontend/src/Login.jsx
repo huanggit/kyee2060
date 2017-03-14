@@ -66,19 +66,19 @@ export default class Login extends Component {
                     <div className="logo_title"><span className="logo"></span>京颐知识共享平台</div>
                     <div className="wrap">
                         <section className="loginForm">
-                            <header><h1>登录</h1></header>
+                            <header><h1>办公平台帐号</h1></header>
                             <div className="loginForm_content">
                                 <fieldset>
                                     <div className="inputWrap">
                                         <input ref={"userName"} defaultValue={localStorage.getItem("userName")}
                                                onBlur={this.rememberPassword}
-                                               type="text" name="userName" placeholder="请输入工号" autofocus required/>
+                                               type="text" name="userName" placeholder="请输入您的办公平台帐号(工号)" autofocus required/>
                                     </div>
                                     <div className="inputWrap">
                                         <input ref={"password"} onBlur={this.rememberPassword}
                                                defaultValue={localStorage.getItem("password")==null?"":
                                                    CryptoJS.AES.decrypt(localStorage.getItem("password"),"125").toString(CryptoJS.enc.Utf8)}
-                                               type="password" name="password" placeholder="请输入密码" required/>
+                                               type="password" name="password" placeholder="请输入您的办公平台帐号密码" required/>
                                     </div>
                                 </fieldset>
                                 <fieldset>

@@ -1,2 +1,2 @@
 global.restUrl="http://localhost:8888/";
-global.requireLogin=true;
+global.requireLogin=false;

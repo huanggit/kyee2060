@@ -7,8 +7,11 @@ import AppLayout from "./AppLayout";
 import Home from "./Home";
 import Modules from "./api/Modules";
 import Services from "./api/Services";
-import Uis from "./api/Uis";
 import Detail from "./api/Detail";
+
+import UiSide from "./api/ui/Sidebar";
+import WebSpecs from "./api/ui/WebSpecs";
+import LoginTemplates from "./api/ui/LoginTemplates";
 
 import TechSide from "./framework/tech/Sidebar";
 import TechQuickStart from "./framework/tech/QuickStart";
@@ -89,23 +92,28 @@ export default class AppRouter extends Component {
         }
     }
 
-    logout(){
+    logout() {
         this.setState({
             loggedIn: false
         });
-        global.get("doLogout", function () {});
+        global.get("doLogout", function () {
+        });
     }
 
     render() {
         return (
-            <Router onUpdate={() => window.scrollTo(0, 0)} >
+            <Router onUpdate={() => window.scrollTo(0, 0)}>
                 <Route path="/login" component={Login} onEnter={this.logout.bind(this)}/>
-                <Route path="/" component={AppLayout} onEnter={this.requireAuth.bind(this)} >
+                <Route path="/" component={AppLayout} onEnter={this.requireAuth.bind(this)}>
                     <IndexRoute component={Home}/>
                     <Route path="api/:apiId" component={Detail}/>
                     <Route path="modules" component={Modules}/>
                     <Route path="services" component={Services}/>
-                    <Route path="uis" component={Uis}/>
+
+                    <Route path="ui" component={UiSide}>
+                        <Route path="webSpecs" component={WebSpecs}/>
+                        <Route path="loginTemplates" component={LoginTemplates}/>
+                    </Route>
 
                     <Route path="tech" component={TechSide}>
                         <Route path="qs" component={TechQuickStart}/>

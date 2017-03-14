@@ -12,11 +12,11 @@ export default  class Home extends Component {
             <Layout>
                 <Content>
                     <Banner/>
-                    {/*<div className="welcome">*/}
-                        {/*<div className="container">*/}
-                            {/*<h3> 公共资源 </h3>*/}
-                            {/*<p className="ever">本平台由公司各个架构组倾力打造，提供常用公共资源组件、公共服务、UI模板等，方便复用，旨在为各个项目组提高开发效率。</p>*/}
-                            {/*<div className="welcome-grids">*/}
+                    <div className="welcome">
+                        <div className="container">
+                            <h3> 公共资源 </h3>
+                            <p className="ever">本平台由公司各个架构组倾力打造，提供常用公共资源组件、公共服务、UI模板等，方便复用，旨在为各个项目组提高开发效率。</p>
+                            <div className="welcome-grids">
                                 {/*<HomeEntry  link="/modules"*/}
                                         {/*icon="tasks"*/}
                                         {/*title="公共组件"*/}
@@ -25,14 +25,14 @@ export default  class Home extends Component {
                                         {/*icon="cloud"*/}
                                         {/*title="公共服务"*/}
                                         {/*sub="还在为发送短信等功能烦恼吗？快来试试公司公共微服务吧！点击查看详细API参考文档。"/>*/}
-                                {/*<HomeEntry  link="/uis"*/}
-                                        {/*icon="picture"*/}
-                                        {/*title="UI模板"*/}
-                                        {/*sub="UI界面设计素材，公司统一UI风格，常用医疗行业小图标，公司产品风格统一化。"/>*/}
-                                {/*<div className="clearfix"> </div>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
+                                <HomeEntry  link="/ui/webSpecs"
+                                        icon="picture"
+                                        title="UI资源"
+                                        sub="UI界面设计素材，公司统一UI风格，常用医疗行业小图标，公司产品风格统一化。"/>
+                                <div className="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div className="welcome">
                         <div className="container">

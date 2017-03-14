@@ -21,18 +21,20 @@ export default class QuickStart extends Component {
                 '</mirrors>',
                 '```',
 
-                '***',
-                '#### 快速开发 - SpringBoot+Mybatis+Thymeleaf',
-                '* 快速搭建一个web项目+数据库+页面模板引擎',
-                '* 下载包地址：xxxxxx',
 
-                '***',
-                '#### 快速开发 - SpringBoot+Mybatis+Scheduling',
-                '* 快速搭建一个定时任务项目+数据库',
-                '* 下载包地址：xxxxxx',
 
             ]}/>
         )
     }
 }
+
+{/*'***',*/}
+{/*'#### 快速开发 - SpringBoot+Mybatis+Thymeleaf',*/}
+{/*'* 快速搭建一个web项目+数据库+页面模板引擎',*/}
+{/*'* 下载包地址：xxxxxx',*/}
+
+{/*'***',*/}
+{/*'#### 快速开发 - SpringBoot+Mybatis+Scheduling',*/}
+{/*'* 快速搭建一个定时任务项目+数据库',*/}
+{/*'* 下载包地址：xxxxxx',*/}
 
