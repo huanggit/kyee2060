@@ -47,10 +47,10 @@ export default  class Home extends Component {
                                         icon="tags"
                                         title="研发规范"
                                         sub="编码规范，多系统对接规范，研发流程。切实提高代码质量，项目质量。"/>
-                                {/*<HomeEntry  link="/ops"*/}
-                                        {/*icon="wrench"*/}
-                                        {/*title="运维机制"*/}
-                                        {/*sub="运维工作内容标准化，流程制度规范化，平台工具标准化、自动化。轻轻松松搞运维。"/>*/}
+                                <HomeEntry  link="/ops/org"
+                                        icon="wrench"
+                                        title="运维机制"
+                                        sub="运维工作内容标准化，流程制度规范化，平台工具标准化、自动化。轻轻松松搞运维。"/>
                                 <div className="clearfix"> </div>
                             </div>
                         </div>

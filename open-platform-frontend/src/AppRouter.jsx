@@ -26,6 +26,9 @@ import LocalDev from "./framework/dev/LocalDev";
 import CodeSpecs from "./framework/dev/CodeSpecs";
 import SqlSpecs from "./framework/dev/SqlSpecs";
 
+import OpsSide from "./framework/ops/Sidebar";
+import OpsOrg from "./framework/ops/Org";
+
 import BasicSidebar from "./study/backend/basic/Sidebar";
 import Speed from "./study/backend/basic/Speed";
 import Solve from "./study/backend/basic/Solve";
@@ -127,6 +130,10 @@ export default class AppRouter extends Component {
                         <Route path="local-dev" component={LocalDev}/>
                         <Route path="code-spec" component={CodeSpecs}/>
                         <Route path="sql-spec" component={SqlSpecs}/>
+                    </Route>
+
+                    <Route path="ops" component={OpsSide}>
+                        <Route path="org" component={OpsOrg}/>
                     </Route>
 
                     <Route path="basic" component={BasicSidebar}>
