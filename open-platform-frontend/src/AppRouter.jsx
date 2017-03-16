@@ -28,6 +28,7 @@ import SqlSpecs from "./framework/dev/SqlSpecs";
 
 import OpsSide from "./framework/ops/Sidebar";
 import OpsOrg from "./framework/ops/Org";
+import OpsRole from "./framework/ops/Role";
 
 import BasicSidebar from "./study/backend/basic/Sidebar";
 import Speed from "./study/backend/basic/Speed";
@@ -134,6 +135,7 @@ export default class AppRouter extends Component {
 
                     <Route path="ops" component={OpsSide}>
                         <Route path="org" component={OpsOrg}/>
+                        <Route path="role" component={OpsRole}/>
                     </Route>
 
                     <Route path="basic" component={BasicSidebar}>

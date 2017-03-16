@@ -2,11 +2,11 @@ import React, {Component} from "react";
 import RightMarkDown from '../../common/RightMarkDown';
 
 
-export default class Env extends Component {
+export default class Org extends Component {
     render() {
         return (
-            <RightMarkDown source={['## 集团运维组织',
-                '***',
+            <RightMarkDown source={['集团运维组织',
+                '===',
                 '### 前言',
                 '#### 运维组织建设目的',
                 '* 建立完善的规章制度，使集团的运维工作有章可循。',
@@ -21,8 +21,6 @@ export default class Env extends Component {
                 '* 集团运维中心',
                 '* 区域运维中心',
                 '* 区域运维分中心',
-                '#### 集团运维角色',
-                '![集团运维角色](/static/images/ops-org-role.jpg)\n',
 
                 '***',
                 '### 各级运维组织工作职责',

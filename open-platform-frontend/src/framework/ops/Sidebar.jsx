@@ -37,5 +37,6 @@ export default class Sidebar extends Component {
 Sidebar.defaultProps = {
     caption: [
         {"link":"org","name":"集团运维组织"},
+        {"link":"role","name":"运维角色"},
     ]
 };
