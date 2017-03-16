@@ -1,18 +1,16 @@
 import React, {Component} from "react";
 import { Link } from 'react-router';
-import {Layout} from 'antd';
-const { Sider} = Layout;
 
 
 export default class Sidebar extends Component {
 
     render() {
         return (
-            <Layout>
+            <div>
                 <div className="wrap">
                     <div className="container">
                         <div className="wrap-content clearfix">
-                            <Sider>
+                            <div>
                                 <div className="wrap-left">
                                     <h3>研发规范</h3>
                                     <ul className="menu-list">
@@ -22,14 +20,14 @@ export default class Sidebar extends Component {
                                     </ul>
                                     <div className="clear"></div>
                                 </div>
-                            </Sider>
+                            </div>
 
                             {this.props.children}
 
                         </div>
                     </div>
                 </div>
-            </Layout>
+            </div>
         )
     }
 }

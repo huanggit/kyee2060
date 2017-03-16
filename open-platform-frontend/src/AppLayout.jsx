@@ -1,15 +1,13 @@
 import React, {Component} from "react"
 import { Link } from 'react-router';
-import {Layout} from 'antd'
-const {Header, Footer} = Layout;
 
 
 
 export default class AppLayout extends Component {
     render() {
         return (
-            <Layout>
-                <Header>
+            <div>
+                <div>
                     <div className="header">
                         <div className="container">
                             <div className="header-nav">
@@ -37,11 +35,11 @@ export default class AppLayout extends Component {
                             </div>
                         </div>
                     </div>
-                </Header>
+                </div>
                 <div className="content">
                 {this.props.children}
                 </div>
-                <Footer>
+                <div>
                     <div className="footer">
                         <div className="container">
                             <div className="footer-grids">
@@ -77,8 +75,8 @@ export default class AppLayout extends Component {
                             <div className="clearfix"> </div>
                         </div>
                     </div>
-                </Footer>
-            </Layout>
+                </div>
+            </div>
         )
     }
 }

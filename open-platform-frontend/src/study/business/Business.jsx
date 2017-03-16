@@ -1,16 +1,14 @@
 import React, {Component} from "react";
 import { Link } from 'react-router';
-import {Layout} from 'antd';
 import Entry from '../../common/Entry'
-const {Content} = Layout;
 
 export default class Business extends Component {
 
 
     render() {
         return (
-            <Layout>
-                <Content>
+            <div>
+                <div>
                     <div className="welcome">
                         <div className="container">
                             <div className="intro">
@@ -29,8 +27,8 @@ export default class Business extends Component {
                         </div>
                     </div>
 
-                </Content>
-            </Layout>
+                </div>
+            </div>
         )
     }
 };

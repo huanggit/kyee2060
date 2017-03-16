@@ -1,9 +1,7 @@
 import React, {Component} from "react";
 import { Link } from 'react-router';
-import {Layout} from 'antd';
 import Entry from '../../common/Entry'
 import EntryList from "../../common/EntryList";
-const {Content} = Layout;
 
 export default class Backend extends EntryList {
 
@@ -11,8 +9,8 @@ export default class Backend extends EntryList {
         var t = this;
         var likes = this.state.likesByTitle;
         return (
-            <Layout>
-                <Content>
+            <div>
+                <div>
                     <div className="welcome">
                         <div className="container">
                             <div className="intro">
@@ -59,8 +57,8 @@ export default class Backend extends EntryList {
                         </div>
                     </div>
 
-                </Content>
-            </Layout>
+                </div>
+            </div>
         )
     }
 };

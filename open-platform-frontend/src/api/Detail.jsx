@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import {Layout} from 'antd';
-const {Content, Sider} = Layout;
+
 
 export default class ModuleApi extends Component {
 
@@ -47,11 +46,11 @@ export default class ModuleApi extends Component {
         var methods = s.methods;
         var method = s.method;
         return (
-            <Layout>
+            <div>
                 <div className="wrap">
                     <div className="container">
                         <div className="wrap-content clearfix">
-                            <Sider>
+                            <div>
                                 <div className="wrap-left">
                                     <h3>技术文档</h3>
                                     <ul className="menu-list">
@@ -67,9 +66,9 @@ export default class ModuleApi extends Component {
                                     </ul>
                                     <div className="clear"></div>
                                 </div>
-                            </Sider>
+                            </div>
 
-                            <Content>
+                            <div>
                                 <div className="wrap-right">
                                     <div className="doc-content">
                                         <h2> 获取用户信息 </h2>
@@ -130,12 +129,12 @@ export default class ModuleApi extends Component {
                                         </label>
                                     </div>
                                 </div>
-                            </Content>
+                            </div>
 
                         </div>
                     </div>
                 </div>
-            </Layout>
+            </div>
         )
     }
 }

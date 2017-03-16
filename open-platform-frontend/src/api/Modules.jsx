@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import {Link} from 'react-router';
-import {Layout} from 'antd';
 import Entry from '../common/Entry'
-const {Content} = Layout;
 
 export default class Modules extends Component {
 
@@ -30,8 +28,8 @@ export default class Modules extends Component {
         var t = this;
         var api = this.state.api;
         return (
-            <Layout>
-                <Content>
+            <div>
+                <div>
                     <div className="welcome">
                         <div className="container">
                             <div className="intro">
@@ -114,8 +112,8 @@ export default class Modules extends Component {
                         </div>
                     </div>
 
-                </Content>
-            </Layout>
+                </div>
+            </div>
         )
     }
 };

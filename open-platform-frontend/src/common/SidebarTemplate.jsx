@@ -1,7 +1,5 @@
 import React, {Component} from "react";
 import {Link} from 'react-router';
-import {Layout} from 'antd';
-const {Sider} = Layout;
 
 
 export default class SidebarTemplate extends Component {
@@ -32,11 +30,11 @@ export default class SidebarTemplate extends Component {
     render() {
         var nav = this.props.nav;
         return (
-            <Layout>
+            <div>
                 <div className="wrap">
                     <div className="container">
                         <div className="wrap-content clearfix">
-                            <Sider>
+                            <div>
                                 <div className="wrap-left">
                                     <div className={this.state.likeIt ? "liked-it" : "like-it"}
                                          onClick={this.toggleLike.bind(this)}>
@@ -51,14 +49,14 @@ export default class SidebarTemplate extends Component {
                                     </ul>
                                     <div className="clear"></div>
                                 </div>
-                            </Sider>
+                            </div>
 
                             {this.props.children}
 
                         </div>
                     </div>
                 </div>
-            </Layout>
+            </div>
         )
     }
 }

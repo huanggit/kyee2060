@@ -1,16 +1,14 @@
 import React, {Component} from "react";
 import { Link } from 'react-router';
-import {Layout} from 'antd';
 import Banner from './common/Banner'
 import HomeEntry from './common/HomeEntry'
-const {Content} = Layout;
 
 
 export default  class Home extends Component {
     render() {
         return (
-            <Layout>
-                <Content>
+            <div>
+                <div>
                     <Banner/>
                     <div className="welcome">
                         <div className="container">
@@ -78,8 +76,8 @@ export default  class Home extends Component {
                         </div>
                     </div>
 
-                </Content>
-            </Layout>
+                </div>
+            </div>
         )
     }
 }
