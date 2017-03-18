@@ -39,6 +39,11 @@ import InterfaceDefault from "./study/backend/java8/InterfaceDefault";
 import DateTime from "./study/backend/java8/DateTime";
 import Lambda from "./study/backend/java8/Lambda";
 import Stream from "./study/backend/java8/Stream";
+import MvcSide from "./study/backend/springmvc/Sidebar";
+import MvcMapping from "./study/backend/springmvc/Mapping";
+import MvcDataBinding from "./study/backend/springmvc/DataBinding";
+import MvcAdvice from "./study/backend/springmvc/Advice";
+
 import SpringBootSidebar from "./study/backend/springboot/Sidebar";
 import SpringBootQuick from "./study/backend/springboot/QuickStart";
 import EhcacheSidebar from "./study/backend/ehcache/Sidebar";
@@ -149,6 +154,11 @@ export default class AppRouter extends Component {
                         <Route path="lambda" component={Lambda}/>
                         <Route path="stream" component={Stream}/>
                     </Route>
+                    <Route path="springMvc" component={MvcSide}>
+                        <Route path="mapping" component={MvcMapping}/>
+                        <Route path="data-binding" component={MvcDataBinding}/>
+                        <Route path="advice" component={MvcAdvice}/>
+                    </Route>
                     <Route path="springBoot" component={SpringBootSidebar}>
                         <Route path="quick-start" component={SpringBootQuick}/>
                     </Route>
@@ -167,6 +177,7 @@ export default class AppRouter extends Component {
                     <Route path="scheduled" component={ScheduledSidebar}>
                         <Route path="quick-start" component={ScheduledQuick}/>
                     </Route>
+
 
                     <Route path="frontend" component={Frontend}/>
                     <Route path="js" component={Java8Sidebar}>

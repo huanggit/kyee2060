@@ -28,6 +28,10 @@ export default class Backend extends EntryList {
                                         icon="cog"
                                         title="Java8"
                                         like={t.dis(likes.java8)}/>
+                                <Entry  link="/springMvc/mapping"
+                                        icon="hd-video"
+                                        title="Spring MVC"
+                                        like={t.dis(likes.springMvc)}/>
                                 <Entry  link="/springBoot/quick-start"
                                         icon="music"
                                         title="Spring Boot"

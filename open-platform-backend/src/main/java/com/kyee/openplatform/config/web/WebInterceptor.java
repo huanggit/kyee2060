@@ -46,9 +46,7 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
                 request.getRequestURI(), request.getRemoteAddr(), "N/A", cost);
     }
 
-    /**
-     * 设置开始时间，记录接口总耗时
-     */
+
     private void setStartTime(HttpServletRequest request) {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         if (requestAttributes.getAttribute(
