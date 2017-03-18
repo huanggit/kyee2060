@@ -9,6 +9,7 @@ spring:
       uri: mongodb://118.190.8.227:27017/kyeeplatform
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 logging:
   config: classpath:config/log4j2.xml
@@ -16,3 +17,18 @@ debug: false
 
 hrp:
   url: https://f.kyee.com.cn/RightsSystem/
+
+authority:
+  api:
+    - 40101
+  ui:
+    - 40101
+  tech:
+    - 40101
+  ops:
+    - 40101
+  study:
+    - 40101
+  product:
+    - 40101
+

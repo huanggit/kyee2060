@@ -12,7 +12,7 @@ export default class Modules extends Component {
     }
 
     componentDidMount() {
-        global.get("/api/components", function (result) {
+        global.get("/doc/components", function (result) {
             if (result)
                 this.setState({
                     api: result
@@ -21,7 +21,7 @@ export default class Modules extends Component {
     }
 
     componentLink(id) {
-        return "/api/"+id;
+        return "/doc/"+id;
     }
 
     render() {

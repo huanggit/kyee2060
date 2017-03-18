@@ -1,5 +1,6 @@
 package com.kyee.openplatform.controller;
 
+import com.kyee.openplatform.config.web.DocAuthority;
 import com.kyee.openplatform.config.web.ResultApi;
 import com.kyee.openplatform.repositorys.user.UserInfo;
 import com.kyee.openplatform.service.UserService;
@@ -17,11 +18,13 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @DocAuthority("anonymous")
     @RequestMapping("/")
     public String index() {
         return "connection ok!";
     }
 
+    @DocAuthority("anonymous")
     @RequestMapping("/doLogin")
     public ResultApi login(HttpServletRequest request,
                            String userName, String password) throws Exception {
@@ -35,11 +38,13 @@ public class UserController {
         return ResultApi.successInstance(true);
     }
 
+    @DocAuthority("anonymous")
     @RequestMapping("/isLogin")
     public Boolean isLogin(UserInfo user) {
         return user != null;
     }
 
+    @DocAuthority("anonymous")
     @RequestMapping("/doLogout")
     public ResultApi doLogout(HttpServletRequest request) throws IOException {
         HttpSession session = request.getSession(true);

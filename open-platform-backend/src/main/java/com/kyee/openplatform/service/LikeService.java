@@ -21,7 +21,6 @@ public class LikeService {
 
     @Cacheable("isLike")
     public Boolean isLike(String userId, String title) {
-        System.out.println("isLike");
         return null != likeRepository.findOne(compositeId(userId, title));
     }
 
@@ -29,7 +28,6 @@ public class LikeService {
             @CacheEvict(value="isLike"),
             @CacheEvict(value="getLikesGroupingByTitle", allEntries = true)})
     public void toggleLike(String userId, String title) {
-        System.out.println("toggleLike");
         String id = compositeId(userId, title);
         if (isLike(userId, title)) {
             likeRepository.delete(id);
@@ -40,7 +38,6 @@ public class LikeService {
 
     @Cacheable("getLikesGroupingByTitle")
     public Map<String, Long> getLikesGroupingByTitle(){
-        System.out.println("getLikesGroupingByTitle");
         return likeRepository.findAll().stream()
                 .collect(groupingBy(Like::getTitle, counting()));
     }

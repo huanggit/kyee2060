@@ -14,13 +14,13 @@ export default class ModuleApi extends Component {
     }
 
     componentDidMount() {
-        global.get("/api/component/" + this.props.params.apiId, function (result) {
+        global.get("/doc/component/" + this.props.params.apiId, function (result) {
             this.setState({
                 methods: result
             });
             var ms = this.state.methods;
             if (ms!=null && ms.length > 0) {
-                global.get("/api/method/" + ms[0].id, function (result) {
+                global.get("/doc/method/" + ms[0].id, function (result) {
                     this.setState({
                         method: result
                     })
@@ -33,7 +33,7 @@ export default class ModuleApi extends Component {
         this.setState({
             activeLine: lineNum
         });
-        global.get("/api/method/" + id, function (result) {
+        global.get("/doc/method/" + id, function (result) {
             this.setState({
                 method: result
             })

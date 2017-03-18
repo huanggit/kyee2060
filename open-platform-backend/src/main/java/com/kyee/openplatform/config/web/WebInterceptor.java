@@ -2,6 +2,9 @@ package com.kyee.openplatform.config.web;
 
 import com.kyee.openplatform.repositorys.user.UserInfo;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.annotation.AnnotationUtils;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -12,27 +15,25 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Method;
+import java.util.List;
+import java.util.Map;
 
 
 @Log4j2
+@Component
 public class WebInterceptor extends HandlerInterceptorAdapter {
 
     private static final String START_TIME_KEY = "START_TIME_KEY";
+
+    @Value("${authority}")
+    private Map<String, List<String>> authority;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         setStartTime(request);
         if (!HandlerMethod.class.isAssignableFrom(handler.getClass())) return true;
-        UserInfo user = getSessionUser(request);
-        if (user != null)
-            return true;
-//        HandlerMethod handlerMethod = (HandlerMethod) handler;
-//        if(isAllowAnonymous(handlerMethod))return true;
-        if("/isLogin".equals(request.getRequestURI()))
-            return true;
-        if("/doLogin".equals(request.getRequestURI()))
-            return true;
-        return false;
+        return isDocAuthorized((Method) handler, getSessionUser(request));
     }
 
     @Override
@@ -42,8 +43,8 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         Long startTime = (Long) requestAttributes.getAttribute(START_TIME_KEY, RequestAttributes.SCOPE_REQUEST);
         long cost = System.currentTimeMillis() - startTime;
-        log.info("[response http] request：{}, from: {}, response：{}, time cost: {} ms.",
-                request.getRequestURI(), request.getRemoteAddr(), "N/A", cost);
+        log.info("[response http] request：{}, from: {}, time cost: {} ms.",
+                request.getRequestURI(), request.getRemoteAddr(), cost);
     }
 
 
@@ -61,9 +62,19 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
         return user;
     }
 
-//    private boolean isAllowAnonymous(HandlerMethod handlerMethod){
-//        if(AnnotationUtils.isAnnotationDeclaredLocally(AnonymousAccess.class,handlerMethod.getBeanType()))return true;
-//        return handlerMethod.getMethodAnnotation(AnonymousAccess.class) != null;
-//    }
+
+    private boolean isDocAuthorized(Method handlerMethod, UserInfo user) {
+        DocAuthority docAuthority = AnnotationUtils.findAnnotation(handlerMethod, DocAuthority.class);
+        if (docAuthority == null && user != null) {
+            return true;
+        }
+        if ("anonymous".equals(docAuthority.value())) {
+            return true;
+        }
+        if (user == null) {
+            return false;
+        }
+        return authority.get(docAuthority.value()).contains(user.getId());
+    }
 }
 

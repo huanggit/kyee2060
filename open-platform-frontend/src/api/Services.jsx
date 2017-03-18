@@ -13,7 +13,7 @@ export default class Services extends Component {
     }
 
     componentDidMount() {
-        global.get("/api/services", function (result) {
+        global.get("/doc/services", function (result) {
             this.setState({
                 api : result
             })
@@ -21,7 +21,7 @@ export default class Services extends Component {
     }
 
     componentLink(id) {
-        return "/api/"+id;
+        return "/doc/"+id;
     }
 
     render() {
