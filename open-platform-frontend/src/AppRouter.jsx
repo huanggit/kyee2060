@@ -7,33 +7,31 @@ import AppLayout from "./AppLayout";
 import Home from "./Home";
 import Modules from "./api/Modules";
 import Services from "./api/Services";
-import Detail from "./api/Detail";
+import Backend from "./study/Backend";
+import Frontend from "./study/Frontend";
+import Business from "./study/Business";
+
 
 import UiSide from "./api/ui/Sidebar";
 import WebSpecs from "./api/ui/WebSpecs";
 import LoginTemplates from "./api/ui/LoginTemplates";
-
 import TechSide from "./framework/tech/Sidebar";
 import TechQuickStart from "./framework/tech/QuickStart";
 import TechJava from "./framework/tech/Java";
 import TechJs from "./framework/tech/Front";
 import TechEvn from "./framework/tech/Env";
 import TechTool from "./framework/tech/Tool";
-
 import DevSide from "./framework/dev/Sidebar";
 import CloudDev from "./framework/dev/CloudDev";
 import LocalDev from "./framework/dev/LocalDev";
 import CodeSpecs from "./framework/dev/CodeSpecs";
 import SqlSpecs from "./framework/dev/SqlSpecs";
-
 import OpsSide from "./framework/ops/Sidebar";
 import OpsOrg from "./framework/ops/Org";
 import OpsRole from "./framework/ops/Role";
-
 import BasicSidebar from "./study/backend/basic/Sidebar";
 import Speed from "./study/backend/basic/Speed";
 import Solve from "./study/backend/basic/Solve";
-import Backend from "./study/backend/Backend";
 import Java8Sidebar from "./study/backend/java8/Sidebar";
 import InterfaceDefault from "./study/backend/java8/InterfaceDefault";
 import DateTime from "./study/backend/java8/DateTime";
@@ -43,7 +41,6 @@ import MvcSide from "./study/backend/springmvc/Sidebar";
 import MvcMapping from "./study/backend/springmvc/Mapping";
 import MvcDataBinding from "./study/backend/springmvc/DataBinding";
 import MvcAdvice from "./study/backend/springmvc/Advice";
-
 import SpringBootSidebar from "./study/backend/springboot/Sidebar";
 import SpringBootQuick from "./study/backend/springboot/QuickStart";
 import EhcacheSidebar from "./study/backend/ehcache/Sidebar";
@@ -56,10 +53,6 @@ import ThymeleafSidebar from "./study/backend/thymeleaf/Sidebar";
 import ThymeleafQuick from "./study/backend/thymeleaf/QuickStart";
 import ScheduledSidebar from "./study/backend/scheduled/Sidebar";
 import ScheduledQuick from "./study/backend/scheduled/QuickStart";
-
-
-import Frontend from "./study/frontend/Frontend";
-// import Business from "./study/business/Business";
 import BusinessSidebar from "./study/business/all/Sidebar";
 import BusinessAll from "./study/business/all/All";
 import BusinessApp from "./study/business/all/App";
@@ -115,9 +108,13 @@ export default class AppRouter extends Component {
                 <Route path="/login" component={Login} onEnter={this.logout.bind(this)}/>
                 <Route path="/" component={AppLayout} onEnter={this.requireAuth.bind(this)}>
                     <IndexRoute component={Home}/>
-                    <Route path="api/:apiId" component={Detail}/>
                     <Route path="modules" component={Modules}/>
                     <Route path="services" component={Services}/>
+                    <Route path="backend" component={Backend}/>
+                    <Route path="business" component={Business}/>
+                    <Route path="frontend" component={Frontend}/>
+
+
 
                     <Route path="ui" component={UiSide}>
                         <Route path="webSpecs" component={WebSpecs}/>
@@ -147,7 +144,7 @@ export default class AppRouter extends Component {
                         <Route path="speed" component={Speed}/>
                         <Route path="solve" component={Solve}/>
                     </Route>
-                    <Route path="backend" component={Backend}/>
+
                     <Route path="java8" component={Java8Sidebar}>
                         <Route path="interface-default" component={InterfaceDefault}/>
                         <Route path="date-time" component={DateTime}/>
@@ -178,12 +175,6 @@ export default class AppRouter extends Component {
                         <Route path="quick-start" component={ScheduledQuick}/>
                     </Route>
 
-
-                    <Route path="frontend" component={Frontend}/>
-                    <Route path="js" component={Java8Sidebar}>
-                    </Route>
-
-                    {/*<Route path="business" component={Business}/>*/}
                     <Route path="businessOverall" component={BusinessSidebar}>
                         <Route path="all" component={BusinessAll}/>
                         <Route path="app" component={BusinessApp}/>

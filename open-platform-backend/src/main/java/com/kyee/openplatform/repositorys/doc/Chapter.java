@@ -9,4 +9,5 @@ public class Chapter {
     private String docId;
     private String name;
     private String content;
+    private String lastUpdater;
 }
