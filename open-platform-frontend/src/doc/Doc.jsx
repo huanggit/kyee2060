@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 import ReactMarkdown from 'react-markdown';
-
+import NewDoc from './NewDoc';
 
 export default class Doc extends Component {
 
@@ -12,14 +12,14 @@ export default class Doc extends Component {
             doc: {},
             chapters: [],
             index: 0,
-            chapter: {"content":" "},
+            chapter: {"content": " "},
             auth: false
         };
         this.init = this.init.bind(this);
         // this.clickChapter = this.clickChapter.bind(this);
     }
 
-    init(id){
+    init(id) {
         global.get("like/isLike/" + id, function (result) {
             this.setState({
                 likeIt: result
@@ -30,7 +30,7 @@ export default class Doc extends Component {
             this.setState({
                 doc: result.doc,
                 chapters: chs,
-                chapter: chs.length>0 ? chs[0]:{"content":" "}
+                chapter: chs.length > 0 ? chs[0] : {"content": " "}
             })
         }.bind(this));
         global.get("doc/authority/" + id, function (result) {
@@ -40,7 +40,7 @@ export default class Doc extends Component {
         }.bind(this));
     }
 
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         this.init(nextProps.params.id);
     }
 
@@ -56,7 +56,7 @@ export default class Doc extends Component {
         }.bind(this));
     }
 
-    clickChapter(i){
+    clickChapter(i) {
         this.setState({
             index: i,
             chapter: this.state.chapters[i]
@@ -65,11 +65,11 @@ export default class Doc extends Component {
 
     newChapter() {
         let formData = new FormData();
-        formData.append("docId",this.props.params.id);
-        formData.append("name",this.refs.name.value);
-        formData.append("content",this.refs.content.value);
+        formData.append("docId", this.props.params.id);
+        formData.append("name", this.refs.name.value);
+        formData.append("content", this.refs.content.value);
         global.post("doc/chapter/new", formData, function () {
-            document.getElementById("box").style.display ="none";
+            document.getElementById("box").style.display = "none";
         }.bind(this));
     }
 
@@ -78,23 +78,7 @@ export default class Doc extends Component {
         var s = this.state;
         return (
             <div>
-                <div id="box" className="box">
-                    <div className="button">
-                        <button  onClick={t.newChapter.bind(t)}>保存</button>
-                        <button  onClick={function () {
-                            document.getElementById("box").style.display ="none";
-                        }}>取消</button>
-                    </div>
-                    <div className="form">
-                        <label>标题：</label>
-                        <input ref={"name"}/>
-                        <br/>
-                        <label>内容（MarkDown格式）：</label>
-                        <br/>
-                        <textarea ref={"content"}></textarea>
-                    </div>
-                </div>
-
+                <NewDoc docId={"TODO"} />
                 <div className="wrap">
                     <div className="container">
                         <div className="wrap-content clearfix">
@@ -110,8 +94,8 @@ export default class Doc extends Component {
                                         {s.chapters.map(function (c, i) {
                                             return <li key={i}>
                                                 <a href="javascript:void(0)"
-                                                    onClick={t.clickChapter.bind(t,i)}
-                                                    className={(s.index==i)?"active":""}>
+                                                   onClick={t.clickChapter.bind(t, i)}
+                                                   className={(s.index == i) ? "active" : ""}>
                                                     {c.name}
                                                 </a></li>
                                         })}
@@ -123,12 +107,13 @@ export default class Doc extends Component {
                             <div>
                                 <div className="wrap-right">
                                     {s.auth && (
-                                            <div className="editButton">
-                                                <button onClick={function () {
-                                                    document.getElementById("box").style.display ="block";
-                                                }}>新增</button>
-                                                <button>修改</button>
-                                                <button>删除</button>
+                                        <div className="editButton">
+                                            <button onClick={function () {
+                                                document.getElementById("newChapter").style.display = "block";
+                                            }}>新增
+                                            </button>
+                                            <button>修改</button>
+                                            <button>删除</button>
                                         </div>
                                     )}
                                     <ReactMarkdown escapeHtml={true} source={s.chapter.content}/>

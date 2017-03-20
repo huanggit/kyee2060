@@ -34,13 +34,23 @@ public class DocController {
     }
 
     @RequestMapping("chapter/new")
-    public ResultApi newChapterByAdmin(UserInfo userInfo, Chapter chapter) throws Exception {
+    public ResultApi newChapter(UserInfo userInfo, Chapter chapter) throws Exception {
         if (!userService.getDocAuthority(userInfo.getUserInfoId(), chapter.getDocId())) {
             throw new Exception("您没有编辑权限.");
         }
         chapter.setId(chapter.getDocId()+"$"+chapter.getName());
         chapter.setLastUpdater(userInfo.getUserInfoName());
         docService.newChapter(chapter);
+        return ResultApi.SUCCESS;
+    }
+
+    @RequestMapping("chapter/update")
+    public ResultApi updateChapter(UserInfo userInfo, Chapter chapter) throws Exception {
+        if (!userService.getDocAuthority(userInfo.getUserInfoId(), chapter.getDocId())) {
+            throw new Exception("您没有编辑权限.");
+        }
+        chapter.setLastUpdater(userInfo.getUserInfoName());
+        docService.updateChapter(chapter);
         return ResultApi.SUCCESS;
     }
 
