@@ -79,6 +79,6 @@ public class UserService {
         if (adminDocs.contains(docId) && authorityAdmin.contains(userId)) {
             return true;
         }
-        return authorityAuthor.contains(userId);
+        return authorityAdmin.contains(userId) || authorityAuthor.contains(userId);
     }
 }

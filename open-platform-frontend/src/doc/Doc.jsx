@@ -16,6 +16,7 @@ export default class Doc extends Component {
             auth: false
         };
         this.init = this.init.bind(this);
+        // this.clickChapter = this.clickChapter.bind(this);
     }
 
     init(id){
@@ -59,7 +60,7 @@ export default class Doc extends Component {
         this.setState({
             index: i,
             chapter: this.state.chapters[i]
-        }.bind(this))
+        });
     }
 
     newChapter() {
@@ -109,7 +110,7 @@ export default class Doc extends Component {
                                         {s.chapters.map(function (c, i) {
                                             return <li key={i}>
                                                 <a href="javascript:void(0)"
-                                                    onClick={t.clickChapter.bind(t, i)}
+                                                    onClick={t.clickChapter.bind(t,i)}
                                                     className={(s.index==i)?"active":""}>
                                                     {c.name}
                                                 </a></li>
@@ -122,9 +123,13 @@ export default class Doc extends Component {
                             <div>
                                 <div className="wrap-right">
                                     {s.auth && (
-                                        <div className="editButton"><button onClick={function () {
-                                            document.getElementById("box").style.display ="block";
-                                        }}>新增</button><button>修改</button></div>
+                                            <div className="editButton">
+                                                <button onClick={function () {
+                                                    document.getElementById("box").style.display ="block";
+                                                }}>新增</button>
+                                                <button>修改</button>
+                                                <button>删除</button>
+                                        </div>
                                     )}
                                     <ReactMarkdown escapeHtml={true} source={s.chapter.content}/>
                                 </div>
