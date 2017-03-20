@@ -19,16 +19,5 @@ hrp:
   url: https://f.kyee.com.cn/RightsSystem/
 
 authority:
-  api:
-    - 40101
-  ui:
-    - 40101
-  tech:
-    - 40101
-  ops:
-    - 40101
-  study:
-    - 40101
-  product:
-    - 40101
-
+  admin: 40101, 40001
+  author: 40101

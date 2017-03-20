@@ -1,8 +1,9 @@
 import React, {Component} from "react";
 import { Link } from 'react-router';
-import Entry from '../../common/Entry'
+import Entry from '../common/Entry';
+import EntryList from "../common/EntryList";
 
-export default class Business extends Component {
+export default class Business extends EntryList {
 
 
     render() {

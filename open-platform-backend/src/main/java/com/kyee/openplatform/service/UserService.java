@@ -15,6 +15,8 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -22,6 +24,14 @@ public class UserService {
 
     @Value("${hrp.url}")
     private String hrpUrl;
+
+    @Value("${authority.admin}")
+    private List<String> authorityAdmin;
+
+    @Value("${authority.author}")
+    private List<String> authorityAuthor;
+
+    private final List<String> adminDocs = Arrays.asList("tech", "dev", "ops", "ui");
 
     private RestTemplate rt = new RestTemplate();
     private HttpHeaders headers = new HttpHeaders();
@@ -64,5 +74,11 @@ public class UserService {
         return new UserInfo(userName, map.get("USER_NAME"), map.get("DEPT_NAME"));
     }
 
-
+    @Cacheable("getDocAuthority")
+    public boolean getDocAuthority(String userId, String docId){
+        if (adminDocs.contains(docId) && authorityAdmin.contains(userId)) {
+            return true;
+        }
+        return authorityAuthor.contains(userId);
+    }
 }

@@ -26,14 +26,11 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
 
     private static final String START_TIME_KEY = "START_TIME_KEY";
 
-    @Value("${authority}")
-    private Map<String, List<String>> authority;
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         setStartTime(request);
         if (!HandlerMethod.class.isAssignableFrom(handler.getClass())) return true;
-        return isDocAuthorized((Method) handler, getSessionUser(request));
+        return isDocAuthorized((HandlerMethod) handler, getSessionUser(request));
     }
 
     @Override
@@ -63,8 +60,9 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
     }
 
 
-    private boolean isDocAuthorized(Method handlerMethod, UserInfo user) {
-        DocAuthority docAuthority = AnnotationUtils.findAnnotation(handlerMethod, DocAuthority.class);
+    private boolean isDocAuthorized(HandlerMethod handlerMethod, UserInfo user) {
+//        if(AnnotationUtils.isAnnotationDeclaredLocally(DocAuthority.class,handlerMethod.getBeanType()))return true;
+        DocAuthority docAuthority = handlerMethod.getMethodAnnotation(DocAuthority.class);
         if (docAuthority == null && user != null) {
             return true;
         }
@@ -74,7 +72,8 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
         if (user == null) {
             return false;
         }
-        return authority.get(docAuthority.value()).contains(user.getId());
+//        return authority.get(docAuthority.value()).contains(user.getId());
+        return true;
     }
 }
 

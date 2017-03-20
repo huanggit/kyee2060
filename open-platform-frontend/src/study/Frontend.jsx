@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Link } from 'react-router';
-import Entry from '../../common/Entry'
-import EntryList from "../../common/EntryList";
+import Entry from '../common/Entry'
+import EntryList from "../common/EntryList";
 
 export default class Frontend extends EntryList {
 

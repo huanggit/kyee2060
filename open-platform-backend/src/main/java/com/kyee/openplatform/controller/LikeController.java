@@ -18,12 +18,12 @@ public class LikeController {
 
     @RequestMapping("/isLike/{title}")
     public ResultApi isLike(UserInfo userInfo, @PathVariable("title") String title) {
-        return ResultApi.successInstance(likeService.isLike(userInfo.getId(), title));
+        return ResultApi.successInstance(likeService.isLike(userInfo.getUserInfoId(), title));
     }
 
     @RequestMapping("/toggle/{title}")
     public ResultApi toggle(UserInfo userInfo, @PathVariable("title") String title) {
-        likeService.toggleLike(userInfo.getId(),title);
+        likeService.toggleLike(userInfo.getUserInfoId(),title);
         return ResultApi.SUCCESS;
     }
 

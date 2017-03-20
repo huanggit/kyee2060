@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 public class UserInfo {
 
     @Id
-    private final String id;
-    private final String name;
-    private final String dept;
+    private final String userInfoId;
+    private final String userInfoName;
+    private final String userInfoDept;
 }

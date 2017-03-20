@@ -58,7 +58,7 @@ ul{
   width:100%;
   height:64px;
   position:fixed;
-  z-index:9999;
+  z-index:99;
   .container{
     margin:0 auto;
      nav{
@@ -173,7 +173,7 @@ ul{
          position: absolute;
          top:20px;
          right: 10px;
-         z-index: 99999;
+         z-index: 99;
          a{
            color: #AAAAAA;
            text-decoration:underline;
@@ -440,9 +440,16 @@ p.ever{
           line-height: 40px;
           font-size: 24px;
           color: #069;
-          padding: 10px 20px;
+          padding-left: 20px;
+          padding-top: 10px;
+          //border-bottom: 1px #d5d5d5 solid;
+        }
+        h5 {
+          line-height: 40px;
+          font-size: 16px;
+          color: #069;
+          padding-left: 20px;
           border-bottom: 1px #d5d5d5 solid;
-
         }
        ul{
          &.menu-list{
@@ -792,4 +799,41 @@ p.ever{
       }
     }
   }
+}
+
+.box{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 100;
+  display: none;
+  .button{
+    float: right;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-right: 500px;
+    button{
+      margin: 1px 5px;
+    }
+  }
+  .form{
+    margin-top: 60px;
+    height: 100%;
+    label{
+      font-size: 18px;
+      margin-top: 20px;
+      margin-left: 100px;
+      color: #ffffff;
+    }
+    input{
+      width:77%;
+    }
+    textarea{
+      margin-left: 100px;
+      width:80%;
+      height: 100%;
+    }
+  }
+
 }

@@ -10,66 +10,7 @@ import Services from "./api/Services";
 import Backend from "./study/Backend";
 import Frontend from "./study/Frontend";
 import Business from "./study/Business";
-
-
-import UiSide from "./api/ui/Sidebar";
-import WebSpecs from "./api/ui/WebSpecs";
-import LoginTemplates from "./api/ui/LoginTemplates";
-import TechSide from "./framework/tech/Sidebar";
-import TechQuickStart from "./framework/tech/QuickStart";
-import TechJava from "./framework/tech/Java";
-import TechJs from "./framework/tech/Front";
-import TechEvn from "./framework/tech/Env";
-import TechTool from "./framework/tech/Tool";
-import DevSide from "./framework/dev/Sidebar";
-import CloudDev from "./framework/dev/CloudDev";
-import LocalDev from "./framework/dev/LocalDev";
-import CodeSpecs from "./framework/dev/CodeSpecs";
-import SqlSpecs from "./framework/dev/SqlSpecs";
-import OpsSide from "./framework/ops/Sidebar";
-import OpsOrg from "./framework/ops/Org";
-import OpsRole from "./framework/ops/Role";
-import BasicSidebar from "./study/backend/basic/Sidebar";
-import Speed from "./study/backend/basic/Speed";
-import Solve from "./study/backend/basic/Solve";
-import Java8Sidebar from "./study/backend/java8/Sidebar";
-import InterfaceDefault from "./study/backend/java8/InterfaceDefault";
-import DateTime from "./study/backend/java8/DateTime";
-import Lambda from "./study/backend/java8/Lambda";
-import Stream from "./study/backend/java8/Stream";
-import MvcSide from "./study/backend/springmvc/Sidebar";
-import MvcMapping from "./study/backend/springmvc/Mapping";
-import MvcDataBinding from "./study/backend/springmvc/DataBinding";
-import MvcAdvice from "./study/backend/springmvc/Advice";
-import SpringBootSidebar from "./study/backend/springboot/Sidebar";
-import SpringBootQuick from "./study/backend/springboot/QuickStart";
-import EhcacheSidebar from "./study/backend/ehcache/Sidebar";
-import EhcacheQuick from "./study/backend/ehcache/QuickStart";
-import JpaSidebar from "./study/backend/jpa/Sidebar";
-import JpaQuick from "./study/backend/jpa/QuickStart";
-import MybatisSidebar from "./study/backend/mybatis/Sidebar";
-import MybatisQuick from "./study/backend/mybatis/QuickStart";
-import ThymeleafSidebar from "./study/backend/thymeleaf/Sidebar";
-import ThymeleafQuick from "./study/backend/thymeleaf/QuickStart";
-import ScheduledSidebar from "./study/backend/scheduled/Sidebar";
-import ScheduledQuick from "./study/backend/scheduled/QuickStart";
-import BusinessSidebar from "./study/business/all/Sidebar";
-import BusinessAll from "./study/business/all/All";
-import BusinessApp from "./study/business/all/App";
-import BusinessCloud from "./study/business/all/Cloud";
-import BusinessCreative from "./study/business/all/Creative";
-import BusinessEdu from "./study/business/all/Edu";
-import BusinessHcrm from "./study/business/all/Hcrm";
-import BusinessHierarchical from "./study/business/all/Hierarchical";
-import BusinessHrp from "./study/business/all/Hrp";
-import BusinessInsurance from "./study/business/all/Insurance";
-import BusinessIot from "./study/business/all/Iot";
-import BusinessMobile from "./study/business/all/Mobile";
-import BusinessOneCardPass from "./study/business/all/OneCardPass";
-import Businesspay from "./study/business/all/Pay";
-import BusinessSupply from "./study/business/all/Supply";
-import BusinessYhis from "./study/business/all/Yhis";
-import BusinessNurse from "./study/business/all/Nursing";
+import Doc from "./doc/Doc";
 
 
 export default class AppRouter extends Component {
@@ -113,86 +54,7 @@ export default class AppRouter extends Component {
                     <Route path="backend" component={Backend}/>
                     <Route path="business" component={Business}/>
                     <Route path="frontend" component={Frontend}/>
-
-
-
-                    <Route path="ui" component={UiSide}>
-                        <Route path="webSpecs" component={WebSpecs}/>
-                        <Route path="loginTemplates" component={LoginTemplates}/>
-                    </Route>
-
-                    <Route path="tech" component={TechSide}>
-                        <Route path="qs" component={TechQuickStart}/>
-                        <Route path="java" component={TechJava}/>
-                        <Route path="js" component={TechJs}/>
-                        <Route path="env" component={TechEvn}/>
-                        <Route path="tool" component={TechTool}/>
-                    </Route>
-                    <Route path="dev" component={DevSide}>
-                        <Route path="cloud-dev" component={CloudDev}/>
-                        <Route path="local-dev" component={LocalDev}/>
-                        <Route path="code-spec" component={CodeSpecs}/>
-                        <Route path="sql-spec" component={SqlSpecs}/>
-                    </Route>
-
-                    <Route path="ops" component={OpsSide}>
-                        <Route path="org" component={OpsOrg}/>
-                        <Route path="role" component={OpsRole}/>
-                    </Route>
-
-                    <Route path="basic" component={BasicSidebar}>
-                        <Route path="speed" component={Speed}/>
-                        <Route path="solve" component={Solve}/>
-                    </Route>
-
-                    <Route path="java8" component={Java8Sidebar}>
-                        <Route path="interface-default" component={InterfaceDefault}/>
-                        <Route path="date-time" component={DateTime}/>
-                        <Route path="lambda" component={Lambda}/>
-                        <Route path="stream" component={Stream}/>
-                    </Route>
-                    <Route path="springMvc" component={MvcSide}>
-                        <Route path="mapping" component={MvcMapping}/>
-                        <Route path="data-binding" component={MvcDataBinding}/>
-                        <Route path="advice" component={MvcAdvice}/>
-                    </Route>
-                    <Route path="springBoot" component={SpringBootSidebar}>
-                        <Route path="quick-start" component={SpringBootQuick}/>
-                    </Route>
-                    <Route path="jpa" component={JpaSidebar}>
-                        <Route path="quick-start" component={JpaQuick}/>
-                    </Route>
-                    <Route path="mybatis" component={MybatisSidebar}>
-                        <Route path="quick-start" component={MybatisQuick}/>
-                    </Route>
-                    <Route path="thymeleaf" component={ThymeleafSidebar}>
-                        <Route path="quick-start" component={ThymeleafQuick}/>
-                    </Route>
-                    <Route path="ehcache" component={EhcacheSidebar}>
-                        <Route path="quick-start" component={EhcacheQuick}/>
-                    </Route>
-                    <Route path="scheduled" component={ScheduledSidebar}>
-                        <Route path="quick-start" component={ScheduledQuick}/>
-                    </Route>
-
-                    <Route path="businessOverall" component={BusinessSidebar}>
-                        <Route path="all" component={BusinessAll}/>
-                        <Route path="app" component={BusinessApp}/>
-                        <Route path="cloud" component={BusinessCloud}/>
-                        <Route path="creative-center" component={BusinessCreative}/>
-                        <Route path="edu" component={BusinessEdu}/>
-                        <Route path="hcrm" component={BusinessHcrm}/>
-                        <Route path="hierarchical-medical" component={BusinessHierarchical}/>
-                        <Route path="hrp" component={BusinessHrp}/>
-                        <Route path="insurance" component={BusinessInsurance}/>
-                        <Route path="lot" component={BusinessIot}/>
-                        <Route path="mobile" component={BusinessMobile}/>
-                        <Route path="one-card-pass" component={BusinessOneCardPass}/>
-                        <Route path="pay" component={Businesspay}/>
-                        <Route path="supply" component={BusinessSupply}/>
-                        <Route path="yhis" component={BusinessYhis}/>
-                        <Route path="nursing" component={BusinessNurse}/>
-                    </Route>
+                    <Route path="doc/:id" component={Doc}/>
                 </Route>
             </Router>
         );
