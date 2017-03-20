@@ -4,6 +4,7 @@ import com.kyee.openplatform.config.web.DocAuthority;
 import com.kyee.openplatform.config.web.ResultApi;
 import com.kyee.openplatform.pojo.DocAndChapters;
 import com.kyee.openplatform.repositorys.doc.Chapter;
+import com.kyee.openplatform.repositorys.doc.Doc;
 import com.kyee.openplatform.repositorys.user.UserInfo;
 import com.kyee.openplatform.service.DocService;
 import com.kyee.openplatform.service.UserService;
@@ -24,6 +25,31 @@ public class DocController {
 
     @Autowired
     UserService userService;
+
+    @RequestMapping("/type/{type}")
+    public ResultApi docsByType(@PathVariable String type) {
+        return ResultApi.successInstance(docService.docsByType(type));
+    }
+
+    @RequestMapping("/new")
+    public ResultApi newDoc(UserInfo userInfo, Doc doc) throws Exception {
+        doc.setLastUpdater(userInfo.getUserInfoName());
+        docService.newDoc(doc);
+        return ResultApi.SUCCESS;
+    }
+
+    @RequestMapping("/update")
+    public ResultApi updateDoc(UserInfo userInfo, Doc doc) {
+        doc.setLastUpdater(userInfo.getUserInfoName());
+        docService.updateDoc(doc);
+        return ResultApi.SUCCESS;
+    }
+
+    @RequestMapping("/delete/{id}")
+    public ResultApi deleteDoc(@PathVariable String id) {
+        docService.deleteDoc(id);
+        return ResultApi.SUCCESS;
+    }
 
     @RequestMapping("/chapters/{docId}")
     public ResultApi chaptersByDoc(@PathVariable String docId) {
@@ -54,6 +80,14 @@ public class DocController {
         return ResultApi.SUCCESS;
     }
 
+    @RequestMapping("chapter/delete")
+    public ResultApi delChapter(UserInfo userInfo, Chapter chapter) throws Exception {
+        if (!userService.getDocAuthority(userInfo.getUserInfoId(), chapter.getDocId())) {
+            throw new Exception("您没有编辑权限.");
+        }
+        docService.deleteChapter(chapter.getId(), chapter.getDocId());
+        return ResultApi.SUCCESS;
+    }
 
     @RequestMapping("/authority/{docId}")
     public ResultApi getDocAuthority(UserInfo userInfo, @PathVariable String docId) {

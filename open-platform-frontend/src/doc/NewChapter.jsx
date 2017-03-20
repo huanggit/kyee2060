@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 
 
-export default class DocNew extends Component {
+export default class NewChapter extends Component {
 
 
     newChapter() {
@@ -10,7 +10,7 @@ export default class DocNew extends Component {
         formData.append("name",this.refs.name.value);
         formData.append("content",this.refs.content.value);
         global.post("doc/chapter/new", formData, function () {
-            document.getElementById("box").style.display ="none";
+            document.getElementById("newChapter").style.display ="none";
         }.bind(this));
     }
 
@@ -23,7 +23,7 @@ export default class DocNew extends Component {
                     <button  onClick={function () {
                         t.refs.name.value = "";
                         t.refs.content.value = "";
-                        document.getElementById("box").style.display ="none";
+                        document.getElementById("newChapter").style.display ="none";
                     }}>取消</button>
                 </div>
                 <div className="form">
@@ -32,7 +32,7 @@ export default class DocNew extends Component {
                     <br/>
                     <label>内容（MarkDown格式）：</label>
                     <br/>
-                    <textarea ref={"content"}></textarea>
+                    <textarea ref={"content"} ></textarea>
                 </div>
             </div>
         )

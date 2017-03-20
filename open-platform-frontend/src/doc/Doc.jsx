@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import {Link} from 'react-router';
 import ReactMarkdown from 'react-markdown';
-import NewDoc from './NewDoc';
+import NewChapter from './NewChapter';
+import UpdateChapter from './UpdateChapter';
 
 export default class Doc extends Component {
 
@@ -16,7 +17,6 @@ export default class Doc extends Component {
             auth: false
         };
         this.init = this.init.bind(this);
-        // this.clickChapter = this.clickChapter.bind(this);
     }
 
     init(id) {
@@ -49,7 +49,7 @@ export default class Doc extends Component {
     }
 
     toggleLike() {
-        global.get("like/toggle/" + this.props.params.id, function () {
+        global.get("like/toggle/" + this.state.doc.id, function () {
             this.setState({
                 likeIt: !this.state.likeIt,
             })
@@ -63,22 +63,15 @@ export default class Doc extends Component {
         });
     }
 
-    newChapter() {
-        let formData = new FormData();
-        formData.append("docId", this.props.params.id);
-        formData.append("name", this.refs.name.value);
-        formData.append("content", this.refs.content.value);
-        global.post("doc/chapter/new", formData, function () {
-            document.getElementById("box").style.display = "none";
-        }.bind(this));
-    }
-
     render() {
         var t = this;
         var s = this.state;
         return (
             <div>
-                <NewDoc docId={"TODO"} />
+                <NewChapter docId={s.doc.id} />
+                {s.chapter.id && (
+                    <UpdateChapter chapter={s.chapter} />
+                )}
                 <div className="wrap">
                     <div className="container">
                         <div className="wrap-content clearfix">
@@ -112,8 +105,21 @@ export default class Doc extends Component {
                                                 document.getElementById("newChapter").style.display = "block";
                                             }}>新增
                                             </button>
-                                            <button>修改</button>
-                                            <button>删除</button>
+                                            {s.chapter.id && (
+                                                <button onClick={function () {
+                                                    document.getElementById("updateChapter").style.display = "block";
+                                                }}>修改</button>
+                                            )}
+                                            {s.chapter.id && (
+                                                <button onClick={function () {
+                                                    if (confirm('确认删除当前章节?')) {
+                                                        let formData = new FormData();
+                                                        formData.append("id",s.chapter.id);
+                                                        formData.append("docId",s.chapter.docId);
+                                                        global.post("doc/chapter/delete", formData, function () {})
+                                                    }
+                                                }}>删除</button>
+                                            )}
                                         </div>
                                     )}
                                     <ReactMarkdown escapeHtml={true} source={s.chapter.content}/>

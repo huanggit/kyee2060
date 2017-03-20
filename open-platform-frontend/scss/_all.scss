@@ -576,6 +576,14 @@ p.ever{
 .welcome{
   .container{
     margin:0 auto;
+    .editButton{
+      float: right;
+      font-size: 16px;
+      margin-right: 150px;
+      button{
+        margin: 1px 5px;
+      }
+    }
     .intro{
       font-size: 14px;
       color:#333;

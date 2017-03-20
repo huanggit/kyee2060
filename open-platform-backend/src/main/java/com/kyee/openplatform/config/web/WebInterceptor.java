@@ -28,7 +28,7 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        setStartTime(request);
+        setStartTime();
         if (!HandlerMethod.class.isAssignableFrom(handler.getClass())) return true;
         return isDocAuthorized((HandlerMethod) handler, getSessionUser(request));
     }
@@ -40,12 +40,13 @@ public class WebInterceptor extends HandlerInterceptorAdapter {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         Long startTime = (Long) requestAttributes.getAttribute(START_TIME_KEY, RequestAttributes.SCOPE_REQUEST);
         long cost = System.currentTimeMillis() - startTime;
-        log.info("[response http] request：{}, from: {}, time cost: {} ms.",
-                request.getRequestURI(), request.getRemoteAddr(), cost);
+        UserInfo userInfo = getSessionUser(request);
+        log.info("[response http] request：{}, from: {}/{}, time cost: {} ms.",
+                request.getRequestURI(), request.getRemoteAddr(), (userInfo == null) ? "" : userInfo.getUserInfoName(), cost);
     }
 
 
-    private void setStartTime(HttpServletRequest request) {
+    private void setStartTime() {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         if (requestAttributes.getAttribute(
                 START_TIME_KEY, RequestAttributes.SCOPE_REQUEST) == null)
