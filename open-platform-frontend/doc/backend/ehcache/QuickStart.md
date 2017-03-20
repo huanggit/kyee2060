@@ -1,0 +1,123 @@
+快速开始
+===
+
+EhCache是十分流行的内存缓存框架，配合Spring Boot可以通过注解轻松使用其来缓存一些访问量比较大，又不常更新的数据，提高系统性能。
+
+***
+### maven依赖
+先在项目根目录下建立文件`pom.xml`。
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.kyee</groupId>
+<artifactId>quick-start</artifactId>
+<version>0.0.1-SNAPSHOT</version>
+<packaging>jar</packaging>
+ 
+<properties>
+\t<java.version>1.8</java.version>
+\t<spring-boot.version>1.5.1.RELEASE</spring-boot.version>
+\t<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+\t<maven.compiler.source>${java.version}</maven.compiler.source>
+\t<maven.compiler.target>${java.version}</maven.compiler.target>
+</properties>
+ 
+<dependencyManagement>
+\t<dependencies>
+\t\t<dependency>
+\t\t\t<groupId>org.springframework.boot</groupId>
+\t\t\t<artifactId>spring-boot-dependencies</artifactId>
+\t\t\t<version>${spring-boot.version}</version>
+\t\t\t<type>pom</type>
+\t\t\t<scope>import</scope>
+\t\t</dependency>
+\t</dependencies>
+</dependencyManagement>
+ 
+<dependencies>
+\t<dependency>
+\t\t<groupId>org.springframework.boot</groupId>
+\t\t<artifactId>spring-boot-starter</artifactId>
+\t</dependency>
+\t<dependency>
+\t\t<groupId>org.springframework.boot</groupId>
+\t\t<artifactId>spring-boot-starter-cache</artifactId>
+\t</dependency>
+\t<dependency>
+\t\t<groupId>net.sf.ehcache</groupId>
+\t\t<artifactId>ehcache</artifactId>
+\t\t<version>2.10.3</version>
+\t</dependency>
+</dependencies>
+ 
+<build>
+\t<plugins>
+\t\t<plugin>
+\t\t\t<groupId>org.springframework.boot</groupId>
+\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>
+\t\t\t<version>${spring-boot.version}</version>
+\t\t</plugin>
+\t</plugins>
+</build>
+</project>
+```
+
+***
+### java代码
+项目根目录下建立文件夹：`src/main/java/com/kyee/quickstart/service`，
+然后在该文件夹下建立java文件`CacheService.java`。
+```java
+package com.kyee.quickstart.service;
+ 
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+ 
+@Service
+public class CacheService {
+ 
+   @Cacheable("data")
+   public String getData(String key){
+       System.out.println("actually did service.");
+       return "back-" + key;
+   }
+}
+```
+在文件夹`src/main/java/com/kyee/quickstart`下建立java文件`App.java`：
+```java
+package com.kyee.quickstart;
+ 
+import com.kyee.quickstart.service.CacheService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
+ 
+@EnableCaching
+@SpringBootApplication
+public class App implements CommandLineRunner{
+ 
+   @Autowired
+   CacheService cacheService;
+ 
+   public static void main(String[] args) throws Exception {
+       SpringApplication.run(App.class, args);
+   }
+ 
+   @Override
+   public void run(String... strings) throws Exception {
+       System.out.println("call service first:"+cacheService.getData("data"));
+       System.out.println("call service second:"+cacheService.getData("data"));
+   }
+}
+```
+
+***
+### 运行，访问
+最后回到项目根目录，运行：`mvn spring-boot:run`。得到打印结果：\n
+actually did service.\n
+call service first:back-data\n
+call service second:back-data\n
+可以发现，service只被调用了一次，第二次直接从缓存里取了数据。
