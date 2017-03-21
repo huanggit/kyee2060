@@ -11,24 +11,23 @@ export default class NewDoc extends Component {
         formData.append("icon",this.refs.icon.value);
         formData.append("author",this.refs.author.value);
         global.post("doc/new", formData, function () {
-            document.getElementById("newDoc").style.display ="none";
+            document.getElementById("newDoc").style.display = "none";
             location.reload();
         }.bind(this));
     }
 
     render() {
-        var t = this;
         return (
             <div id="newDoc" className="box">
                 <div className="button">
-                    <button  onClick={t.newDoc.bind(t)}>保存</button>
+                    <button  onClick={this.newDoc.bind(this)}>保存</button>
                     <button  onClick={function () {
-                        t.refs.id.value = "";
-                        t.refs.name.value = "";
-                        t.refs.icon.value = "";
-                        t.refs.author.value = "";
+                        this.refs.id.value = "";
+                        this.refs.name.value = "";
+                        this.refs.icon.value = "";
+                        this.refs.author.value = "";
                         document.getElementById("newDoc").style.display ="none";
-                    }}>取消</button>
+                    }.bind(this)}>取消</button>
                 </div>
                 <div className="docForm">
                     <label>URL：</label>

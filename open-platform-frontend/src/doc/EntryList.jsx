@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Entry from './Entry';
 import NewDoc from './NewDoc';
+import UpdateDoc from './UpdateDoc';
 
 export default class EntryList extends Component {
 
@@ -9,6 +10,7 @@ export default class EntryList extends Component {
         this.state = {
             likesByTitle: {},
             docs: [],
+            doc: {},
             auth: false
         }
     }
@@ -37,7 +39,10 @@ export default class EntryList extends Component {
         var likes = s.likesByTitle;
         return (
             <div>
-                <NewDoc type={this.props.type} />
+                <NewDoc type={this.props.type}/>
+                {s.auth && (
+                    <UpdateDoc doc={s.doc}/>
+                )}
                 <div>
                     <div className="welcome">
                         <div className="container">
@@ -52,22 +57,29 @@ export default class EntryList extends Component {
                                         document.getElementById("newDoc").style.display = "block";
                                     }}>新增
                                     </button>
-                                    <button onClick={function () {
-                                        {/*document.getElementById("updateChapter").style.display = "block";*/
-                                        }
-                                    }}>编辑
-                                    </button>
                                 </div>
                             )}
                             <p className="ever"></p>
                             <div className="welcome-grids">
                                 {
                                     s.docs && s.docs.map(function (c, i) {
-                                        return <Entry key={i}
-                                                      link={"/doc/" + c.id}
-                                                      icon={c.icon}
-                                                      title={c.name}
-                                                      like={likes[c.id]}/>
+                                        return <div className="col-md-4 welcome-grid"  key={i}>
+                                            <Entry link={"/doc/" + c.id}
+                                                   icon={c.icon}
+                                                   title={c.name}
+                                                   like={likes[c.id]}/>
+                                            { s.auth && (
+                                                <div className="editButton">
+                                                    <button onClick={function () {
+                                                        t.setState({
+                                                            doc: c
+                                                        });
+                                                        document.getElementById("updateDoc").style.display = "block";
+                                                    }}>编辑
+                                                    </button>
+                                                </div>
+                                            )}
+                                        </div>
                                     })
                                 }
                                 <div className="clearfix"></div>

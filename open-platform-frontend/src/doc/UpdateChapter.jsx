@@ -10,7 +10,7 @@ export default class UpdateChapter extends Component {
         formData.append("name",this.props.chapter.name);
         formData.append("content",this.refs.content.value);
         global.post("doc/chapter/update", formData, function () {
-            document.getElementById("updateChapter").style.display ="none";
+            document.getElementById("updateChapter").style.display = "none";
             location.reload();
         }.bind(this));
     }
