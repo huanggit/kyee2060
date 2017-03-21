@@ -1,6 +1,6 @@
 package com.kyee.openplatform.controller;
 
-import com.kyee.openplatform.config.web.DocAuthority;
+import com.kyee.openplatform.config.anno.CacheControl;
 import com.kyee.openplatform.config.web.ResultApi;
 import com.kyee.openplatform.pojo.DocAndChapters;
 import com.kyee.openplatform.repositorys.doc.Chapter;
@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
-import java.util.List;
-
 @RestController
 @RequestMapping("/doc")
 public class DocController {
@@ -26,6 +23,7 @@ public class DocController {
     @Autowired
     UserService userService;
 
+    @CacheControl
     @RequestMapping("/type/{type}")
     public ResultApi docsByType(@PathVariable String type) {
         return ResultApi.successInstance(docService.docsByType(type));
@@ -51,6 +49,7 @@ public class DocController {
         return ResultApi.SUCCESS;
     }
 
+    @CacheControl
     @RequestMapping("/chapters/{docId}")
     public ResultApi chaptersByDoc(@PathVariable String docId) {
         DocAndChapters docAndChapters = new DocAndChapters();
@@ -87,11 +86,6 @@ public class DocController {
         }
         docService.deleteChapter(chapter.getId(), chapter.getDocId());
         return ResultApi.SUCCESS;
-    }
-
-    @RequestMapping("/authority/{docId}")
-    public ResultApi getDocAuthority(UserInfo userInfo, @PathVariable String docId) {
-        return ResultApi.successInstance(userService.getDocAuthority(userInfo.getUserInfoId(), docId));
     }
 
 }

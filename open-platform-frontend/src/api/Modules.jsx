@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Link} from 'react-router';
-import Entry from '../common/Entry'
+import Entry from '../doc/Entry'
 
 export default class Modules extends Component {
 

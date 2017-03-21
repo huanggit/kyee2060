@@ -830,8 +830,8 @@ p.ever{
       margin: 1px 5px;
     }
   }
-  .form{
-    margin-top: 60px;
+  .chapterForm{
+    margin-top: 10px;
     height: 100%;
     label{
       font-size: 18px;
@@ -840,7 +840,7 @@ p.ever{
       color: #ffffff;
     }
     input{
-      width:77%;
+      width:40%;
     }
     textarea{
       margin-left: 100px;
@@ -848,5 +848,19 @@ p.ever{
       height: 100%;
     }
   }
-
+  .docForm{
+    margin-top: 150px;
+    height: 100%;
+    width:100%;
+    label{
+      font-size: 24px;
+      margin-top: 20px;
+      margin-left: 580px;
+      color: #ffffff;
+    }
+    input{
+      width:30%;
+      line-height: 24px;
+    }
+  }
 }

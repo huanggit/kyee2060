@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Link } from 'react-router';
-import Banner from './common/Banner'
-import HomeEntry from './common/HomeEntry'
+import Banner from './Banner'
+import HomeEntry from './HomeEntry'
 
 
 export default  class Home extends Component {

@@ -4,7 +4,7 @@ import {Router, Route, IndexRoute, History, hashHistory} from "react-router";
 
 import Login from "./Login";
 import AppLayout from "./AppLayout";
-import Home from "./Home";
+import Home from "./home/Home";
 import Modules from "./api/Modules";
 import Services from "./api/Services";
 import Backend from "./study/Backend";

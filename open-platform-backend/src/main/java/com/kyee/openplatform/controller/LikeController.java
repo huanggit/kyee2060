@@ -1,5 +1,6 @@
 package com.kyee.openplatform.controller;
 
+import com.kyee.openplatform.config.anno.CacheControl;
 import com.kyee.openplatform.config.web.ResultApi;
 import com.kyee.openplatform.repositorys.user.UserInfo;
 import com.kyee.openplatform.service.LikeService;
@@ -16,6 +17,7 @@ public class LikeController {
     @Autowired
     LikeService likeService;
 
+    @CacheControl
     @RequestMapping("/isLike/{title}")
     public ResultApi isLike(UserInfo userInfo, @PathVariable("title") String title) {
         return ResultApi.successInstance(likeService.isLike(userInfo.getUserInfoId(), title));
@@ -27,6 +29,7 @@ public class LikeController {
         return ResultApi.SUCCESS;
     }
 
+    @CacheControl
     @RequestMapping("/countGroupingByTitle")
     public ResultApi getLikesGroupingByTitle(){
         return ResultApi.successInstance(likeService.getLikesGroupingByTitle());

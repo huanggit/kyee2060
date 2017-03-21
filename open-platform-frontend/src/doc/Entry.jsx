@@ -2,6 +2,12 @@ import React, {Component} from "react";
 import {Link} from 'react-router';
 
 export default  class Entry extends Component {
+
+
+    dis(num) {
+        return num?num:0;
+    }
+
     render() {
         return (
             <div className="col-md-4 welcome-grid">
@@ -15,7 +21,7 @@ export default  class Entry extends Component {
                             <div className="list-item-count">
                                 <div className="listcount">
                                     {/*<span className="view glyphicon glyphicon-eye-open"><cite>{this.props.viewed}</cite></span>*/}
-                                    <span className="like glyphicon glyphicon-heart"><cite>{this.props.like}</cite></span>
+                                    <span className="like glyphicon glyphicon-heart"><cite>{this.dis(this.props.like)}</cite></span>
                                 </div>
                             </div>
                         </div>

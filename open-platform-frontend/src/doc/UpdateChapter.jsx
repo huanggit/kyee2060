@@ -11,6 +11,7 @@ export default class UpdateChapter extends Component {
         formData.append("content",this.refs.content.value);
         global.post("doc/chapter/update", formData, function () {
             document.getElementById("updateChapter").style.display ="none";
+            location.reload();
         }.bind(this));
     }
 
@@ -25,7 +26,7 @@ export default class UpdateChapter extends Component {
                         document.getElementById("updateChapter").style.display ="none";
                     }}>取消</button>
                 </div>
-                <div className="form">
+                <div className="chapterForm">
                     <label>内容（MarkDown格式）：</label>
                     <br/>
                     <textarea ref={"content"} defaultValue={this.props.chapter.content}></textarea>

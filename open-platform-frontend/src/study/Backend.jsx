@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Link } from 'react-router';
-import Entry from '../common/Entry'
-import EntryList from "../common/EntryList";
+import Entry from '../doc/Entry'
+import EntryList from "../doc/EntryList";
 
 export default class Backend extends EntryList {
 

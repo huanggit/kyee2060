@@ -33,7 +33,8 @@ export default class Doc extends Component {
                 chapter: chs.length > 0 ? chs[0] : {"content": " "}
             })
         }.bind(this));
-        global.get("doc/authority/" + id, function (result) {
+        var authorityUrl = (["tech", "dev", "ops", "ui"].indexOf(id) > -1) ? "isAdmin" : "isAuthor";
+        global.get(authorityUrl, function (result) {
             this.setState({
                 auth: result
             })
@@ -68,9 +69,9 @@ export default class Doc extends Component {
         var s = this.state;
         return (
             <div>
-                <NewChapter docId={s.doc.id} />
+                <NewChapter docId={s.doc.id}/>
                 {s.chapter.id && (
-                    <UpdateChapter chapter={s.chapter} />
+                    <UpdateChapter chapter={s.chapter}/>
                 )}
                 <div className="wrap">
                     <div className="container">
@@ -114,9 +115,11 @@ export default class Doc extends Component {
                                                 <button onClick={function () {
                                                     if (confirm('确认删除当前章节?')) {
                                                         let formData = new FormData();
-                                                        formData.append("id",s.chapter.id);
-                                                        formData.append("docId",s.chapter.docId);
-                                                        global.post("doc/chapter/delete", formData, function () {})
+                                                        formData.append("id", s.chapter.id);
+                                                        formData.append("docId", s.chapter.docId);
+                                                        global.post("doc/chapter/delete", formData, function () {
+                                                            location.reload();
+                                                        })
                                                     }
                                                 }}>删除</button>
                                             )}

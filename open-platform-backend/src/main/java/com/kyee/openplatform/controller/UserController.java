@@ -1,20 +1,17 @@
 package com.kyee.openplatform.controller;
 
-import com.kyee.openplatform.config.web.DocAuthority;
+import com.kyee.openplatform.config.anno.CacheControl;
+import com.kyee.openplatform.config.anno.DocAuthority;
 import com.kyee.openplatform.config.web.ResultApi;
 import com.kyee.openplatform.repositorys.user.UserInfo;
 import com.kyee.openplatform.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 @RestController
 public class UserController {
@@ -55,6 +52,18 @@ public class UserController {
         HttpSession session = request.getSession(true);
         session.removeAttribute("userInfo");
         return ResultApi.successInstance(true);
+    }
+
+    @CacheControl(600)
+    @RequestMapping("/isAdmin")
+    public ResultApi isAdmin(UserInfo user){
+        return ResultApi.successInstance(userService.isAdmin(user.getUserInfoId()));
+    }
+
+    @CacheControl(600)
+    @RequestMapping("/isAuthor")
+    public ResultApi isAuthor(UserInfo user){
+        return ResultApi.successInstance(userService.isAuthor(user.getUserInfoId()));
     }
 
 }

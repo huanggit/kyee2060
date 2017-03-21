@@ -11,6 +11,7 @@ export default class NewChapter extends Component {
         formData.append("content",this.refs.content.value);
         global.post("doc/chapter/new", formData, function () {
             document.getElementById("newChapter").style.display ="none";
+            location.reload();
         }.bind(this));
     }
 
@@ -26,7 +27,7 @@ export default class NewChapter extends Component {
                         document.getElementById("newChapter").style.display ="none";
                     }}>取消</button>
                 </div>
-                <div className="form">
+                <div className="chapterForm">
                     <label>标题：</label>
                     <input ref={"name"}/>
                     <br/>

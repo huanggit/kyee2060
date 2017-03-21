@@ -26,9 +26,11 @@ public class UserService {
     private String hrpUrl;
 
     @Value("${authority.admin}")
+    private String adminString;
     private List<String> authorityAdmin;
 
     @Value("${authority.author}")
+    private String authorString;
     private List<String> authorityAuthor;
 
     private final List<String> adminDocs = Arrays.asList("tech", "dev", "ops", "ui");
@@ -40,6 +42,8 @@ public class UserService {
     @PostConstruct
     public void init() {
         headers.setContentType(MediaType.parseMediaType("application/x-www-form-urlencoded; charset=UTF-8"));
+        authorityAdmin = Arrays.asList(adminString.split(","));
+        authorityAuthor = Arrays.asList(authorString.split(","));
     }
 
     public String getLoginToken(String userName, String password) throws IOException {
@@ -76,9 +80,19 @@ public class UserService {
 
     @Cacheable("getDocAuthority")
     public boolean getDocAuthority(String userId, String docId){
-        if (adminDocs.contains(docId) && authorityAdmin.contains(userId)) {
+        if (adminDocs.contains(docId) && isAdmin(userId)) {
             return true;
         }
+        return isAuthor(userId);
+    }
+
+    @Cacheable("isAdmin")
+    public boolean isAdmin(String userId) {
+        return authorityAdmin.contains(userId);
+    }
+
+    @Cacheable("isAdmin")
+    public boolean isAuthor(String userId) {
         return authorityAdmin.contains(userId) || authorityAuthor.contains(userId);
     }
 }
