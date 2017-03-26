@@ -1,13 +1,13 @@
 Java框架
 ===
+> 所有的spring boot starter都统一使用1.5.X.RELEASE的最新版本。
 
 ### 脚手架 - Spring Boot
 > 简化新Spring应用的初始搭建以及开发过程。该框架通过项目依赖来配置相应bean对象，从而使开发人员不再需要定义xml。
 ```xml
 <dependency>
-\t<groupId>org.springframework.boot</groupId>
-\t<artifactId>spring-boot-starter</artifactId>
-\t<version>1.5.1.RELEASE</version>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter</artifactId>
 </dependency>
 ```
 
@@ -16,9 +16,8 @@ Java框架
 > 快速搭建java web项目
 ```xml
 <dependency>
-\t<groupId>org.springframework.boot</groupId>
-\t<artifactId>spring-boot-starter-web</artifactId>
-\t<version>1.5.1.RELEASE</version>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 ```
 
@@ -27,30 +26,29 @@ Java框架
 > Mybatis with spring-boot
 ```xml
 <dependency>
-\t<groupId>org.mybatis.spring.boot</groupId>
-\t<artifactId>mybatis-spring-boot-starter</artifactId>
-\t<version>1.2.0</version>
+  <groupId>org.mybatis.spring.boot</groupId>
+  <artifactId>mybatis-spring-boot-starter</artifactId>
+  <version>1.2.0</version>
 </dependency>
 <dependency>
-\t<groupId>org.mybatis</groupId>
-\t<artifactId>mybatis</artifactId>
-\t<version>3.4.2</version>
+  <groupId>org.mybatis</groupId>
+  <artifactId>mybatis</artifactId>
+  <version>3.4.2</version>
 </dependency>
 ```
 > Spring Data Jpa with Hibernate
 ```xml
 <dependency>
-\t<groupId>org.springframework.boot</groupId>
-\t<artifactId>spring-boot-starter-data-jpa</artifactId>
-\t<version>1.5.1.RELEASE</version>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-data-jpa</artifactId>
 </dependency>
 ```
 > Hibernate
 ```xml
 <dependency>
-\t<groupId>org.hibernate</groupId>
-\t<artifactId>hibernate-core</artifactId>
-\t<version>5.2.7.Final</version>
+  <groupId>org.hibernate</groupId>
+  <artifactId>hibernate-core</artifactId>
+  <version>5.2.7.Final</version>
 </dependency>
 ```
 
@@ -59,17 +57,17 @@ Java框架
 > c3p0
 ```xml
 <dependency>
-\t<groupId>com.mchange</groupId>
-\t<artifactId>c3p0</artifactId>
-\t<version>0.9.5.2</version>
+  <groupId>com.mchange</groupId>
+  <artifactId>c3p0</artifactId>
+  <version>0.9.5.2</version>
 </dependency>
 ```
 > druid
 ```xml
 <dependency>
-\t<groupId>com.alibaba</groupId>
-\t<artifactId>druid</artifactId>
-\t<version>1.0.27</version>
+  <groupId>com.alibaba</groupId>
+  <artifactId>druid</artifactId>
+  <version>1.0.27</version>
 </dependency>
 ```
 
@@ -78,27 +76,25 @@ Java框架
 > thymeleaf
 ```xml
 <dependency>
-\t<groupId>org.springframework.boot</groupId>
-\t<artifactId>spring-boot-starter-thymeleaf</artifactId>
-\t<version>1.5.1.RELEASE</version>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-thymeleaf</artifactId>
 </dependency>
 <dependency>
-\t<groupId>org.thymeleaf</groupId>
-\t<artifactId>thymeleaf</artifactId>
-\t<version>3.0.3.RELEASE</version>
+  <groupId>org.thymeleaf</groupId>
+  <artifactId>thymeleaf</artifactId>
+  <version>3.0.3.RELEASE</version>
 </dependency>
 ```
 > freemarker
 ```xml
 <dependency>
-\t<groupId>org.springframework.boot</groupId>
-\t<artifactId>spring-boot-starter-freemarker</artifactId>
-\t<version>1.5.1.RELEASE</version>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-freemarker</artifactId>
 </dependency>
 <dependency>
-\t<groupId>org.freemarker</groupId>
-\t<artifactId>freemarker</artifactId>
-\t<version>2.3.23</version>
+  <groupId>org.freemarker</groupId>
+  <artifactId>freemarker</artifactId>
+  <version>2.3.23</version>
 </dependency>
 ```
 
@@ -107,27 +103,25 @@ Java框架
 > ehcache 本地缓存
 ```xml
 <dependency>
-\t<groupId>org.springframework.boot</groupId>
-\t<artifactId>spring-boot-starter-cache</artifactId>
-\t<version>1.5.1.RELEASE</version>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-cache</artifactId>
 </dependency>
 <dependency>
-\t<groupId>net.sf.ehcache</groupId>
-\t<artifactId>ehcache</artifactId>
-\t<version>2.10.3</version>
+  <groupId>net.sf.ehcache</groupId>
+  <artifactId>ehcache</artifactId>
+  <version>2.10.3</version>
 </dependency>
 ```
 > redis 集中缓存
 ```xml
 <dependency>
-\t<groupId>org.springframework.boot</groupId>
-\t<artifactId>spring-boot-starter-data-redis</artifactId>
-\t<version>1.5.1.RELEASE</version>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-data-redis</artifactId>
 </dependency>
 <dependency>
-\t<groupId>redis.clients</groupId>
-\t<artifactId>jedis</artifactId>
-\t<version>2.9.0</version>
+  <groupId>redis.clients</groupId>
+  <artifactId>jedis</artifactId>
+  <version>2.9.0</version>
 </dependency>
 ```
 
@@ -136,9 +130,9 @@ Java框架
 > 微服务框架
 ```xml
 <dependency>
-\t<groupId>org.springframework.cloud</groupId>
-\t<artifactId>spring-cloud-starter</artifactId>
-\t<version>1.1.7.RELEASE</version>
+  <groupId>org.springframework.cloud</groupId>
+  <artifactId>spring-cloud-starter</artifactId>
+  <version>1.1.7.RELEASE</version>
 </dependency>
 ```
 
@@ -148,27 +142,26 @@ Java框架
 > Spring Security
 ```xml
 <dependency>
-\t<groupId>org.springframework.boot</groupId>
-\t<artifactId>spring-boot-starter-security</artifactId>
-\t<version>1.5.1.RELEASE</version>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-security</artifactId>
 </dependency>
 <dependency>
-\t<groupId>org.springframework.security</groupId>
-\t<artifactId>spring-security-core</artifactId>
-\t<version>4.2.1.RELEASE</version>
+  <groupId>org.springframework.security</groupId>
+  <artifactId>spring-security-core</artifactId>
+  <version>4.2.1.RELEASE</version>
 </dependency>
 ```
 > Apache Shiro
 ```xml
 <dependency>
-\t<groupId>org.apache.shiro</groupId>
-\t<artifactId>shiro-core</artifactId>
-\t<version>1.3.2</version>
+  <groupId>org.apache.shiro</groupId>
+  <artifactId>shiro-core</artifactId>
+  <version>1.3.2</version>
 </dependency>
 <dependency>
-\t<groupId>org.apache.shiro</groupId>
-\t<artifactId>shiro-spring</artifactId>
-\t<version>1.3.2</version>
+  <groupId>org.apache.shiro</groupId>
+  <artifactId>shiro-spring</artifactId>
+  <version>1.3.2</version>
 </dependency>
 ```
 
@@ -177,9 +170,9 @@ Java框架
 > spring-boot自带@EnableScheduling和@Scheduled注解，可以快速开发定时任务，也可以单独使用quartz。
 ```xml
 <dependency>
-\t<groupId>org.quartz-scheduler</groupId>
-\t<artifactId>quartz</artifactId>
-\t<version>2.2.1</version>
+  <groupId>org.quartz-scheduler</groupId>
+  <artifactId>quartz</artifactId>
+  <version>2.2.1</version>
 </dependency>
 ```
 
@@ -189,9 +182,9 @@ Java框架
 > NIO通信。
 ```xml
 <dependency>
-\t<groupId>io.netty</groupId>
-\t<artifactId>netty-all</artifactId>
-\t<version>4.1.8.Final</version>
+  <groupId>io.netty</groupId>
+  <artifactId>netty-all</artifactId>
+  <version>4.1.8.Final</version>
 </dependency>
 ```
 
@@ -200,9 +193,9 @@ Java框架
 > Lucene。
 ```xml
 <dependency>
-\t<groupId>org.apache.lucene</groupId>
-\t<artifactId>lucene-core</artifactId>
-\t<version>6.4.1</version>
+  <groupId>org.apache.lucene</groupId>
+  <artifactId>lucene-core</artifactId>
+  <version>6.4.1</version>
 </dependency>
 ```
 
@@ -211,9 +204,9 @@ Java框架
 > 领域驱动设计。
 ```xml
 <dependency>
-\t<groupId>org.apache.isis.core</groupId>
-\t<artifactId>isis-core-applib</artifactId>
-\t<version>1.14.0</version>
+  <groupId>org.apache.isis.core</groupId>
+  <artifactId>isis-core-applib</artifactId>
+  <version>1.14.0</version>
 </dependency>
 ```
 
@@ -222,9 +215,9 @@ Java框架
 > 规则引擎。
 ```xml
 <dependency>
-\t<groupId>org.drools</groupId>
-\t<artifactId>drools-core</artifactId>
-\t<version>6.5.0.Final</version>
+  <groupId>org.drools</groupId>
+  <artifactId>drools-core</artifactId>
+  <version>6.5.0.Final</version>
 </dependency>
 ```
 
@@ -233,9 +226,9 @@ Java框架
 > 工作流。
 ```xml
 <dependency>
-\t<groupId>org.activiti</groupId>
-\t<artifactId>activiti-engine</artifactId>
-\t<version>5.22.0</version>
+  <groupId>org.activiti</groupId>
+  <artifactId>activiti-engine</artifactId>
+  <version>5.22.0</version>
 </dependency>
 ```
 

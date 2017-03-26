@@ -303,17 +303,17 @@ class GraphicEditor {
  public void drawRectangle(Rectangle r) {....}
 }
 
- class Shape {
+class Shape {
  int m_type;
 }
 
- class Rectangle extends Shape {
+class Rectangle extends Shape {
  Rectangle() {
    super.m_type=1;
  }
 }
 
- class Circle extends Shape {
+class Circle extends Shape {
  Circle() {
    super.m_type=2;
  }
@@ -327,11 +327,11 @@ class GraphicEditor {
  }
 }
 
- class Shape {
+class Shape {
  abstract void draw();
 }
 
- class Rectangle extends Shape {
+class Rectangle extends Shape {
  public void draw() {
    // draw the rectangle
  }

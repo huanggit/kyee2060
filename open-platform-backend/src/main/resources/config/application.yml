@@ -21,5 +21,5 @@ hrp:
   url: https://f.kyee.com.cn/RightsSystem/
 
 authority:
-  admin: 40101,40001
-  author: 40002,40003
+  admin: 40101,40000
+  author: 40002,40000

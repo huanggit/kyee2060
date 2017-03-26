@@ -18,42 +18,42 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <packaging>jar</packaging>
 
 <properties>
-\t<java.version>1.8</java.version>
-\t<spring-boot.version>1.5.1.RELEASE</spring-boot.version>
-\t<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <java.version>1.8</java.version>
+  <spring-boot.version>1.5.1.RELEASE</spring-boot.version>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 </properties>
 
 <dependencyManagement>
-\t<dependencies>
-\t\t<dependency>
-\t\t\t<groupId>org.springframework.boot</groupId>
-\t\t\t<artifactId>spring-boot-dependencies</artifactId>
-\t\t\t<version>${spring-boot.version}</version>
-\t\t\t<type>pom</type>
-\t\t\t<scope>import</scope>
-\t\t</dependency>
-\t</dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-dependencies</artifactId>
+      <version>${spring-boot.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
 </dependencyManagement>
 
 <dependencies>
-\t<dependency>
-\t\t<groupId>org.springframework.boot</groupId>
-\t\t<artifactId>spring-boot-starter-web</artifactId>
-\t</dependency>
-\t<dependency>
-\t\t<groupId>org.springframework.boot</groupId>
-\t\t<artifactId>spring-boot-starter-thymeleaf</artifactId>
-\t</dependency>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+  </dependency>
 </dependencies>
 
 <build>
-\t<plugins>
-\t\t<plugin>
-\t\t\t<groupId>org.springframework.boot</groupId>
-\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>
-\t\t\t<version>${spring-boot.version}</version>
-\t\t</plugin>
-\t</plugins>
+  <plugins>
+    <plugin>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+      <version>${spring-boot.version}</version>
+    </plugin>
+  </plugins>
 </build>
 </project>
 ```

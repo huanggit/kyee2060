@@ -31,16 +31,16 @@ export default class NewDoc extends Component {
                 </div>
                 <div className="docForm">
                     <label>URL：</label>
-                    <input ref={"id"} placeholder="只能包含字母和数字"/>
+                    <input ref={"id"} placeholder="只能包含字母和数字，最长15个字符" maxLength="15"/>
                     <br/>
                     <label>标题：</label>
-                    <input ref={"name"}/>
+                    <input ref={"name"} placeholder="最长12个字符" maxLength="12"/>
                     <br/>
                     <label>图标：</label>
                     <input ref={"icon"}/>
                     <br/>
                     <label>作者：</label>
-                    <input ref={"author"}/>
+                    <input ref={"author"} placeholder="最长11个字符" maxLength="11"/>
                     <br/>
                 </div>
             </div>

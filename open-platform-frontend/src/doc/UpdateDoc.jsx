@@ -60,7 +60,7 @@ export default class UpdateDoc extends Component {
                     <label>标题：</label>
                     <input value={this.state.name} onChange={function (event) {
                         this.setState({name: event.target.value});
-                    }.bind(this)} />
+                    }.bind(this)} placeholder="最长12个字符" maxLength="12" />
                     <br/>
                     <label>图标：</label>
                     <input value={this.state.icon} onChange={function (event) {
@@ -70,7 +70,7 @@ export default class UpdateDoc extends Component {
                     <label>作者：</label>
                     <input value={this.state.author} onChange={function (event) {
                         this.setState({author: event.target.value});
-                    }.bind(this)} />
+                    }.bind(this)} placeholder="最长11个字符" maxLength="11" />
                     <br/>
                 </div>
             </div>

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kyee</groupId>
     <artifactId>open-platform</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>KYEE-Open-Platform</name>
     <packaging>jar</packaging>
 

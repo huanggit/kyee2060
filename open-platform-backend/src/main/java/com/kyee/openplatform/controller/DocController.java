@@ -31,20 +31,29 @@ public class DocController {
 
     @RequestMapping("/new")
     public ResultApi newDoc(UserInfo userInfo, Doc doc) throws Exception {
+        if (!userService.isAuthor(userInfo.getUserInfoId())) {
+            throw new Exception("您没有编辑权限.");
+        }
         doc.setLastUpdater(userInfo.getUserInfoName());
         docService.newDoc(doc);
         return ResultApi.SUCCESS;
     }
 
     @RequestMapping("/update")
-    public ResultApi updateDoc(UserInfo userInfo, Doc doc) {
+    public ResultApi updateDoc(UserInfo userInfo, Doc doc) throws Exception {
+        if (!userService.isAuthor(userInfo.getUserInfoId())) {
+            throw new Exception("您没有编辑权限.");
+        }
         doc.setLastUpdater(userInfo.getUserInfoName());
         docService.updateDoc(doc);
         return ResultApi.SUCCESS;
     }
 
     @RequestMapping("/delete/{id}")
-    public ResultApi deleteDoc(@PathVariable String id) {
+    public ResultApi deleteDoc(UserInfo userInfo, @PathVariable String id) throws Exception {
+        if (!userService.isAuthor(userInfo.getUserInfoId())) {
+            throw new Exception("您没有编辑权限.");
+        }
         docService.deleteDoc(id);
         return ResultApi.SUCCESS;
     }

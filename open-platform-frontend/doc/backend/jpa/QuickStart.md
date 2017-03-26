@@ -19,77 +19,77 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <packaging>jar</packaging>
 
 <properties>
-\t<java.version>1.8</java.version>
-\t<spring-boot.version>1.5.1.RELEASE</spring-boot.version>
-\t<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-\t<maven.compiler.source>${java.version}</maven.compiler.source>
-\t<maven.compiler.target>${java.version}</maven.compiler.target>
+  <java.version>1.8</java.version>
+  <spring-boot.version>1.5.1.RELEASE</spring-boot.version>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <maven.compiler.source>${java.version}</maven.compiler.source>
+  <maven.compiler.target>${java.version}</maven.compiler.target>
 </properties>
 
 <dependencyManagement>
-\t<dependencies>
-\t\t<dependency>
-\t\t\t<groupId>org.springframework.boot</groupId>
-\t\t\t<artifactId>spring-boot-dependencies</artifactId>
-\t\t\t<version>${spring-boot.version}</version>
-\t\t\t<type>pom</type>
-\t\t\t<scope>import</scope>
-\t\t</dependency>
-\t</dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-dependencies</artifactId>
+      <version>${spring-boot.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
 </dependencyManagement>
 
 <dependencies>
-\t<dependency>
-\t\t<groupId>org.springframework.boot</groupId>
-\t\t<artifactId>spring-boot-starter</artifactId>
-\t</dependency>
-\t<dependency>
-\t\t<groupId>org.springframework.boot</groupId>
-\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>
-\t</dependency>
-\t<dependency>
-\t\t<groupId>mysql</groupId>
-\t\t<artifactId>mysql-connector-java</artifactId>
-\t\t<version>6.0.4</version>
-\t</dependency>
-\t<dependency>
-\t\t<groupId>org.projectlombok</groupId>
-\t\t<artifactId>lombok</artifactId>
-\t\t<version>1.16.12</version>
-\t</dependency>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>6.0.4</version>
+  </dependency>
+  <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.16.12</version>
+  </dependency>
 </dependencies>
 
 <build>
-\t<plugins>
-\t\t<plugin>
-\t\t\t<groupId>org.springframework.boot</groupId>
-\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>
-\t\t\t<version>${spring-boot.version}</version>
-\t\t</plugin>
-\t</plugins>
+  <plugins>
+    <plugin>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+      <version>${spring-boot.version}</version>
+    </plugin>
+  </plugins>
 </build>
 </project>
 ```
 
 ***
 ### yml配置文件
-项目根目录下建立文件夹：`src/main/resources/config`，然后在该文件夹下建立配置文件`application.yml`。\n
+项目根目录下建立文件夹：`src/main/resources/config`，然后在该文件夹下建立配置文件`application.yml`。
 **（请将数据库连接修改成自己实际的配置）**
 ```yml
 spring:
-\tdatasource:
-\t\turl: jdbc:mysql://localhost:3306/db?useLegacyDatetimeCode=false&serverTimezone=CST&useSSL=false&autoReconnect=true
-\t\tusername: xxxx
-\t\tpassword: xxxxxx
-\t\tdriver-class-name: com.mysql.cj.jdbc.Driver
-\t\tmax-wait: 1
-\t\tmax-active: 10
-\tjpa:
-\t\tdatabase: MYSQL
-\t\thibernate:
-\t\t\tnaming-strategy: "org.hibernate.cfg.ImprovedNamingStrategy"
-\tjackson:
-\t\tdate-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    url: jdbc:mysql://localhost:3306/db?useLegacyDatetimeCode=false&serverTimezone=CST&useSSL=false&autoReconnect=true
+    username: xxxx
+    password: xxxxxx
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    max-wait: 1
+    max-active: 10
+  jpa:
+    database: MYSQL
+    hibernate:
+      naming-strategy: "org.hibernate.cfg.ImprovedNamingStrategy"
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
 ```
 
 ***

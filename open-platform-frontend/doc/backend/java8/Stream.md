@@ -72,18 +72,18 @@ Integer randomNumber = random.ints().findFirst();
 ***
 ###  进一步学习
 想系统的学习请参考`官方API`文档：[Stream API](http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html), 
-[Collectors API](http://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html)。下面是2个具体应用实例：\n
+[Collectors API](http://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html)。下面是2个具体应用实例：  
 按照年龄归组:
 ```java
 Map<Integer, List<Person>> personGroups = Stream.generate(new PersonSupplier())
-\t .limit(100)
-\t .collect(Collectors.groupingBy(Person::getAge));
+   .limit(100)
+   .collect(Collectors.groupingBy(Person::getAge));
 ```
 将食品交易的ID按交易金额排序:
 ```java
 List<Integer> transactionsIds = transactions.parallelStream()
-\t .filter(t -> t.getType() == Transaction.GROCERY)
-\t .sorted(comparing(Transaction::getValue).reversed())
-\t .map(Transaction::getId)
-\t .collect(toList());
+   .filter(t -> t.getType() == Transaction.GROCERY)
+   .sorted(comparing(Transaction::getValue).reversed())
+   .map(Transaction::getId)
+   .collect(toList());
 ```

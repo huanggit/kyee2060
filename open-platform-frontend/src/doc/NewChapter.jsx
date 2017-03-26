@@ -29,7 +29,7 @@ export default class NewChapter extends Component {
                 </div>
                 <div className="chapterForm">
                     <label>标题：</label>
-                    <input ref={"name"}/>
+                    <input ref={"name"} placeholder="请把长度控制在8个字以内" maxLength="8"/>
                     <br/>
                     <label>内容（MarkDown格式）：</label>
                     <br/>
