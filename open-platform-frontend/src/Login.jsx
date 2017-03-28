@@ -24,9 +24,7 @@ export default class Login extends Component {
         formData.append("password",this.refs.password.value);
         global.post("doLogin", formData, function (result) {
             if (result) {
-                var url = window.location.href;
-                var subUrl = url.substr(0,url.indexOf('#'));
-                window.location.href = subUrl;
+                location = "/";
             }else {
                 this.setState({
                     loading: false,
