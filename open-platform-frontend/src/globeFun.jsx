@@ -60,3 +60,19 @@ global.post = function(url, body, handler){
     });
 };
 
+global.icons = ['bold','music','plus','glass','cloud','envelope',
+                'pencil','search','user','zoom-out','off','plane',
+                'signal','home','time','upload','earphone','ok',
+                'lock','flag', 'headphones','file','tag','camera',
+                'cog','tint','edit','share','leaf','folder-close',
+                'comment','fire','bell','phone','flash','magnet'];
+
+global.randomIcons = function () {
+    var icons =[];
+    var divide = 3;
+    for(var i=0;i<12;i++){
+        icons.push(global.icons[divide*i+Math.floor(Math.random()*divide)]);
+    }
+    return icons;
+};
+

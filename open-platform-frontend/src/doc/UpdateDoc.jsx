@@ -11,16 +11,20 @@ export default class UpdateDoc extends Component {
             type: "",
             icon: "",
             author: "",
+            icons:[]
         };
     }
 
     componentWillReceiveProps(nextProps) {
+        var randomIcons = global.randomIcons();
+        randomIcons.unshift(nextProps.doc.icon);
         this.setState({
             id: nextProps.doc.id,
             name: nextProps.doc.name,
             type: nextProps.doc.type,
             icon: nextProps.doc.icon,
             author: nextProps.doc.author,
+            icons: randomIcons
         })
     }
 
@@ -62,15 +66,19 @@ export default class UpdateDoc extends Component {
                         this.setState({name: event.target.value});
                     }.bind(this)} placeholder="最长12个字符" maxLength="12" />
                     <br/>
-                    <label>图标：</label>
-                    <input value={this.state.icon} onChange={function (event) {
-                        this.setState({icon: event.target.value});
-                    }.bind(this)} />
-                    <br/>
                     <label>作者：</label>
                     <input value={this.state.author} onChange={function (event) {
                         this.setState({author: event.target.value});
                     }.bind(this)} placeholder="最长11个字符" maxLength="11" />
+                    <br/>
+                    <label>图标：</label>
+                    <select value={this.state.icon} onChange={function (event) {
+                        this.setState({icon: event.target.value});
+                    }.bind(this)}>
+                        {   this.state.icons.map(function (icon, i) {
+                            return icon && (<option  key={i} value ={icon} className={"glyphicon glyphicon-"+icon}>{icon.slice(0,3)}</option>)
+                        }) }
+                    </select>
                     <br/>
                 </div>
             </div>

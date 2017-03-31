@@ -52,6 +52,7 @@ export default class AppLayout extends Component {
                                 <div className="col-md-4 footer-grid">
                                     <h3 className="title">基础设施</h3>
                                     <ul>
+                                        <li><a href="http://cdn.kyeegroup.com/" target="_blank">静态资源CDN</a></li>
                                         <li><a href="http://nexus.kyeegroup.com/" target="_blank">依赖仓库Nexus</a></li>
                                         <li><a href="http://git.kyeegroup.com/" target="_blank">代码协作GitLab</a></li>
                                         <li><a href="https://sonar.kyeegroup.com/" target="_blank">代码质量Sonar</a></li>
