@@ -23,3 +23,6 @@ hrp:
 authority:
   admin: 40101,40000
   author: 40002,40000
+
+file:
+   address: /home/alan/workspace/kyee-2060/open-platform-frontend/img/

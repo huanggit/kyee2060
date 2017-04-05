@@ -875,4 +875,20 @@ p.ever{
       line-height: 18px;
     }
   }
+  .imgUploadForm{
+    margin-top: 150px;
+    height: 100%;
+    width:100%;
+    label{
+      font-size: 24px;
+      margin-top: 20px;
+      margin-left: 580px;
+      color: #ffffff;
+    }
+    input{
+      width:30%;
+      margin-left: 580px;
+      line-height: 24px;
+    }
+  }
 }

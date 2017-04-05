@@ -13,19 +13,28 @@ export default class UpdateDoc extends Component {
             author: "",
             icons:[]
         };
+        this.init = this.init.bind(this);
+    }
+
+    init(doc){
+        var randomIcons = global.randomIcons();
+        randomIcons.unshift(doc.icon);
+        this.setState({
+            id: doc.id,
+            name: doc.name,
+            type: doc.type,
+            icon: doc.icon,
+            author: doc.author,
+            icons: randomIcons
+        })
+    }
+
+    componentDidMount() {
+        this.init(this.props.doc);
     }
 
     componentWillReceiveProps(nextProps) {
-        var randomIcons = global.randomIcons();
-        randomIcons.unshift(nextProps.doc.icon);
-        this.setState({
-            id: nextProps.doc.id,
-            name: nextProps.doc.name,
-            type: nextProps.doc.type,
-            icon: nextProps.doc.icon,
-            author: nextProps.doc.author,
-            icons: randomIcons
-        })
+        this.init(nextProps.doc);
     }
 
     updateDoc() {

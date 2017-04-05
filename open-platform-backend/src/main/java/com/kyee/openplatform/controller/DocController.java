@@ -8,13 +8,19 @@ import com.kyee.openplatform.repositorys.doc.Doc;
 import com.kyee.openplatform.repositorys.user.UserInfo;
 import com.kyee.openplatform.service.DocService;
 import com.kyee.openplatform.service.UserService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 
 @RestController
 @RequestMapping("/doc")
+@Log4j2
 public class DocController {
 
     @Autowired
@@ -22,6 +28,9 @@ public class DocController {
 
     @Autowired
     UserService userService;
+
+    @Value("${file.address}")
+    private String fileAddress;
 
     @CacheControl
     @RequestMapping("/type/{type}")
@@ -72,7 +81,7 @@ public class DocController {
         if (!userService.getDocAuthority(userInfo.getUserInfoId(), chapter.getDocId())) {
             throw new Exception("您没有编辑权限.");
         }
-        chapter.setId(chapter.getDocId()+"$"+chapter.getName());
+        chapter.setId(chapter.getDocId() + "$" + chapter.getName());
         chapter.setLastUpdater(userInfo.getUserInfoName());
         docService.newChapter(chapter);
         return ResultApi.SUCCESS;
@@ -97,4 +106,20 @@ public class DocController {
         return ResultApi.SUCCESS;
     }
 
+    @PostMapping(value = "/img/upload")
+    public ResultApi imgUpload(@RequestParam(name = "file") MultipartFile img) throws Exception {
+        if (img == null) {
+            throw new Exception("上传文件为空。");
+        }
+        String imgName = img.getOriginalFilename();
+        File imgDir = new File(fileAddress);
+        for (File existsFile : imgDir.listFiles()) {
+            if (imgName.equals(existsFile.getName())) {
+                throw new Exception("该文件名已存在。");
+            }
+        }
+        File dest = new File(fileAddress + imgName);
+        img.transferTo(dest);
+        return ResultApi.SUCCESS;
+    }
 }

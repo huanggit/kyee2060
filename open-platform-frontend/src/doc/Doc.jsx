@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 import ReactMarkdown from 'react-markdown';
 import NewChapter from './NewChapter';
 import UpdateChapter from './UpdateChapter';
+import UploadImg from './UploadImg';
 
 export default class Doc extends Component {
 
@@ -70,6 +71,7 @@ export default class Doc extends Component {
         return (
             <div>
                 <NewChapter docId={s.doc.id}/>
+                <UploadImg />
                 {s.chapter.id && (
                     <UpdateChapter chapter={s.chapter}/>
                 )}
@@ -105,6 +107,10 @@ export default class Doc extends Component {
                                             <button onClick={function () {
                                                 document.getElementById("newChapter").style.display = "block";
                                             }}>新增
+                                            </button>
+                                            <button onClick={function () {
+                                                document.getElementById("uploadImg").style.display = "block";
+                                            }}>图片
                                             </button>
                                             {s.chapter.id && (
                                                 <button onClick={function () {

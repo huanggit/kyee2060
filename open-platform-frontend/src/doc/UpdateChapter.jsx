@@ -11,15 +11,24 @@ export default class UpdateChapter extends Component {
             name: "",
             content: "",
         };
+        this.init = this.init.bind(this);
+    }
+
+    init(chapter){
+        this.setState({
+            id: chapter.id,
+            docId: chapter.docId,
+            name: chapter.name,
+            content: chapter.content,
+        })
+    }
+
+    componentDidMount() {
+        this.init(this.props.chapter);
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({
-            id: nextProps.chapter.id,
-            docId: nextProps.chapter.docId,
-            name: nextProps.chapter.name,
-            content: nextProps.chapter.content,
-        })
+        this.init(nextProps.chapter);
     }
 
     updateChapter() {
