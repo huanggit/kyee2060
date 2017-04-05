@@ -37,7 +37,7 @@ export default class Doc extends Component {
         var authorityUrl = (["tech", "dev", "ops", "ui"].indexOf(id) > -1) ? "isAdmin" : "isAuthor";
         global.get(authorityUrl, function (result) {
             this.setState({
-                auth: result
+                auth: result && (localStorage.getItem("editMode") == 'true')
             })
         }.bind(this));
     }
@@ -70,9 +70,13 @@ export default class Doc extends Component {
         var s = this.state;
         return (
             <div>
-                <NewChapter docId={s.doc.id}/>
-                <UploadImg />
-                {s.chapter.id && (
+                {s.auth && (
+                    <NewChapter docId={s.doc.id}/>
+                )}
+                {s.auth && (
+                    <UploadImg />
+                )}
+                {s.auth && s.chapter.id && (
                     <UpdateChapter chapter={s.chapter}/>
                 )}
                 <div className="wrap">

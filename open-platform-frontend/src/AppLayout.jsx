@@ -4,7 +4,25 @@ import { Link } from 'react-router';
 
 
 export default class AppLayout extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            auth: false,
+            editMode: (localStorage.getItem("editMode") == 'true'),
+        };
+    }
+
+    componentDidMount() {
+        global.get("isAuthor", function (result) {
+            this.setState({
+                auth: result
+            })
+        }.bind(this));
+    }
+
     render() {
+        var s = this.state;
         return (
             <div>
                 <div>
@@ -30,6 +48,14 @@ export default class AppLayout extends Component {
                                             <li className="hvr-sweep-to-bottom"><Link to={"/business"}>业务</Link> </li>
                                         </ul>
                                         <div className="logout"><Link to={"/login"}>退出</Link></div>
+                                        {s.auth && (<div className="editMode"><a onClick={function () {
+                                            var toggledMode = !this.state.editMode;
+                                            localStorage.setItem("editMode", toggledMode);
+                                            this.setState({
+                                                editMode: toggledMode
+                                            });
+                                            location.reload();
+                                        }.bind(this)}>{s.editMode?"浏览":"编辑"}</a></div>)}
                                     </div>
                                 </nav>
                             </div>

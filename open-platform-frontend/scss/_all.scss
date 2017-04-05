@@ -172,7 +172,17 @@ ul{
        .logout {
          position: absolute;
          top:20px;
-         right: 10px;
+         right: 40px;
+         z-index: 99;
+         a{
+           color: #AAAAAA;
+           text-decoration:underline;
+         }
+       }
+       .editMode {
+         position: absolute;
+         top:20px;
+         right: 0px;
          z-index: 99;
          a{
            color: #AAAAAA;

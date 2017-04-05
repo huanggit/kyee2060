@@ -28,7 +28,7 @@ export default class EntryList extends Component {
         }.bind(this));
         global.get("isAuthor", function (result) {
             this.setState({
-                auth: result
+                auth: result && (localStorage.getItem("editMode") == 'true')
             })
         }.bind(this));
     }
@@ -39,7 +39,9 @@ export default class EntryList extends Component {
         var likes = s.likesByTitle;
         return (
             <div>
-                <NewDoc type={this.props.type}/>
+                {s.auth && (
+                    <NewDoc type={this.props.type}/>
+                )}
                 {s.auth && (
                     <UpdateDoc doc={s.doc}/>
                 )}
