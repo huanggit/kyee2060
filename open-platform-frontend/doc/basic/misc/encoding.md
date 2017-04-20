@@ -70,3 +70,73 @@ UTF-8的编码规则很简单，只有二条：
 ```
 跟据上表，解读UTF-8编码非常简单。如果一个字节的第一位是0，则这个字节单独就是一个字符；如果第一位是1，则连续有多少个1，就表示当前字符占用多少个字节。
 
+## HTTP
+
+在HTTP中，与字符集和字符编码相关的消息头是Accept-Charset/Content-Type，
+另外主区区分Accept-Charset/Accept-Encoding/Accept-Language/Content-Type/Content-Encoding/Content-Language：
+
+* Accept-Charset：浏览器申明自己接收的字符集，这就是本文前面介绍的各种字符集和字符编码，如gb2312，utf-8（通常我们说Charset包括了相应的字符编码方案）；
+
+* Accept-Encoding：浏览器申明自己接收的编码方法，通常指定压缩方法，是否支持压缩，支持什么压缩方法（gzip，deflate），（注意：这不是只字符编码）；
+
+* Accept-Language：浏览器申明自己接收的语言。语言跟字符集的区别：中文是语言，中文有多种字符集，比如big5，gb2312，gbk等等；
+
+* Content-Type：WEB服务器告诉浏览器自己响应的对象的类型和字符集。例如：Content-Type: text/html; charset='gb2312'
+
+* Content-Encoding：WEB服务器表明自己使用了什么压缩方法（gzip，deflate）压缩响应中的对象。例如：Content-Encoding：gzip
+
+* Content-Language：WEB服务器告诉浏览器自己响应的对象的语言。
+
+## URL encoding
+[RFC标准](http://blog.csdn.net/langurisser/article/details/49160903)
+
+## maven
+当我们源码中有中文等字符的时候，我们把源码打包成class文件的时候，也需要在`pom.xml`指定这些字符的编码格式：
+```
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    ...
+</properties>
+```
+
+## web.xml
+我们可以在web.xml中设置encoding filter。
+当forceEncoding为false的前提下（默认为false），当request没有指定content-type或content-type不含编码时，该filter将会为这个request设定请求体的编码为filter的encoding值。
+当forceEncoding为true的前提下，就会为request的请求体和response都设定为这个filter的encoding值。
+```
+ <filter>
+    <filter-name>encoding</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+        <param-name>forceEncoding</param-name>
+        <param-value>true</param-value>
+    </init-param>
+</filter>
+
+<filter-mapping>
+    <filter-name>encoding</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+```
+
+
+## jdbc
+```
+jdbcUrl=jdbc:mysql:///itcastoa?useUnicode=true&characterEncoding=UTF-8
+```
+例如：mysql数据库用的是gbk编码，而项目数据库用的是utf-8编码。这时候如果添加了useUnicode=true&characterEncoding=UTF-8 ，那么作用有如下两个方面：
+* 存数据时： 数据库在存放项目数据的时候会先用UTF-8格式将数据解码成字节码，然后再将解码后的字节码重新使用GBK编码存放到数据库中。
+* 取数据时： 在从数据库中取数据的时候，数据库会先将数据库中的数据按GBK格式解码成字节码，然后再将解码后的字节码重新按UTF-8格式编码数据，最后再将数据返回给客户端。
+
+
+## database
+可以先输入查询语句SHOW VARIABLES LIKE 'character_set_%';，查看所有的编码是否是UTF-8.
+如果不是可以使用Server Instance Config 把默认的字符集设置为utf-8
+或者修改/MySQL/MySQL Server 5.0/my.ini中的
+default-character-set=utf-8;
+character-set-server=utf-8;
+然后重新启动mysql的服务就行了
