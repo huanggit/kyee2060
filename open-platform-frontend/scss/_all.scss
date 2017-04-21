@@ -859,10 +859,19 @@ p.ever{
       width:40%;
     }
     textarea{
-      margin-left: 100px;
-      width:80%;
+      margin-left: 10px;
+      width:49%;
       height: 800px;
       overflow: auto;
+      float:left;
+    }
+    .markdown{
+      margin-left: 10px;
+      width:49%;
+      height: 800px;
+      overflow: auto;
+      float:left;
+      background: #ffffff;
     }
   }
   .docForm{

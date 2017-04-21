@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import ReactMarkdown from 'react-markdown';
 
 
 export default class UpdateChapter extends Component {
@@ -58,9 +59,16 @@ export default class UpdateChapter extends Component {
                 <div className="chapterForm">
                     <label>内容（MarkDown格式）：</label>
                     <br/>
-                    <textarea ref={"content"} value={t.state.content} onChange={function (event) {
-                        this.setState({content: event.target.value});
-                    }.bind(this)}></textarea>
+                    <textarea value={t.state.content}
+                              onChange={function (event) {
+                                this.setState({content: event.target.value});
+                              }.bind(this)}
+                              onScroll={function () {
+                                  document.getElementsByClassName("markdown")[1].scrollTop =
+                                      document.getElementsByTagName("textarea")[1].scrollTop;
+                              }}
+                    ></textarea>
+                    <ReactMarkdown className="markdown" escapeHtml={true} source={t.state.content}/>
                 </div>
             </div>
         )

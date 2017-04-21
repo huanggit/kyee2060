@@ -1,14 +1,20 @@
 import React, {Component} from "react";
-
+import ReactMarkdown from 'react-markdown';
 
 export default class NewChapter extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            content: "",
+        };
+    }
 
     newChapter() {
         let formData = new FormData();
         formData.append("docId",this.props.docId);
         formData.append("name",this.refs.name.value);
-        formData.append("content",this.refs.content.value);
+        formData.append("content",this.state.content);
         global.post("doc/chapter/new", formData, function () {
             document.getElementById("newChapter").style.display ="none";
             location.reload();
@@ -23,7 +29,6 @@ export default class NewChapter extends Component {
                     <button  onClick={t.newChapter.bind(t)}>保存</button>
                     <button  onClick={function () {
                         t.refs.name.value = "";
-                        t.refs.content.value = "";
                         document.getElementById("newChapter").style.display ="none";
                     }}>取消</button>
                 </div>
@@ -33,7 +38,16 @@ export default class NewChapter extends Component {
                     <br/>
                     <label>内容（MarkDown格式）：</label>
                     <br/>
-                    <textarea ref={"content"} ></textarea>
+                    <textarea value={t.state.content}
+                              onChange={function (event) {
+                                  this.setState({content: event.target.value});
+                              }.bind(this)}
+                              onScroll={function () {
+                        document.getElementsByClassName("markdown")[0].scrollTop =
+                            document.getElementsByTagName("textarea")[0].scrollTop;
+                    }}
+                    ></textarea>
+                    <ReactMarkdown className="markdown" escapeHtml={true} source={t.state.content}/>
                 </div>
             </div>
         )
