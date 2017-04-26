@@ -6,6 +6,7 @@ export default class NewChapter extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            html: false,
             content: "",
         };
     }
@@ -15,6 +16,7 @@ export default class NewChapter extends Component {
         formData.append("docId",this.props.docId);
         formData.append("name",this.refs.name.value);
         formData.append("content",this.state.content);
+        formData.append("html",this.state.html);
         global.post("doc/chapter/new", formData, function () {
             document.getElementById("newChapter").style.display ="none";
             location.reload();
@@ -33,11 +35,21 @@ export default class NewChapter extends Component {
                     }}>取消</button>
                 </div>
                 <div className="chapterForm">
-                    <label>标题：</label>
-                    <input ref={"name"} placeholder="请把长度控制在8个字以内" maxLength="8"/>
-                    <br/>
-                    <label>内容（MarkDown格式）：</label>
-                    <br/>
+                    <div className="topic">
+                        <label>标题：</label>
+                        <input ref={"name"} className="topicName" placeholder="请把长度控制在8个字以内" maxLength="8"/>
+                        <input type="checkbox" className="checkbox"
+                               onChange={function (event) {
+                                   this.setState({html: event.target.checked});
+                               }.bind(this)}/><span>html</span>
+                        <div className="clearFix"></div>
+                    </div>
+
+                    <div >
+                        <label className="contentLabel">内容（MarkDown格式）：</label>
+                        <label className="contentPreview">预览：</label>
+                    </div>
+
                     <textarea value={t.state.content}
                               onChange={function (event) {
                                   this.setState({content: event.target.value});
@@ -47,7 +59,7 @@ export default class NewChapter extends Component {
                             document.getElementsByTagName("textarea")[0].scrollTop;
                     }}
                     ></textarea>
-                    <ReactMarkdown className="markdown" escapeHtml={true} source={t.state.content}/>
+                    <ReactMarkdown className="markdown" escapeHtml={!t.state.html} source={t.state.content}/>
                 </div>
             </div>
         )

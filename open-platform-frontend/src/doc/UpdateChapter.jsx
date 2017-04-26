@@ -11,6 +11,7 @@ export default class UpdateChapter extends Component {
             docId: "",
             name: "",
             content: "",
+            html: false
         };
         this.init = this.init.bind(this);
     }
@@ -21,6 +22,7 @@ export default class UpdateChapter extends Component {
             docId: chapter.docId,
             name: chapter.name,
             content: chapter.content,
+            html: chapter.html
         })
     }
 
@@ -39,6 +41,7 @@ export default class UpdateChapter extends Component {
         formData.append("docId", s.docId);
         formData.append("name", s.name);
         formData.append("content", s.content);
+        formData.append("html",s.html);
         global.post("doc/chapter/update", formData, function () {
             document.getElementById("updateChapter").style.display = "none";
             location.reload();
@@ -57,8 +60,20 @@ export default class UpdateChapter extends Component {
                     </button>
                 </div>
                 <div className="chapterForm">
-                    <label>内容（MarkDown格式）：</label>
-                    <br/>
+                    <div className="topic">
+                        <label>标题：</label>
+                        <input  className="topicName" value={t.state.name} disabled="disabled"/>
+                        <input type="checkbox" className="checkbox" checked={t.state.html}
+                               onChange={function (event) {
+                                   this.setState({html: event.target.checked});
+                               }.bind(this)}/><span>html</span>
+                        <div className="clearFix"></div>
+                    </div>
+
+                    <div >
+                        <label className="contentLabel">内容（MarkDown格式）：</label>
+                        <label className="contentPreview">预览：</label>
+                    </div>
                     <textarea value={t.state.content}
                               onChange={function (event) {
                                 this.setState({content: event.target.value});
@@ -68,7 +83,7 @@ export default class UpdateChapter extends Component {
                                       document.getElementsByTagName("textarea")[1].scrollTop;
                               }}
                     ></textarea>
-                    <ReactMarkdown className="markdown" escapeHtml={true} source={t.state.content}/>
+                    <ReactMarkdown className="markdown" escapeHtml={!t.state.html} source={t.state.content}/>
                 </div>
             </div>
         )

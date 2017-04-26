@@ -851,12 +851,36 @@ p.ever{
     height: 100%;
     label{
       font-size: 18px;
-      margin-top: 20px;
-      margin-left: 100px;
       color: #ffffff;
     }
-    input{
-      width:40%;
+    .topic{
+      margin-top: 20px;
+      margin-left: 100px;
+      label{
+        float:left;
+      }
+      span{
+        font-size: 18px;
+        color: #ffffff;
+      }
+      .topicName{
+        width:30%;
+        float:left;
+      }
+      .checkbox{
+        margin-left: 5px;
+        float:left;
+      }
+      .clearFix{
+        clear: both;
+      }
+    }
+    .contentLabel{
+      float:left;
+      margin-left: 100px;
+    }
+    .contentPreview{
+      margin-left: 700px;
     }
     textarea{
       margin-left: 10px;

@@ -72,7 +72,11 @@ export default class AppLayout extends Component {
                                 <div className="col-md-4 footer-grid">
                                     <h3 className="title">站点地图</h3>
                                     <ul>
-                                        <li><a href="http://www.kyee.com.cn/webmap.asp" target="_blank">京颐股份</a></li>
+                                        <li><a href="http://www.kyeegroup.com" target="_blank">京颐集团</a></li>
+                                        <li><a href="http://www.kyee.com.cn" target="_blank">京颐股份</a></li>
+                                        <li><a href="https://www.quyiyuan.com" target="_blank">趣医网</a></li>
+                                        <li><a href="http://www.feiyi.com.cn" target="_blank">飞医网</a></li>
+                                        <li><a href="http://www.haohushi.me" target="_blank">小趣好护士</a></li>
                                     </ul>
                                 </div>
                                 <div className="col-md-4 footer-grid">

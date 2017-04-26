@@ -135,7 +135,7 @@ export default class Doc extends Component {
                                             )}
                                         </div>
                                     )}
-                                    <ReactMarkdown escapeHtml={true} source={s.chapter.content}/>
+                                    <ReactMarkdown escapeHtml={!s.chapter.html} source={s.chapter.content}/>
                                 </div>
                             </div>
 
