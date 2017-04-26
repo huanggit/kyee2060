@@ -495,6 +495,8 @@ p.ever{
         width:80%;
         padding:40px;
         border-left: 1px #e6e7ec solid;
+        p, blockquote, ul, ol, dl, li, table, pre {
+          margin: 15px 0; }
         .editButton{
           float: right;
           font-size: 16px;
@@ -871,9 +873,6 @@ p.ever{
         margin-left: 5px;
         float:left;
       }
-      .clearFix{
-        clear: both;
-      }
     }
     .contentLabel{
       float:left;
@@ -935,3 +934,54 @@ p.ever{
     }
   }
 }
+
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+h1 {
+  font-size: 28px;
+  color: black; }
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+h3 {
+  font-size: 18px; }
+h4 {
+  font-size: 16px; }
+h5 {
+  font-size: 14px; }
+h6 {
+  color: #777777;
+  font-size: 14px; }
+table {
+  padding: 0;border-collapse: collapse;
+}
+table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0; }
+table tr:nth-child(2n) {
+  background-color: #f8f8f8; }
+table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 6px 13px; }
+table tr td {
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 6px 13px; }
+table tr th :first-child, table tr td :first-child {
+  margin-top: 0; }
+table tr th :last-child, table tr td :last-child {
+  margin-bottom: 0; }

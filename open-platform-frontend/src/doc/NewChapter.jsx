@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import ReactMarkdown from 'react-markdown';
+import Markdown from './Markdown';
 
 export default class NewChapter extends Component {
 
@@ -42,7 +42,7 @@ export default class NewChapter extends Component {
                                onChange={function (event) {
                                    this.setState({html: event.target.checked});
                                }.bind(this)}/><span>html</span>
-                        <div className="clearFix"></div>
+                        <div className="clearfix"></div>
                     </div>
 
                     <div >
@@ -59,7 +59,7 @@ export default class NewChapter extends Component {
                             document.getElementsByTagName("textarea")[0].scrollTop;
                     }}
                     ></textarea>
-                    <ReactMarkdown className="markdown" escapeHtml={!t.state.html} source={t.state.content}/>
+                    <Markdown   html={t.state.html} source={t.state.content}/>
                 </div>
             </div>
         )

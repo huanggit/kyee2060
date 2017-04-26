@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Link} from 'react-router';
-import ReactMarkdown from 'react-markdown';
+import Markdown from './Markdown';
 import NewChapter from './NewChapter';
 import UpdateChapter from './UpdateChapter';
 import UploadImg from './UploadImg';
@@ -107,35 +107,38 @@ export default class Doc extends Component {
                             <div>
                                 <div className="wrap-right">
                                     {s.auth && (
-                                        <div className="editButton">
-                                            <button onClick={function () {
-                                                document.getElementById("newChapter").style.display = "block";
-                                            }}>新增
-                                            </button>
-                                            <button onClick={function () {
-                                                document.getElementById("uploadImg").style.display = "block";
-                                            }}>图片
-                                            </button>
-                                            {s.chapter.id && (
+                                        <div>
+                                            <div className="editButton">
                                                 <button onClick={function () {
-                                                    document.getElementById("updateChapter").style.display = "block";
-                                                }}>修改</button>
-                                            )}
-                                            {s.chapter.id && (
+                                                    document.getElementById("newChapter").style.display = "block";
+                                                }}>新增
+                                                </button>
                                                 <button onClick={function () {
-                                                    if (confirm('确认删除当前章节?')) {
-                                                        let formData = new FormData();
-                                                        formData.append("id", s.chapter.id);
-                                                        formData.append("docId", s.chapter.docId);
-                                                        global.post("doc/chapter/delete", formData, function () {
-                                                            location.reload();
-                                                        })
-                                                    }
-                                                }}>删除</button>
-                                            )}
+                                                    document.getElementById("uploadImg").style.display = "block";
+                                                }}>图片
+                                                </button>
+                                                {s.chapter.id && (
+                                                    <button onClick={function () {
+                                                        document.getElementById("updateChapter").style.display = "block";
+                                                    }}>修改</button>
+                                                )}
+                                                {s.chapter.id && (
+                                                    <button onClick={function () {
+                                                        if (confirm('确认删除当前章节?')) {
+                                                            let formData = new FormData();
+                                                            formData.append("id", s.chapter.id);
+                                                            formData.append("docId", s.chapter.docId);
+                                                            global.post("doc/chapter/delete", formData, function () {
+                                                                location.reload();
+                                                            })
+                                                        }
+                                                    }}>删除</button>
+                                                )}
+                                            </div>
+                                            <div className="clearfix"></div>
                                         </div>
                                     )}
-                                    <ReactMarkdown escapeHtml={!s.chapter.html} source={s.chapter.content}/>
+                                    <Markdown html={s.chapter.html} source={s.chapter.content}/>
                                 </div>
                             </div>
 
