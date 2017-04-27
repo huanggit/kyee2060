@@ -41,7 +41,7 @@ export default  class Home extends Component {
                                         icon="paperclip"
                                         title="技术架构"
                                         sub="公司推荐技术选型、推荐版本号。异常处理、日志等基础设施。一站式开发平台。"/>
-                                <HomeEntry  link="/doc/dev"
+                                <HomeEntry  link="/develops"
                                         icon="tags"
                                         title="研发规范"
                                         sub="编码规范，多系统对接规范，研发流程。切实提高代码质量，项目质量。"/>

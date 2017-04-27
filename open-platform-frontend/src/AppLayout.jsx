@@ -41,7 +41,7 @@ export default class AppLayout extends Component {
                                             <li className="hvr-sweep-to-bottom"><Link to={"/services"}>服务</Link></li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/doc/ui"}>UI</Link></li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/doc/tech"}>架构</Link></li>
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/doc/dev"}>研发</Link></li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/develops"}>研发</Link></li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/doc/ops"}>运维</Link></li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/backend"}>后端</Link> </li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/frontend"}>前端</Link> </li>

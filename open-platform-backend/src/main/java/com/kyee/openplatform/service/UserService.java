@@ -3,7 +3,9 @@ package com.kyee.openplatform.service;
 import com.google.gson.Gson;
 import com.kyee.openplatform.config.web.ResultApi;
 import com.kyee.openplatform.pojo.HrpQueryResult;
+import com.kyee.openplatform.repositorys.doc.DocRepository;
 import com.kyee.openplatform.repositorys.user.UserInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpEntity;
@@ -38,6 +40,9 @@ public class UserService {
     private RestTemplate rt = new RestTemplate();
     private HttpHeaders headers = new HttpHeaders();
     private Gson gson = new Gson();
+
+    @Autowired
+    DocRepository docRepository;
 
     @PostConstruct
     public void init() {
@@ -80,7 +85,7 @@ public class UserService {
 
     @Cacheable("getDocAuthority")
     public boolean getDocAuthority(String userId, String docId){
-        if (adminDocs.contains(docId) && isAdmin(userId)) {
+        if (adminDocs.contains(docRepository.findOne(docId)) && isAdmin(userId)) {
             return true;
         }
         return isAuthor(userId);

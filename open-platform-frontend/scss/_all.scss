@@ -421,6 +421,8 @@ p.ever{
         width: 20%;
         text-align: left;
         .like-it {
+          z-index: 101;
+          position: relative;
           display: block;
           width: 50px;
           line-height: 60px;
@@ -434,6 +436,8 @@ p.ever{
           }
         }
         .liked-it {
+          z-index: 101;
+          position: relative;
           display: block;
           width: 50px;
           line-height: 60px;
