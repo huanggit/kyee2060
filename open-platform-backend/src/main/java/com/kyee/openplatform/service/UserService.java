@@ -84,7 +84,7 @@ public class UserService {
     }
 
     @Cacheable("getDocAuthority")
-    public boolean getDocAuthority(String userId, String docId){
+    public boolean getDocAuthority(String userId, String docId) {
         if (adminDocs.contains(docRepository.findOne(docId)) && isAdmin(userId)) {
             return true;
         }

@@ -43,7 +43,6 @@ public class DocService {
         }
     }
 
-
     public boolean docIdAlreadyExists(String id) {
         return docRepository.findOne(id) != null;
     }

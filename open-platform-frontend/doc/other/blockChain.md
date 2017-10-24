@@ -1,0 +1,1 @@
+http://www.michaelburge.us/2017/08/17/rolling-your-own-blockchain.html
