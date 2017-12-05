@@ -73,7 +73,7 @@ export default class UpdateDoc extends Component {
                     <label>标题：</label>
                     <input value={this.state.name} onChange={function (event) {
                         this.setState({name: event.target.value});
-                    }.bind(this)} placeholder="最长12个字符" maxLength="12" />
+                    }.bind(this)} placeholder="最长20个字符" maxLength="20" />
                     <br/>
                     <label>作者：</label>
                     <input value={this.state.author} onChange={function (event) {

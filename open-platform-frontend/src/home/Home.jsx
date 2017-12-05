@@ -15,14 +15,19 @@ export default  class Home extends Component {
                             <h3> 公共资源 </h3>
                             <p className="ever">本平台由公司各个架构组倾力打造，提供常用公共资源组件、公共服务、UI模板等，方便复用，旨在为各个项目组提高开发效率。</p>
                             <div className="welcome-grids">
+                                <HomeEntry  link="/services"
+                                            icon="cloud"
+                                            title="公共服务"
+                                            sub="还在为发送短信等功能烦恼吗？快来试试公司公共微服务吧！点击查看详细API参考文档。"/>
                                 <HomeEntry  link="/modules"
                                         icon="tasks"
                                         title="公共组件"
                                         sub="提供详细的组件使用文档，包括组件简介、组件详细API参考文档、组件升级日志等。"/>
-                                <HomeEntry  link="/services"
-                                        icon="cloud"
-                                        title="公共服务"
-                                        sub="还在为发送短信等功能烦恼吗？快来试试公司公共微服务吧！点击查看详细API参考文档。"/>
+                                <HomeEntry  link="/system"
+                                            icon="envelope"
+                                            title="公共系统"
+                                            sub="集团公共系统。"/>
+                                <div className="clearfix"> </div>
                                 <HomeEntry  link="/doc/ui"
                                         icon="picture"
                                         title="UI资源"
@@ -37,7 +42,7 @@ export default  class Home extends Component {
                             <h3> 架构规范 </h3>
                             <p className="ever">公司推荐技术选型，编码规范，SQL规范，研发流程规范，运维流程制度规范。开发架构，研发运维不再烦恼！</p>
                             <div className="welcome-grids">
-                                <HomeEntry  link="/doc/tech"
+                                <HomeEntry  link="technology"
                                         icon="paperclip"
                                         title="技术架构"
                                         sub="公司推荐技术选型、推荐版本号。异常处理、日志等基础设施。一站式开发平台。"/>

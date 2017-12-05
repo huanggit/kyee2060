@@ -1,2 +1,2 @@
-global.restUrl="http://w.kyeegroup.com:8888/";
+global.restUrl="https://w.kyeegroup.com:8889/";
 global.requireLogin=true;

@@ -8,6 +8,8 @@ import Home from "./home/Home";
 import Modules from "./api/Modules";
 import Services from "./api/Services";
 import Develops from "./api/Devs";
+import Techs from "./api/Tech";
+import Sys from "./api/System";
 import Backend from "./study/Backend";
 import Frontend from "./study/Frontend";
 import Business from "./study/Business";
@@ -53,6 +55,8 @@ export default class AppRouter extends Component {
                     <Route path="modules" component={Modules}/>
                     <Route path="services" component={Services}/>
                     <Route path="develops" component={Develops}/>
+                    <Route path="technology" component={Techs}/>
+                    <Route path="system" component={Sys}/>
                     <Route path="backend" component={Backend}/>
                     <Route path="business" component={Business}/>
                     <Route path="frontend" component={Frontend}/>

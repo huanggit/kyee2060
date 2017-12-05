@@ -37,10 +37,12 @@ export default class AppLayout extends Component {
                                     </div>
                                     <div className="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                                         <ul className="nav navbar-nav">
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/modules"}>组件</Link></li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/technology"}>架构</Link></li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/services"}>服务</Link></li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/modules"}>组件</Link></li>
+                                            <li className="hvr-sweep-to-bottom"><Link to={"/system"}>系统</Link></li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/doc/ui"}>UI</Link></li>
-                                            <li className="hvr-sweep-to-bottom"><Link to={"/doc/tech"}>架构</Link></li>
+
                                             <li className="hvr-sweep-to-bottom"><Link to={"/develops"}>研发</Link></li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/doc/ops"}>运维</Link></li>
                                             <li className="hvr-sweep-to-bottom"><Link to={"/backend"}>后端</Link> </li>

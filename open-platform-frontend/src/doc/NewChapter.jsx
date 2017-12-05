@@ -37,7 +37,7 @@ export default class NewChapter extends Component {
                 <div className="chapterForm">
                     <div className="topic">
                         <label>标题：</label>
-                        <input ref={"name"} className="topicName" placeholder="请把长度控制在8个字以内" maxLength="8"/>
+                        <input ref={"name"} className="topicName" placeholder="请把长度控制在20个字以内" maxLength="20"/>
                         <input type="checkbox" className="checkbox"
                                onChange={function (event) {
                                    this.setState({html: event.target.checked});

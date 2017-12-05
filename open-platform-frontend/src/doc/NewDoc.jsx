@@ -41,7 +41,7 @@ export default class NewDoc extends Component {
                     <input ref={"id"} placeholder="只能包含字母和数字，最长15个字符" maxLength="15" />
                     <br/>
                     <label>标题：</label>
-                    <input ref={"name"} placeholder="最长12个字符" maxLength="12"/>
+                    <input ref={"name"} placeholder="最长20个字符" maxLength="20"/>
                     <br/>
                     <label>作者：</label>
                     <input ref={"author"} placeholder="最长11个字符" maxLength="11"/>
